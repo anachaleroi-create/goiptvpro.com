@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
@@ -1661,7 +1660,6 @@
         </div>
         
 		<!DOCTYPE html>
-		
 <html lang="fr-FR">
 <head>
 <meta charset="UTF-8">
@@ -1670,7 +1668,6 @@
 	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 
 	<!-- This site is optimized with the Yoast SEO plugin v27.2 - https://yoast.com/product/yoast-seo-wordpress/ -->
-	
 	<title>Accueil - IRON TV PRO</title>
 	<meta name="description" content="Abonnement IRON TV PRO Pour tout vos appareils avec test de l&#039;application tv et prix pour pack complet des stream stable hd vod 12 mois" />
 	<link rel="canonical" href="https://iron-protv.com/" />
@@ -2202,7 +2199,7 @@
                 </div>
                 <div class="pricing-column">
                     <div class="duration-header">6 Months</div>
-                    <div class="price-tag">27.99€</div>
+                    <div class="price-tag">29.99€</div>
                     <ul class="features-list">
                         <li>+23 000 TV Channels</li>
                         <li>UHD/FHD/HD/SD Quality</li>
@@ -2223,7 +2220,7 @@
                 </div>
                 <div class="pricing-column">
                     <div class="duration-header">12 Months</div>
-                    <div class="price-tag">35€</div>
+                    <div class="price-tag">44.99€</div>
                     <ul class="features-list">
                         <li>+23 000 TV Channels</li>
                         <li>UHD/FHD/HD/SD Quality</li>
@@ -2351,7 +2348,41 @@ mg {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IPTV Premium</title>
 
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0d0d0d;
+    color: white;
+}
 
+header {
+    background: #ff0000;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+}
+
+.hero {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.card {
+    background: #1a1a1a;
+    margin: 10px auto;
+    padding: 15px;
+    width: 90%;
+    max-width: 300px;
+    border-radius: 10px;
+}
 
 </style>
 </head>
@@ -2363,9 +2394,48 @@ mg {
 <div class="hero">
     <h1>Regarde +10 000 chaînes</h1>
 
+    <img src="image.jpg" width="300" height="200" loading="lazy">
 
+</div>
 
+<div class="card">
+    <h3>1 Mois</h3>
+    <p>10€</p>
+</div>
 
+<div class="card">
+    <h3>12 Mois</h3>
+    <p>70€</p>
+</div>
+
+</body>
+</html>
+
+<script>
+  window.chatbotConfig = {
+    welcomeMessage: "👋 Salut ! Tu cherches un abonnement IPTV ?",
+    responses: {
+      "prix": "Nos offres : 1 mois 10€, 3 mois 25€, 12 mois 60€",
+      "test": "Oui 👍 test 24h disponible",
+      "appareil": "Smart TV, Android, iPhone, PC 👍"
+    }
+  };
+</script>
+
+<div id="chatbot" style="position:fixed;bottom:20px;right:20px;background:#111;color:#fff;padding:15px;border-radius:10px;">
+💬 Chat IPTV
+</div>
+
+from openai import OpenAI
+
+client = OpenAI()
+
+response = client.responses.create(
+  model="gpt-4.1",
+  input="Tu es un agent qui vend IPTV"
+)
+
+print(response.output[0].content[0].text)
 
     <!-- Features Section -->
     <section class="features-section">
