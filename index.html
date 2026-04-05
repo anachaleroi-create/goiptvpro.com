@@ -2341,101 +2341,195 @@ mg {
   display: block;
 }
 
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IPTV Premium</title>
+<title>TV Premium</title>
 
 <style>
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0d0d0d;
-    color: white;
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#020617;
+  color:white;
 }
 
 header {
-    background: #ff0000;
-    text-align: center;
-    padding: 15px;
-    font-weight: bold;
+  padding:20px;
+  text-align:center;
+  background:#000;
+}
+
+h1 {
+  color:#25D366;
 }
 
 .hero {
-    padding: 40px 20px;
-    text-align: center;
+  text-align:center;
+  padding:80px 20px;
+  background:linear-gradient(to right,#020617,#0f172a);
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: auto;
+.hero h2 {
+  font-size:36px;
+}
+
+.hero p {
+  color:#94a3b8;
+}
+
+.btn {
+  display:inline-block;
+  margin-top:20px;
+  padding:15px 30px;
+  background:#25D366;
+  color:white;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.btn:hover {
+  background:#1ebe5d;
+}
+
+.section {
+  padding:50px 20px;
+  text-align:center;
+}
+
+.cards {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
 }
 
 .card {
-    background: #1a1a1a;
-    margin: 10px auto;
-    padding: 15px;
-    width: 90%;
-    max-width: 300px;
-    border-radius: 10px;
+  background:#0f172a;
+  padding:25px;
+  border-radius:12px;
+  width:260px;
+  transition:0.3s;
 }
 
+.card:hover {
+  transform:translateY(-5px);
+}
+
+.price {
+  font-size:28px;
+  color:#25D366;
+}
+
+.testimonial {
+  background:#0f172a;
+  margin:10px auto;
+  padding:15px;
+  border-radius:10px;
+  max-width:300px;
+}
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  font-size: 24px;
+  padding: 15px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
 </style>
 </head>
 
 <body>
 
-<header>IPTV PREMIUM</header>
+<header>
+  <h1>🔥 TV PREMIUM</h1>
+</header>
 
-<div class="hero">
-    <h1>Regarde +10 000 chaînes</h1>
+<section class="hero">
+  <h2>Films 🎬 Séries 📺 Sport ⚽</h2>
+  <p>Tout en un • HD / 4K • Sans coupure</p>
 
-    <img src="image.jpg" width="300" height="200" loading="lazy">
+  <a href="https://wa.me/213XXXXXXXXX?text=Bonjour%20je%20veux%20tester" class="btn">
+    🎁 TEST GRATUIT 24H
+  </a>
+</section>
 
-</div>
+<section class="section">
+  <h2>Pourquoi nous ?</h2>
+  <div class="cards">
+    <div class="card">📺 +10 000 chaînes</div>
+    <div class="card">🎬 Films récents</div>
+    <div class="card">⚡ Ultra rapide</div>
+  </div>
+</section>
 
-<div class="card">
-    <h3>1 Mois</h3>
-    <p>10€</p>
-</div>
+<section class="section">
+  <h2>Nos Offres</h2>
+  <div class="cards">
 
-<div class="card">
-    <h3>12 Mois</h3>
-    <p>70€</p>
-</div>
+    <div class="card">
+      <h3>1 Mois</h3>
+      <div class="price">10€</div>
+    </div>
+
+    <div class="card">
+      <h3>3 Mois</h3>
+      <div class="price">25€</div>
+    </div>
+
+    <div class="card">
+      <h3>12 Mois</h3>
+      <div class="price">60€</div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <h2>Avis clients 🔥</h2>
+  <div class="testimonial">"Très rapide et stable 👌"</div>
+  <div class="testimonial">"Qualité top, je recommande 🔥"</div>
+  <div class="testimonial">"Installation facile 👍"</div>
+</section>
+
+<!-- Bouton WhatsApp -->
+<a href="https://wa.me/213XXXXXXXXX?text=Bonjour%20je%20veux%20tester" class="whatsapp-btn">
+💬
+</a>
+
+<!-- Popup auto -->
+<script>
+setTimeout(function(){
+  if(confirm("🔥 Test IPTV gratuit 24h dispo ! Tu veux essayer ?")){
+    window.location.href="https://wa.me/213XXXXXXXXX?text=Bonjour%20je%20veux%20tester";
+  }
+},5000);
+</script>
 
 </body>
 </html>
+⚠️ IMPORTANT
 
-<script>
-  window.chatbotConfig = {
-    welcomeMessage: "👋 Salut ! Tu cherches un abonnement IPTV ?",
-    responses: {
-      "prix": "Nos offres : 1 mois 10€, 3 mois 25€, 12 mois 60€",
-      "test": "Oui 👍 test 24h disponible",
-      "appareil": "Smart TV, Android, iPhone, PC 👍"
-    }
-  };
-</script>
 
-<div id="chatbot" style="position:fixed;bottom:20px;right:20px;background:#111;color:#fff;padding:15px;border-radius:10px;">
-💬 Chat IPTV
-</div>
 
-from openai import OpenAI
-
-client = OpenAI()
-
-response = client.responses.create(
-  model="gpt-4.1",
-  input="Tu es un agent qui vend IPTV"
-)
-
-print(response.output[0].content[0].text)
 
     <!-- Features Section -->
     <section class="features-section">
@@ -2517,6 +2611,12 @@ print(response.output[0].content[0].text)
         </div>
     </section>
 
+	<!-- WhatsApp Button -->
+<a href="https://wa.me/213XXXXXXXXX?text=Bonjour%20je%20veux%20tester" 
+style="position:fixed;bottom:20px;right:20px;background:#25D366;
+color:white;padding:15px;border-radius:50%;text-decoration:none;">
+💬
+</a>
     <!-- Payment Methods Section -->
     <section class="payment-section">
         <div class="payment-container">
