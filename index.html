@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GOIPTVPRO - Premium IPTV Entertainment</title>
+    
+    <!-- Google AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8647291268357460"
+         crossorigin="anonymous"></script>
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -54,7 +59,6 @@
             align-items: center;
         }
 
-        /* Logo Styles - Blue + Black Professional Theme */
         .logo {
             display: flex;
             align-items: center;
@@ -65,90 +69,9 @@
             letter-spacing: 1px;
         }
 
-        .logo-icon-wrapper {
-            position: relative;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-screen {
-            width: 45px;
-            height: 32px;
-            background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            box-shadow: 0 0 20px rgba(0, 102, 255, 0.5);
-        }
-
-        .logo-screen::before {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 4px;
-            background: linear-gradient(90deg, #0066ff, #00ccff);
-            border-radius: 2px;
-        }
-
-        .logo-play {
-            color: white;
-            font-size: 1rem;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-        }
-
-        /* Broadcast Waves Animation */
-        .logo-waves {
-            position: absolute;
-            right: -8px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
-        }
-
-        .wave {
-            width: 4px;
-            background: linear-gradient(90deg, #00ccff, #0066ff);
-            border-radius: 2px;
-            animation: wave-pulse 1.5s ease-in-out infinite;
-        }
-
-        .wave:nth-child(1) { height: 8px; animation-delay: 0s; }
-        .wave:nth-child(2) { height: 14px; animation-delay: 0.2s; }
-        .wave:nth-child(3) { height: 20px; animation-delay: 0.4s; }
-
-        @keyframes wave-pulse {
-            0%, 100% { opacity: 0.4; transform: scaleY(0.8); }
-            50% { opacity: 1; transform: scaleY(1); }
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.1;
-        }
-
-        .logo-main {
-            background: linear-gradient(135deg, #0066ff 0%, #00ccff 50%, #ffffff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .logo-sub {
-            font-size: 0.6rem;
-            color: #00ccff;
-            letter-spacing: 3px;
-            font-weight: 500;
+        .logo img {
+            height: 70px;
+            width: auto;
         }
 
         .nav-links {
@@ -392,189 +315,6 @@
             box-shadow: 0 20px 40px rgba(0, 102, 255, 0.6);
         }
 
-        /* Sports Section */
-        .sports-section {
-            padding: 5rem 2rem;
-            background: linear-gradient(180deg, #0a0a0f 0%, #0d1a2d 50%, #0a0a0f 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sports-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #0066ff, #00ccff, #0066ff, transparent);
-        }
-
-        .sports-header {
-            text-align: center;
-            max-width: 1200px;
-            margin: 0 auto 3rem auto;
-        }
-
-        .sports-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #0066ff 0%, #00ccff 50%, #0066ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 0 30px rgba(0, 102, 255, 0.3);
-        }
-
-        .sports-description {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .sports-description strong {
-            color: #00ccff;
-        }
-
-        /* Sports Marquee */
-        .sports-marquee {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            margin-bottom: 3rem;
-        }
-
-        .sports-marquee::before,
-        .sports-marquee::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 150px;
-            height: 100%;
-            z-index: 10;
-            pointer-events: none;
-        }
-
-        .sports-marquee::before {
-            left: 0;
-            background: linear-gradient(90deg, #0a0a0f, transparent);
-        }
-
-        .sports-marquee::after {
-            right: 0;
-            background: linear-gradient(-90deg, #0a0a0f, transparent);
-        }
-
-        .sports-track {
-            display: flex;
-            gap: 1.5rem;
-            width: max-content;
-            animation: sports-scroll 30s linear infinite;
-        }
-
-        .sports-track:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes sports-scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .sports-card {
-            flex-shrink: 0;
-            width: 280px;
-            height: 380px;
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-            transition: all 0.4s ease;
-            cursor: pointer;
-        }
-
-        .sports-card:hover {
-            transform: scale(1.05) translateY(-10px);
-            box-shadow: 0 25px 60px rgba(0, 102, 255, 0.4);
-        }
-
-        .sports-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .sports-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .sports-card-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-            padding: 2rem 1rem 1rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .sports-card:hover .sports-card-overlay {
-            opacity: 1;
-        }
-
-        .sports-card-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: white;
-        }
-
-        /* Sports Logos */
-        .sports-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            padding: 2rem;
-            background: rgba(0, 102, 255, 0.05);
-            border-radius: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            border: 1px solid rgba(0, 102, 255, 0.2);
-        }
-
-        .sports-logo-item {
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 10px;
-            transition: all 0.3s ease;
-            filter: grayscale(100%) brightness(0.8);
-        }
-
-        .sports-logo-item:hover {
-            filter: grayscale(0%) brightness(1);
-            transform: scale(1.1);
-            background: rgba(0, 102, 255, 0.2);
-        }
-
-        .sports-logo-item img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
         /* Movies Marquee Section */
         .movies-marquee-section {
             padding: 4rem 0;
@@ -683,94 +423,6 @@
 
         .marquee-item:hover img {
             transform: scale(1.1);
-        }
-
-        /* Video Demo Section */
-        .video-demo-section {
-            padding: 4rem 2rem;
-            background: linear-gradient(180deg, var(--primary-dark) 0%, #0d0d15 100%);
-            text-align: center;
-        }
-
-        .video-demo-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .video-demo-title {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .video-demo-title span {
-            background: linear-gradient(135deg, #00ccff, #0066ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .video-demo-subtitle {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
-
-        .video-wrapper {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 102, 255, 0.3);
-            border: 2px solid rgba(0, 204, 255, 0.3);
-        }
-
-        .video-wrapper video {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .video-overlay-badge {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: linear-gradient(135deg, #ff3333, #cc0000);
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            animation: pulse-red 1.5s ease-in-out infinite;
-        }
-
-        @keyframes pulse-red {
-            0%, 100% { box-shadow: 0 0 10px rgba(255, 51, 51, 0.5); }
-            50% { box-shadow: 0 0 25px rgba(255, 51, 51, 0.8); }
-        }
-
-        .video-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .video-stat {
-            text-align: center;
-        }
-
-        .video-stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #00ccff, #0066ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .video-stat-label {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
         }
 
         /* Pricing Tables Section */
@@ -1218,24 +870,24 @@
             transition: all 0.3s;
         }
 
-        .whatsapp-btn {
+        .support-btn.whatsapp-btn {
             background: linear-gradient(135deg, #25d366, #128c7e);
             color: white;
             box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
         }
 
-        .whatsapp-btn:hover {
+        .support-btn.whatsapp-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
         }
 
-        .telegram-btn {
+        .support-btn.telegram-btn {
             background: linear-gradient(135deg, #0088cc, #00a8e6);
             color: white;
             box-shadow: 0 10px 30px rgba(0, 136, 204, 0.4);
         }
 
-        .telegram-btn:hover {
+        .support-btn.telegram-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(0, 136, 204, 0.6);
         }
@@ -1347,164 +999,6 @@
             color: #00ccff;
         }
 
-        /* Movies Section */
-        .movies-section {
-            padding: 4rem 0;
-            background: var(--secondary-dark);
-            overflow: hidden;
-        }
-
-        .marquee-container {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            margin-bottom: 3rem;
-        }
-
-        .marquee-container::before,
-        .marquee-container::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 150px;
-            height: 100%;
-            z-index: 10;
-            pointer-events: none;
-        }
-
-        .marquee-container::before {
-            left: 0;
-            background: linear-gradient(90deg, var(--secondary-dark), transparent);
-        }
-
-        .marquee-container::after {
-            right: 0;
-            background: linear-gradient(-90deg, var(--secondary-dark), transparent);
-        }
-
-        .marquee-track {
-            display: flex;
-            gap: 20px;
-            animation: scroll 30s linear infinite;
-            width: max-content;
-            padding: 10px 0;
-        }
-
-        .marquee-track:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .movie-card {
-            position: relative;
-            width: 180px;
-            height: 270px;
-            border-radius: 12px;
-            overflow: hidden;
-            flex-shrink: 0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .movie-card:hover {
-            transform: scale(1.05) translateY(-10px);
-        }
-
-        .movie-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .movie-platform-badge {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            padding: 0.25rem 0.6rem;
-            border-radius: 12px;
-            font-size: 0.65rem;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .movie-platform-badge.netflix { background: var(--netflix-red); color: white; }
-        .movie-platform-badge.hbo { background: var(--hbo-purple); color: white; }
-        .movie-platform-badge.amazon { background: var(--amazon-orange); color: black; }
-
-        .movie-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.95));
-            padding: 2rem 1rem 1rem;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .movie-card:hover .movie-overlay {
-            opacity: 1;
-        }
-
-        .play-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #0066ff, #00ccff);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 0.5rem;
-            color: white;
-        }
-
-        .movie-title {
-            font-weight: bold;
-            font-size: 0.9rem;
-            color: white;
-        }
-
-        .movie-year {
-            color: var(--text-secondary);
-            font-size: 0.75rem;
-        }
-
-        .platform-category {
-            margin-bottom: 3rem;
-        }
-
-        .category-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 0 5%;
-            margin-bottom: 1rem;
-        }
-
-        .category-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .category-title.netflix { color: var(--netflix-red); }
-        .category-title.hbo { color: var(--hbo-purple); }
-        .category-title.amazon { color: var(--amazon-orange); }
-
-        .category-line {
-            flex: 1;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, currentColor, transparent);
-            opacity: 0.3;
-        }
-
         /* WhatsApp Float */
         .whatsapp-float {
             position: fixed;
@@ -1568,6 +1062,26 @@
             font-size: 0.9rem;
         }
 
+        /* AdSense Ad Container Styles */
+        .ad-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ad-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .pricing-row {
@@ -1582,7 +1096,7 @@
             .pricing-row {
                 grid-template-columns: 1fr;
             }
-            .movie-card { width: 150px; height: 225px; }
+            .marquee-item { width: 150px; height: 225px; }
             .features-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -1593,7 +1107,7 @@
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <img src="logo.png" alt="GOIPTVPRO" style="height: 50px; width: auto;">
+                <img src="logo.png" alt="GOIPTVPRO" style="height: 70px; width: auto;">
             </div>
             <ul class="nav-links">
                 <li><a href="#home">HOME</a></li>
@@ -1651,6 +1165,20 @@
             </div>
         </div>
     </section>
+
+    <!-- AdSense Ad 1 - After Hero -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8647291268357460"
+             data-ad-slot="VOTRE_SLOT_1"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
 
     <!-- Latest Movies Marquee Section -->
     <section class="movies-marquee-section" id="movies">
@@ -1740,6 +1268,20 @@
             </div>
         </div>
     </section>
+
+    <!-- AdSense Ad 2 - Between Movies and Pricing -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8647291268357460"
+             data-ad-slot="VOTRE_SLOT_2"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
 
     <!-- Pricing Tables Section -->
     <section class="pricing-tables-section" id="pricing">
@@ -2307,6 +1849,20 @@
         </div>
     </section>
 
+    <!-- AdSense Ad 3 - After Pricing -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8647291268357460"
+             data-ad-slot="VOTRE_SLOT_3"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
     <!-- Features Section -->
     <section class="features-section">
         <div class="section-header">
@@ -2406,17 +1962,6 @@
         </div>
     </section>
 
-    <!-- Sports Section -->
-    <section class="sports-section" id="sports">
-        <div class="sports-header">
-            <h2 class="sports-title">PTV CONTAINS OUR BEST LIVE SPORTS CHANNELS</h2>
-            <p class="sports-description">
-                service caters to all tastes, whether you're a sports fan, a fan of international championships, a fan of various continental competitions, or interested in current sporting events. However, we offer endless entertainment options. We have what meets your needs and is accessible on various devices. Don't miss out on sporting events and live TV shows in the world of sports. After connecting with us, you will enjoy seamless streaming with Smart IPTV, your gateway to continuous excitement in ultra-clear quality.
-            </p>
-        </div>
-
-       
-
     <!-- Support Section -->
     <section class="support-section" id="support">
         <div class="support-container">
@@ -2430,10 +1975,10 @@
             </p>
             <div class="support-buttons">
                 <a href="https://wa.me/213550082871" class="support-btn whatsapp-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Contacte on WhatsApp
+                    <i class="fab fa-whatsapp"></i> Contact on WhatsApp
                 </a>
                 <a href="https://t.me/goiptvpro" class="support-btn telegram-btn" target="_blank">
-                    <i class="fab fa-telegram"></i> Contacte on Telegram
+                    <i class="fab fa-telegram"></i> Contact on Telegram
                 </a>
             </div>
             <div class="support-features">
@@ -2451,12 +1996,12 @@
     </section>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/213550082871" class="whatsapp-float" target="_blank" title="Contacte on WhatsApp">
+    <a href="https://wa.me/213550082871" class="whatsapp-float" target="_blank" title="Contact on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- Telegram Float -->
-    <a href="https://t.me/goiptvpro" class="telegram-float" target="_blank" title="Contacte on Telegram">
+    <a href="https://t.me/goiptvpro" class="telegram-float" target="_blank" title="Contact on Telegram">
         <i class="fab fa-telegram"></i>
     </a>
 
@@ -2464,54 +2009,6 @@
     <footer>
         <p>&copy; 2026 GOIPTVPRO. All rights reserved. Premium IPTV Entertainment.</p>
     </footer>
-    <!-- Votre footer existant -->
-    <footer>
-        <p>&copy; 2026 GOIPTVPRO</p>
-    </footer>
 
-    <!-- 👉 COLEZ LE CODE WHATSAPP ICI -->
-
-    <!-- Code WhatsApp -->
-    <style>
-    .whatsapp-widget {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        z-index: 9999;
-    }
-    .whatsapp-button {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(135deg, #25d366, #128c7e);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 30px;
-        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-        cursor: pointer;
-        text-decoration: none;
-        animation: whatsapp-pulse 2s infinite;
-    }
-    @keyframes whatsapp-pulse {
-        0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-        70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
-        100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-    }
-    </style>
-
-    <div class="whatsapp-widget">
-        <a href="https://wa.me/213550082871?text=Bonjour%20!%20Je%20suis%20intéressé%20par%20un%20abonnement%20IPTV." 
-           class="whatsapp-button" 
-           target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
-    <!-- Fin Code WhatsApp -->
-
-    ();
-<script src="whatsapp-chat.js"></script>
-    
 </body>
 </html>
