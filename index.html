@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GOIPTVPRO - Premium IPTV Entertainment</title>
     
-    <!-- Google AdSense Verification & Script -->
-    <meta name="google-adsense-account" content="ca-pub-8647291268357460">
+    <!-- Google AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8647291268357460"
          crossorigin="anonymous"></script>
     
@@ -316,133 +315,6 @@
             box-shadow: 0 20px 40px rgba(0, 102, 255, 0.6);
         }
 
-        /* Testimonials Section */
-        .testimonials-section {
-            padding: 5rem 2rem;
-            background: linear-gradient(180deg, #0a0a0f 0%, #12121a 50%, #0a0a0f 100%);
-        }
-
-        .testimonials-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .testimonials-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .testimonials-header h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .testimonials-header p {
-            color: #a1a1aa;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 215, 0, 0.15);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255, 215, 0, 0.4);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-        }
-
-        .testimonial-card.featured {
-            transform: scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .testimonial-card.featured:hover {
-            transform: translateY(-10px) scale(1.02);
-        }
-
-        .stars {
-            color: #ffd700;
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 2px;
-        }
-
-        .testimonial-text {
-            color: #e5e5e5;
-            font-style: italic;
-            line-height: 1.8;
-            font-size: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .testimonial-author {
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .author-name {
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .author-location {
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        .author-location i {
-            margin-right: 5px;
-            color: #ffd700;
-        }
-
-        .testimonials-stats {
-            display: flex;
-            justify-content: center;
-            gap: 5rem;
-            padding-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #ffd700;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.85rem;
-        }
-
         /* Movies Marquee Section */
         .movies-marquee-section {
             padding: 4rem 0;
@@ -580,6 +452,7 @@
             font-size: 1.1rem;
         }
 
+        /* Provider Table Container */
         .provider-table-container {
             max-width: 1200px;
             margin: 0 auto 4rem auto;
@@ -598,6 +471,7 @@
             color: white;
         }
 
+        /* Provider Colors */
         .provider-orca .provider-header-table { 
             background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
         }
@@ -683,6 +557,7 @@
             border-bottom: none;
         }
 
+        /* Buy Buttons */
         .buy-buttons {
             display: flex;
             flex-direction: column;
@@ -726,6 +601,10 @@
             box-shadow: 0 10px 30px rgba(0, 136, 204, 0.4);
         }
 
+        .whatsapp-btn i, .telegram-btn i {
+            font-size: 1.2rem;
+        }
+
         /* Features Section */
         .features-section {
             padding: 4rem 2rem;
@@ -747,9 +626,6 @@
             padding: 2rem;
             text-align: center;
             transition: all 0.3s;
-            text-decoration: none;
-            color: inherit;
-            display: block;
         }
 
         .feature-card:hover {
@@ -766,23 +642,26 @@
             justify-content: center;
             font-size: 2rem;
             margin: 0 auto 1.5rem;
-            color: white;
         }
 
         .feature-card:nth-child(1) .feature-icon {
             background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%);
+            color: white;
         }
 
         .feature-card:nth-child(2) .feature-icon {
             background: linear-gradient(135deg, #00ccff 0%, #0066ff 100%);
+            color: white;
         }
 
         .feature-card:nth-child(3) .feature-icon {
             background: linear-gradient(135deg, #0099ff 0%, #00ccff 100%);
+            color: white;
         }
 
         .feature-card:nth-child(4) .feature-icon {
             background: linear-gradient(135deg, #0066ff 0%, #0099ff 100%);
+            color: white;
         }
 
         .feature-content h3 {
@@ -1208,9 +1087,6 @@
             .pricing-row {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .testimonials-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
         @media (max-width: 768px) {
@@ -1222,15 +1098,6 @@
             }
             .marquee-item { width: 150px; height: 225px; }
             .features-grid { grid-template-columns: 1fr; }
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-            .testimonials-stats {
-                gap: 2rem;
-            }
-            .stat-number {
-                font-size: 2.5rem;
-            }
         }
     </style>
 </head>
@@ -1312,85 +1179,6 @@
              (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
     </div>
-
-    <!-- Section Témoignages Clients -->
-    <section class="testimonials-section">
-        <div class="testimonials-container">
-            
-            <!-- Titre -->
-            <div class="testimonials-header">
-                <h2>Ce que disent nos clients</h2>
-                <p>Plus de 5000 utilisateurs nous font confiance pour leur divertissement quotidien.</p>
-            </div>
-
-            <!-- Grille des témoignages -->
-            <div class="testimonials-grid">
-                
-                <!-- Carte 1 - Jean-Pierre M. -->
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">
-                        "Service incroyable ! La qualité 4K est réelle et je n'ai aucune coupure pendant les matchs de foot. L'activation a été faite en 5 minutes via WhatsApp."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-name">Jean-Pierre M.</div>
-                        <div class="author-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            Paris, France
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Carte 2 - Marc L. (Featured) -->
-                <div class="testimonial-card featured">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">
-                        "Le meilleur abonnement IPTV que j'ai testé. Le pack 3 codes est parfait pour toute ma famille. Support technique très réactif et professionnel."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-name">Marc L.</div>
-                        <div class="author-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            Bruxelles, Belgique
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Carte 3 - Sophie R. -->
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">
-                        "Une bibliothèque de films et séries impressionnante. Les mises à jour sont quotidiennes. Je recommande vivement Iron TV Pro !"
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-name">Sophie R.</div>
-                        <div class="author-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            Genève, Suisse
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Stats -->
-            <div class="testimonials-stats">
-                <div class="stat-item">
-                    <div class="stat-number">99.9%</div>
-                    <div class="stat-label">Uptime Serveur</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Support VIP</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">5000+</div>
-                    <div class="stat-label">Clients Satisfaits</div>
-                </div>
-            </div>
-
-        </div>
-    </section>
 
     <!-- Latest Movies Marquee Section -->
     <section class="movies-marquee-section" id="movies">
@@ -1507,8 +1295,91 @@
             <div class="provider-header-table">
                 <i class="fas fa-tv"></i> ORCA PRO MAX
             </div>
-            <div class="pricing-image-container">
-                <img src="orca_promax_pricing.png" alt="ORCA PRO MAX Pricing" class="pricing-image">
+            <div class="pricing-row">
+                <div class="pricing-column">
+                    <div class="duration-header">1 Month</div>
+                    <div class="price-tag">10.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="duration-header">3 Months</div>
+                    <div class="price-tag">20.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="duration-header">6 Months</div>
+                    <div class="price-tag">32.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="duration-header">12 Months</div>
+                    <div class="price-tag">44.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1517,8 +1388,91 @@
             <div class="provider-header-table">
                 <i class="fas fa-globe"></i> ATLAS PRO MAX
             </div>
-            <div class="pricing-image-container">
-                <img src="atlas_promax_pricing.png" alt="ATLAS PRO MAX Pricing" class="pricing-image">
+            <div class="pricing-row">
+                <div class="pricing-column">
+                    <div class="duration-header">1 Month</div>
+                    <div class="price-tag">11.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="duration-header">3 Months</div>
+                    <div class="price-tag">22.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="duration-header">6 Months</div>
+                    <div class="price-tag">34.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="duration-header">12 Months</div>
+                    <div class="price-tag">49.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1527,8 +1481,91 @@
             <div class="provider-header-table">
                 <i class="fas fa-bolt"></i> STRONG
             </div>
-            <div class="pricing-image-container">
-                <img src="strong_pricing.png" alt="STRONG Pricing" class="pricing-image">
+            <div class="pricing-row">
+                <div class="pricing-column">
+                    <div class="duration-header">1 Month</div>
+                    <div class="price-tag">12.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="duration-header">3 Months</div>
+                    <div class="price-tag">24.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="duration-header">6 Months</div>
+                    <div class="price-tag">37.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="duration-header">12 Months</div>
+                    <div class="price-tag">54.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1537,8 +1574,91 @@
             <div class="provider-header-table">
                 <i class="fas fa-dragon"></i> TREX
             </div>
-            <div class="pricing-image-container">
-                <img src="trex_pricing.png" alt="TREX Pricing" class="pricing-image">
+            <div class="pricing-row">
+                <div class="pricing-column">
+                    <div class="duration-header">1 Month</div>
+                    <div class="price-tag">9.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="duration-header">3 Months</div>
+                    <div class="price-tag">18.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="duration-header">6 Months</div>
+                    <div class="price-tag">28.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="duration-header">12 Months</div>
+                    <div class="price-tag">39.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1547,8 +1667,91 @@
             <div class="provider-header-table">
                 <i class="fas fa-crown"></i> IRONPROMAX
             </div>
-            <div class="pricing-image-container">
-                <img src="ironpromax_pricing.png" alt="IRONPROMAX Pricing" class="pricing-image">
+            <div class="pricing-row">
+                <div class="pricing-column">
+                    <div class="duration-header">1 Month</div>
+                    <div class="price-tag">10.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="duration-header">3 Months</div>
+                    <div class="price-tag">19.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="duration-header">6 Months</div>
+                    <div class="price-tag">29.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="duration-header">12 Months</div>
+                    <div class="price-tag">44.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1557,42 +1760,96 @@
             <div class="provider-header-table">
                 <i class="fas fa-chess-king"></i> KING365TV
             </div>
-            <div class="pricing-image-container">
-                <img src="king365tv_pricing.png" alt="KING365TV Pricing" class="pricing-image">
+            <div class="pricing-row">
+                <div class="pricing-column">
+                    <div class="duration-header">1 Month</div>
+                    <div class="price-tag">13.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="duration-header">3 Months</div>
+                    <div class="price-tag">26.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="duration-header">6 Months</div>
+                    <div class="price-tag">39.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="duration-header">12 Months</div>
+                    <div class="price-tag">59.99€</div>
+                    <ul class="features-list">
+                        <li>+23 000 TV Channels</li>
+                        <li>UHD/FHD/HD/SD Quality</li>
+                        <li>+154 000 Films & Series</li>
+                        <li>Quality UHD/FHD/HD</li>
+                        <li>Free Update</li>
+                        <li>Catch-up</li>
+                        <li>EPG</li>
+                    </ul>
+                    <div class="buy-buttons">
+                        <a href="https://wa.me/213550082871" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-
     </section>
 
-    <!-- CSS for pricing images -->
-    <style>
-        .pricing-image-container {
-            padding: 2rem;
-            background: rgba(26, 26, 37, 0.95);
-            text-align: center;
-        }
-
-        .pricing-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .pricing-image:hover {
-            transform: scale(1.02);
-            box-shadow: 0 30px 80px rgba(0, 102, 255, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            .pricing-image-container {
-                padding: 1rem;
-            }
-        }
-    </style>
-
-<!-- AdSense Ad 3 - After Pricing -->
+    <!-- AdSense Ad 3 - After Pricing -->
     <div class="ad-container">
         <div class="ad-label">Advertisement</div>
         <ins class="adsbygoogle"
@@ -1612,7 +1869,7 @@
             <h2>Why Choose <span>Our Service</span></h2>
         </div>
         <div class="features-grid">
-            <a href="https://wa.me/213550082871" class="feature-card" target="_blank">
+            <a href="https://wa.me/213550082871" class="feature-card" target="_blank" style="text-decoration: none;">
                 <div class="feature-icon">
                     <i class="fas fa-headset"></i>
                 </div>
