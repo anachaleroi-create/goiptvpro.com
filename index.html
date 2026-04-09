@@ -20,6 +20,8 @@
             --accent-gold: #ffd700;
             --text-primary: #ffffff;
             --text-secondary: #a1a1aa;
+            --affiliate-green: #00d084;
+            --affiliate-green-dark: #00a86b;
         }
         
         body {
@@ -897,6 +899,339 @@
 
         .reward-subtext { color: var(--text-secondary); font-size: 0.95rem; }
 
+        /* Affiliate Program Section */
+        .affiliate-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 208, 132, 0.08) 0%, rgba(0, 168, 107, 0.05) 100%);
+            border-top: 2px solid rgba(0, 208, 132, 0.3);
+            border-bottom: 2px solid rgba(0, 208, 132, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .affiliate-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 208, 132, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .affiliate-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .affiliate-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .affiliate-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #00d084, #00a86b);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 208, 132, 0.4);
+            animation: affiliate-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes affiliate-pulse {
+            0%, 100% { box-shadow: 0 10px 30px rgba(0, 208, 132, 0.4); }
+            50% { box-shadow: 0 15px 40px rgba(0, 208, 132, 0.7); }
+        }
+
+        .affiliate-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #00d084 50%, #00a86b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .affiliate-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .commission-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .commission-card {
+            background: rgba(0, 208, 132, 0.05);
+            border: 2px solid rgba(0, 208, 132, 0.2);
+            border-radius: 25px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .commission-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00d084, #00a86b);
+        }
+
+        .commission-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 208, 132, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 208, 132, 0.2);
+        }
+
+        .commission-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #00d084, #00a86b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 208, 132, 0.4);
+        }
+
+        .commission-percent {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00d084, #00a86b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .commission-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .commission-desc {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .affiliate-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .affiliate-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: rgba(0, 208, 132, 0.05);
+            border: 1px solid rgba(0, 208, 132, 0.15);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .affiliate-feature:hover {
+            border-color: rgba(0, 208, 132, 0.4);
+            background: rgba(0, 208, 132, 0.08);
+        }
+
+        .affiliate-feature i {
+            color: #00d084;
+            font-size: 1.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .affiliate-feature-content h4 {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .affiliate-feature-content p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .affiliate-cta {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 208, 132, 0.1), rgba(0, 168, 107, 0.1));
+            border: 2px dashed rgba(0, 208, 132, 0.4);
+            border-radius: 25px;
+            padding: 3rem;
+        }
+
+        .affiliate-cta-title {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .affiliate-cta-text {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .affiliate-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #00d084, #00a86b);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 208, 132, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .affiliate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 208, 132, 0.6);
+        }
+
+        /* Affiliate Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .modal-overlay.active { display: flex; }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a25, #12121a);
+            border: 2px solid rgba(0, 208, 132, 0.3);
+            border-radius: 25px;
+            padding: 3rem;
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            animation: modal-slide 0.3s ease;
+        }
+
+        @keyframes modal-slide {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover { color: #00d084; }
+
+        .modal-title {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .modal-subtitle {
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #00d084;
+            box-shadow: 0 0 20px rgba(0, 208, 132, 0.2);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #00d084, #00a86b);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 208, 132, 0.4);
+        }
+
         /* Payment Section */
         .payment-section {
             padding: 3rem 2rem;
@@ -1134,6 +1469,10 @@
             .marquee-item { width: 150px; height: 225px; }
             .referral-steps { flex-direction: column; align-items: center; }
             .recommended-badge { font-size: 0.75rem; padding: 0.5rem 1.2rem; }
+            .commission-cards { grid-template-columns: 1fr; }
+            .affiliate-features { grid-template-columns: 1fr; }
+            .affiliate-title { font-size: 2rem; }
+            .commission-percent { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -1150,6 +1489,7 @@
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#pricing">PRICING</a></li>
                 <li><a href="#movies">MOVIES</a></li>
+                <li><a href="#affiliate" style="color: #00d084;"><i class="fas fa-hand-holding-usd"></i> AFFILIATE</a></li>
                 <li><a href="#support" class="support-btn">Support</a></li>
             </ul>
         </div>
@@ -1814,6 +2154,107 @@
         </div>
     </section>
 
+    <!-- Affiliate Program Section -->
+    <section class="affiliate-section" id="affiliate">
+        <div class="affiliate-container">
+            <div class="affiliate-header">
+                <div class="affiliate-badge"><i class="fas fa-hand-holding-usd"></i> Program d'Affiliation</div>
+                <h2 class="affiliate-title">Gagnez de l'Argent avec GOIPTVPRO</h2>
+                <p class="affiliate-subtitle">Rejoignez notre programme d'affiliation et gagnez des commissions sur chaque vente que vous générez. C'est simple, rapide et lucratif !</p>
+            </div>
+
+            <div class="commission-cards">
+                <div class="commission-card">
+                    <div class="commission-icon"><i class="fas fa-euro-sign"></i></div>
+                    <div class="commission-percent">15%</div>
+                    <div class="commission-label">Commission de Base</div>
+                    <div class="commission-desc">Sur chaque vente de pack 1 CODE (35€ = 5.25€ de commission)</div>
+                </div>
+                <div class="commission-card">
+                    <div class="commission-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="commission-percent">18%</div>
+                    <div class="commission-label">Niveau Intermédiaire</div>
+                    <div class="commission-desc">Après 10 ventes validées (65€ = 11.70€ de commission)</div>
+                </div>
+                <div class="commission-card">
+                    <div class="commission-icon"><i class="fas fa-crown"></i></div>
+                    <div class="commission-percent">20%</div>
+                    <div class="commission-label">Niveau VIP</div>
+                    <div class="commission-desc">Après 50 ventes validées (90€ = 18€ de commission)</div>
+                </div>
+            </div>
+
+            <div class="affiliate-features">
+                <div class="affiliate-feature">
+                    <i class="fas fa-link"></i>
+                    <div class="affiliate-feature-content">
+                        <h4>Lien d'Affiliation Unique</h4>
+                        <p>Recevez un lien personnalisé pour tracker toutes vos ventes en temps réel.</p>
+                    </div>
+                </div>
+                <div class="affiliate-feature">
+                    <i class="fas fa-wallet"></i>
+                    <div class="affiliate-feature-content">
+                        <h4>Paiement Rapide</h4>
+                        <p>Retirez vos gains chaque semaine via PayPal, virement bancaire ou crypto.</p>
+                    </div>
+                </div>
+                <div class="affiliate-feature">
+                    <i class="fas fa-chart-bar"></i>
+                    <div class="affiliate-feature-content">
+                        <h4>Tableau de Bord</h4>
+                        <p>Suivez vos clics, conversions et commissions en temps réel.</p>
+                    </div>
+                </div>
+                <div class="affiliate-feature">
+                    <i class="fas fa-headset"></i>
+                    <div class="affiliate-feature-content">
+                        <h4>Support Dédié</h4>
+                        <p>Un manager d'affiliation personnel pour vous accompagner.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="affiliate-cta">
+                <h3 class="affiliate-cta-title"><i class="fas fa-rocket"></i> Commencez à Gagner Aujourd'hui</h3>
+                <p class="affiliate-cta-text">Inscrivez-vous gratuitement et recevez votre lien d'affiliation en quelques minutes. Aucun investissement requis !</p>
+                <button class="affiliate-btn" onclick="openAffiliateModal()">
+                    <i class="fas fa-user-plus"></i> Devenir Affilié
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Affiliate Modal -->
+    <div class="modal-overlay" id="affiliateModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeAffiliateModal()"><i class="fas fa-times"></i></button>
+            <h3 class="modal-title"><i class="fas fa-hand-holding-usd" style="color: #00d084;"></i> Inscription Affilié</h3>
+            <p class="modal-subtitle">Remplissez le formulaire pour rejoindre notre programme</p>
+            <form onsubmit="submitAffiliateForm(event)">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Nom Complet</label>
+                    <input type="text" placeholder="Votre nom" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" placeholder="votre@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fab fa-whatsapp"></i> WhatsApp</label>
+                    <input type="tel" placeholder="+33 6 12 34 56 78" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-globe"></i> Site Web / Réseaux Sociaux (optionnel)</label>
+                    <input type="text" placeholder="https://...">
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Envoyer ma candidature
+                </button>
+            </form>
+        </div>
+    </div>
+
     <!-- Payment Section -->
     <section class="payment-section">
         <div class="payment-container">
@@ -1857,6 +2298,39 @@
     <!-- Floating Buttons -->
     <a href="https://wa.me/213550082871" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
     <a href="https://t.me/goiptvpro" class="telegram-float" target="_blank"><i class="fab fa-telegram"></i></a>
+
+    <!-- Affiliate Modal JavaScript -->
+    <script>
+        function openAffiliateModal() {
+            document.getElementById('affiliateModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeAffiliateModal() {
+            document.getElementById('affiliateModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function submitAffiliateForm(event) {
+            event.preventDefault();
+            alert('Merci pour votre inscription ! Notre équipe vous contactera sous 24h pour activer votre compte affilié.');
+            closeAffiliateModal();
+        }
+
+        // Close modal on outside click
+        document.getElementById('affiliateModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeAffiliateModal();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeAffiliateModal();
+            }
+        });
+    </script>
 
 </body>
 </html>
