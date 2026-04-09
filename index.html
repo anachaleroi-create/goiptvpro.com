@@ -1,50 +1,50 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PREMIUM IPTV - Le Meilleur Service de Streaming</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>GOIPTVPRO - Premium IPTV Entertainment</title>
+    
+    <!-- Google AdSense -->
+    <meta name="google-adsense-account" content="ca-pub-8647291268357460">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8647291268357460" crossorigin="anonymous"></script>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         :root {
-            --primary: #FFD700;
-            --secondary: #00D4FF;
-            --dark: #0a0a0a;
-            --darker: #050505;
-            --card: #111111;
-            --text: #ffffff;
-            --text-muted: #888888;
+            --primary-dark: #0a0a0f;
+            --secondary-dark: #12121a;
+            --card-bg: #1a1a25;
+            --accent-gold: #ffd700;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
         }
-
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--dark);
-            color: var(--text);
+            background-color: var(--primary-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Header */
-        header {
+        /* Navigation */
+        nav {
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
             position: fixed;
+            width: 100%;
             top: 0;
-            left: 0;
-            right: 0;
             z-index: 1000;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .header-container {
+        .nav-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -54,87 +54,48 @@
             display: flex;
             align-items: center;
             gap: 12px;
-        }
-
-        .logo-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--primary), #FFA500);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            color: #000;
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), #FFA500);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-primary);
+            text-decoration: none;
         }
 
-        nav ul {
+        .logo i { color: #ffd700; }
+
+        .nav-links {
             display: flex;
-            list-style: none;
             gap: 2rem;
+            list-style: none;
         }
 
-        nav a {
-            color: var(--text);
+        .nav-links a {
+            color: var(--text-secondary);
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s;
-            position: relative;
         }
 
-        nav a:hover {
-            color: var(--primary);
-        }
+        .nav-links a:hover { color: var(--accent-gold); }
 
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transition: width 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .btn-header {
-            background: linear-gradient(135deg, var(--primary), #FFA500);
-            color: #000;
-            padding: 0.7rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
+        .support-btn {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #0a0a0f !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
             font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .btn-header:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
         }
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            margin-top: 80px;
+            min-height: 90vh;
+            background: linear-gradient(135deg, rgba(10, 10, 15, 0.95), rgba(26, 26, 37, 0.98));
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 8rem 2rem 4rem;
-            background: 
-                radial-gradient(ellipse at 20% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-                var(--darker);
+            padding: 3rem 2rem;
             position: relative;
             overflow: hidden;
         }
@@ -142,22 +103,15 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,215,0,0.1)"/></svg>');
-            background-size: 50px 50px;
-            animation: float 20s linear infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-50px); }
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 50%, rgba(0, 204, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .hero-container {
             max-width: 1400px;
+            width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
@@ -166,123 +120,381 @@
             z-index: 1;
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
+        .hero-content { text-align: left; }
 
-        .hero-content h1 span {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .hero-stats {
+        .hero-image-wrapper {
+            position: relative;
             display: flex;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .stat-label {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), #FFA500);
-            color: #000;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: flex;
+            justify-content: center;
             align-items: center;
-            gap: 10px;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            border: 2px solid var(--primary);
-            transition: all 0.3s;
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: #000;
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
         }
 
         .hero-image {
-            position: relative;
-        }
-
-        .hero-image img {
             width: 100%;
             border-radius: 20px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 30px 80px rgba(0, 102, 255, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image-container:hover .hero-image { transform: scale(1.02); }
+
+        .hero-image-glow {
+            position: absolute;
+            top: -20px; left: -20px; right: -20px; bottom: -20px;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.3), rgba(0, 204, 255, 0.2));
+            border-radius: 30px;
+            filter: blur(30px);
+            z-index: -1;
+            animation: glow-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: linear-gradient(135deg, #ff3366, #ff6b6b);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 51, 102, 0.4);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-badge.channels { top: 10%; right: -10%; animation-delay: 0s; }
+        .floating-badge.movies { bottom: 15%; left: -15%; background: linear-gradient(135deg, #00ccff, #0066ff); box-shadow: 0 10px 30px rgba(0, 204, 255, 0.4); animation-delay: 1.5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
 
         .hero-badge {
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            background: linear-gradient(135deg, var(--primary), #FFA500);
-            color: #000;
-            padding: 1rem 1.5rem;
-            border-radius: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 102, 255, 0.1);
+            border: 1px solid rgba(0, 204, 255, 0.3);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: #00ccff;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 .welcome {
+            display: block;
+            font-size: 1.2rem;
+            color: #00ccff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h1 .main-title {
+            background: linear-gradient(135deg, #ffffff 0%, #00ccff 50%, #0066ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-description strong { color: var(--text-primary); }
+
+        .hero-features {
+            display: flex;
+            justify-content: flex-start;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .hero-feature i { color: #00ccff; }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%);
+            color: white;
+            padding: 1.2rem 3.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.6);
+        }
+
+        /* Ad Container */
+        .ad-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ad-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(180deg, #0a0a0f 0%, #12121a 50%, #0a0a0f 100%);
+        }
+
+        .testimonials-container { max-width: 1200px; margin: 0 auto; }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-header h2 {
+            font-size: 2.5rem;
             font-weight: 700;
-            animation: pulse 2s infinite;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+        .testimonials-header p {
+            color: #a1a1aa;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        /* Pricing Section */
-        .pricing {
-            padding: 6rem 2rem;
-            background: var(--dark);
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 215, 0, 0.4);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            color: #e5e5e5;
+            font-style: italic;
+            line-height: 1.8;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-author {
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .author-name {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .author-location {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .author-location i { margin-right: 5px; color: #ffd700; }
+
+        .testimonials-stats {
+            display: flex;
+            justify-content: center;
+            gap: 5rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+        }
+
+        .stat-item { text-align: center; }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+        }
+
+        /* Movies Marquee */
+        .movies-marquee-section {
+            padding: 4rem 0;
+            background: linear-gradient(180deg, #0a0a0f 0%, #12121a 50%, #0a0a0f 100%);
+            overflow: hidden;
+        }
+
+        .marquee-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 0 2rem;
+        }
+
+        .marquee-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .marquee-header h2 span {
+            background: linear-gradient(135deg, #00ccff, #0066ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .marquee-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .marquee-row {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .marquee-row::before, .marquee-row::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 150px;
+            height: 100%;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .marquee-row::before {
+            left: 0;
+            background: linear-gradient(90deg, #0a0a0f, transparent);
+        }
+
+        .marquee-row::after {
+            right: 0;
+            background: linear-gradient(-90deg, #0a0a0f, transparent);
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 1rem;
+            width: max-content;
+            animation: marquee-left 40s linear infinite;
+        }
+
+        .marquee-track.right { animation: marquee-right 40s linear infinite; }
+        .marquee-track:hover { animation-play-state: paused; }
+
+        @keyframes marquee-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @keyframes marquee-right {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+
+        .marquee-item {
+            flex-shrink: 0;
+            width: 200px;
+            height: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .marquee-item:hover {
+            transform: scale(1.08);
+            box-shadow: 0 20px 50px rgba(0, 102, 255, 0.4);
+            z-index: 100;
+        }
+
+        .marquee-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .marquee-item:hover img { transform: scale(1.1); }
+
+        /* PRICING SECTION */
+        .pricing-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(180deg, var(--primary-dark) 0%, #0d0d15 50%, var(--primary-dark) 100%);
         }
 
         .section-header {
@@ -296,118 +508,224 @@
         }
 
         .section-header h2 span {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, #00ccff, #0066ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .section-header p {
-            color: var(--text-muted);
+        .section-subtitle {
+            color: var(--text-secondary);
             font-size: 1.1rem;
         }
 
-        .pricing-grid {
+        .provider-container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 auto 4rem auto;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .provider-header {
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .provider-orca .provider-header { background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); }
+        .provider-atlas .provider-header { background: linear-gradient(135deg, #059669 0%, #047857 100%); }
+        .provider-strong .provider-header { background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); }
+        .provider-trex .provider-header { background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); color: #1f2937; }
+        .provider-iron .provider-header { background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%); }
+        .provider-king .provider-header { background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%); color: #1f2937; }
+
+        .pricing-grid-new {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.3);
         }
 
-        .pricing-card {
-            background: var(--card);
-            border-radius: 20px;
-            padding: 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s;
+        .pricing-card-new {
+            background: rgba(26, 26, 37, 0.95);
+            border: 2px solid rgba(0, 102, 255, 0.4);
+            border-radius: 25px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
             position: relative;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+                        0 0 20px rgba(0, 102, 255, 0.1);
         }
 
-        .pricing-card:hover {
+        .pricing-card-new:hover {
             transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.1);
+            border-color: rgba(0, 204, 255, 0.8);
+            box-shadow: 0 20px 50px rgba(0, 102, 255, 0.4),
+                        0 0 40px rgba(0, 204, 255, 0.2);
         }
 
-        .pricing-card.featured {
-            border: 2px solid var(--primary);
+        .pricing-card-new.recommended {
+            border: 3px solid rgba(0, 204, 255, 0.9);
+            box-shadow: 0 0 50px rgba(0, 102, 255, 0.5), 
+                        inset 0 0 60px rgba(0, 102, 255, 0.15);
             transform: scale(1.05);
+            z-index: 10;
         }
 
-        .pricing-card.featured:hover {
+        .pricing-card-new.recommended:hover {
             transform: scale(1.05) translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 102, 255, 0.6),
+                        0 0 80px rgba(0, 204, 255, 0.3),
+                        inset 0 0 80px rgba(0, 204, 255, 0.2);
         }
 
-        .badge-popular {
+        .recommended-badge {
             position: absolute;
             top: -15px;
             left: 50%;
             transform: translateX(-50%);
-            background: linear-gradient(135deg, var(--primary), #FFA500);
-            color: #000;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 700;
+            background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%);
+            color: white;
+            padding: 0.6rem 1.8rem;
+            border-radius: 30px;
             font-size: 0.85rem;
-        }
-
-        .pricing-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .pricing-card .price {
-            font-size: 3rem;
             font-weight: 800;
-            margin: 1.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 5px 25px rgba(0, 102, 255, 0.6);
+            animation: pulse-blue 2s ease-in-out infinite;
+            white-space: nowrap;
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
-        .pricing-card .price span {
-            font-size: 1rem;
-            color: var(--text-muted);
+        @keyframes pulse-blue {
+            0%, 100% { 
+                box-shadow: 0 5px 25px rgba(0, 102, 255, 0.6);
+                transform: translateX(-50%) scale(1);
+            }
+            50% { 
+                box-shadow: 0 5px 35px rgba(0, 204, 255, 0.9);
+                transform: translateX(-50%) scale(1.02);
+            }
         }
 
-        .pricing-card ul {
+        .code-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.2) 0%, rgba(0, 204, 255, 0.1) 100%);
+            border: 2px solid rgba(0, 204, 255, 0.5);
+            color: #00ccff;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px rgba(0, 204, 255, 0.3);
+        }
+
+        .price-tag-new {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 30px rgba(0, 102, 255, 0.5);
+            background: linear-gradient(135deg, #ffffff 0%, #00ccff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .price-period {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list-new {
             list-style: none;
-            margin: 2rem 0;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            text-align: left;
         }
 
-        .pricing-card li {
-            padding: 0.7rem 0;
+        .features-list-new li {
+            padding: 0.8rem 0;
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
             align-items: center;
-            gap: 10px;
-            color: var(--text-muted);
+            gap: 12px;
         }
 
-        .pricing-card li i {
-            color: var(--primary);
+        .features-list-new li:last-child { border-bottom: none; }
+
+        .features-list-new li i {
+            color: #00ccff;
+            font-size: 0.9rem;
+            text-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
         }
 
-        .btn-pricing {
+        .buy-buttons-new {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .whatsapp-btn-new, .telegram-btn-new {
             width: 100%;
-            background: linear-gradient(135deg, var(--primary), #FFA500);
-            color: #000;
-            padding: 1rem;
+            padding: 1.1rem;
+            border: none;
             border-radius: 50px;
-            text-decoration: none;
             font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            transition: all 0.3s;
+            color: white;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 1px;
         }
 
-        .btn-pricing:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        .whatsapp-btn-new {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-btn-new:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .telegram-btn-new {
+            background: linear-gradient(135deg, #0088cc 0%, #00a8e6 100%);
+            box-shadow: 0 5px 20px rgba(0, 136, 204, 0.4);
+        }
+
+        .telegram-btn-new:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(0, 136, 204, 0.6);
         }
 
         /* Features Section */
-        .features {
-            padding: 6rem 2rem;
-            background: var(--darker);
+        .features-section {
+            padding: 4rem 2rem;
+            background: var(--primary-dark);
         }
 
         .features-grid {
@@ -419,196 +737,330 @@
         }
 
         .feature-card {
-            background: var(--card);
-            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
+            padding: 2rem;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: var(--secondary);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         .feature-icon {
             width: 70px;
             height: 70px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 20px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 2rem;
             margin: 0 auto 1.5rem;
-            font-size: 1.8rem;
-            color: #000;
+            color: white;
+            background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%);
         }
 
-        .feature-card h3 {
+        .feature-content h3 {
             font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card p {
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* Devices Section */
-        .devices {
-            padding: 6rem 2rem;
-            background: var(--dark);
-        }
-
-        .devices-grid {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-        }
-
-        .device-item {
-            text-align: center;
-            padding: 2rem;
-            background: var(--card);
-            border-radius: 20px;
-            transition: all 0.3s;
-        }
-
-        .device-item:hover {
-            transform: scale(1.05);
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 212, 255, 0.1));
-        }
-
-        .device-item i {
-            font-size: 3rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
-        }
-
-        .device-item h4 {
-            font-size: 1.1rem;
-        }
-
-        /* FAQ Section */
-        .faq {
-            padding: 6rem 2rem;
-            background: var(--darker);
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: var(--card);
-            border-radius: 15px;
-            margin-bottom: 1rem;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        .faq-question i {
-            transition: transform 0.3s;
-        }
-
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            padding: 0 1.5rem;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s;
-            color: var(--text-muted);
-        }
-
-        .faq-item.active .faq-answer {
-            padding: 0 1.5rem 1.5rem;
-            max-height: 200px;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--darker);
-            padding: 4rem 2rem 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-        }
-
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), #FFA500);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
-        }
-
-        .footer-about p {
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        .footer-links h4 {
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
             margin-bottom: 0.8rem;
         }
 
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.3s;
+        .feature-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
         }
 
-        .footer-links a:hover {
-            color: var(--primary);
+        /* Referral Section */
+        .referral-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 204, 255, 0.05) 100%);
+            border-top: 1px solid rgba(0, 204, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 204, 255, 0.2);
         }
 
-        .footer-contact p {
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
+        .referral-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .referral-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #0066ff, #00ccff);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 102, 255, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(0, 204, 255, 0.8); }
+        }
+
+        .referral-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #00ccff 50%, #0066ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .referral-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .referral-steps {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .referral-step {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 204, 255, 0.2);
+            border-radius: 20px;
+            padding: 1.5rem;
+            width: 200px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .referral-step:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 204, 255, 0.5);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #0066ff, #00ccff);
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            margin: 0 auto 1rem;
         }
 
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 3rem auto 0;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        .step-text {
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .step-desc {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        .referral-reward {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.2), rgba(0, 204, 255, 0.1));
+            border: 2px dashed rgba(0, 204, 255, 0.5);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .reward-icon {
+            font-size: 3rem;
+            color: #00ccff;
+            margin-bottom: 1rem;
+        }
+
+        .reward-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .reward-subtext { color: var(--text-secondary); font-size: 0.95rem; }
+
+        /* Payment Section */
+        .payment-section {
+            padding: 3rem 2rem;
+            background: linear-gradient(180deg, var(--primary-dark) 0%, #0f0f1a 100%);
             text-align: center;
-            color: var(--text-muted);
+        }
+
+        .payment-title {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .payment-title i {
+            color: #00ccff;
+            margin-right: 10px;
+        }
+
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .payment-icon {
+            width: 60px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .payment-icon.visa { background: #1a1f71; color: white; }
+        .payment-icon.mastercard { background: linear-gradient(90deg, #eb001b 50%, #f79e1b 50%); }
+        .payment-icon.amex { background: #016fd0; color: white; }
+        .payment-icon.paypal { background: #003087; color: white; }
+        .payment-icon.crypto { background: #f7931a; color: white; }
+
+        .payment-note {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Support Section */
+        .support-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.15) 0%, rgba(0, 204, 255, 0.1) 100%);
+            border-top: 1px solid rgba(0, 204, 255, 0.3);
+            text-align: center;
+        }
+
+        .support-container { max-width: 700px; margin: 0 auto; }
+
+        .support-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #0066ff, #00ccff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            margin: 0 auto 2rem;
+            box-shadow: 0 0 40px rgba(0, 102, 255, 0.5);
+            animation: support-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes support-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 40px rgba(0, 102, 255, 0.5); }
+            50% { transform: scale(1.05); box-shadow: 0 0 60px rgba(0, 204, 255, 0.8); }
+        }
+
+        .support-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00ccff, #0066ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .support-text {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .support-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .support-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .support-btn.whatsapp-btn {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .support-btn.whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+        }
+
+        .support-btn.telegram-btn {
+            background: linear-gradient(135deg, #0088cc, #00a8e6);
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 136, 204, 0.4);
+        }
+
+        .support-btn.telegram-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 136, 204, 0.6);
+        }
+
+        .support-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .support-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .support-feature i { color: #25d366; }
+
+        /* Footer */
+        footer {
+            background: rgba(0,0,0,0.3);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
 
         /* WhatsApp Float */
@@ -618,7 +1070,7 @@
             right: 30px;
             width: 60px;
             height: 60px;
-            background: #25D366;
+            background: #25d366;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -632,340 +1084,779 @@
             text-decoration: none;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* Telegram Float */
+        .telegram-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #0088cc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 136, 204, 0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 1000;
+            text-decoration: none;
         }
+
+        .telegram-float:hover { transform: scale(1.1); }
 
         /* Responsive */
-        @media (max-width: 992px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-stats {
-                justify-content: center;
-            }
-
-            .hero-image {
-                order: -1;
-            }
-
-            nav {
-                display: none;
-            }
-
-            .pricing-card.featured {
-                transform: none;
-            }
-
-            .pricing-card.featured:hover {
-                transform: translateY(-10px);
-            }
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; text-align: center; }
+            .hero-content { text-align: center; }
+            .hero-image-wrapper { order: -1; }
+            .hero-image-container { max-width: 350px; }
+            .floating-badge.channels { right: 0; }
+            .floating-badge.movies { left: 0; }
+            .hero-features { justify-content: center; }
+            .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+            .pricing-grid-new { grid-template-columns: repeat(2, 1fr); }
+            .pricing-card-new.recommended { grid-column: span 2; transform: scale(1); }
+            .pricing-card-new.recommended:hover { transform: translateY(-10px); }
         }
 
-        @media (max-width: 576px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                justify-content: center;
-            }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .pricing-grid-new { grid-template-columns: 1fr; }
+            .pricing-card-new.recommended { grid-column: span 1; transform: scale(1); }
+            .price-tag-new { font-size: 3rem; }
+            .marquee-item { width: 150px; height: 225px; }
+            .referral-steps { flex-direction: column; align-items: center; }
+            .recommended-badge { font-size: 0.75rem; padding: 0.5rem 1.2rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-play"></i>
-                </div>
-                <div class="logo-text">PREMIUM IPTV</div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#tarifs">Tarifs</a></li>
-                    <li><a href="#features">Avantages</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-            </nav>
-            <a href="https://wa.me/213550082871" class="btn-header" target="_blank">
-                <i class="fab fa-whatsapp"></i> Contact
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-satellite-dish"></i>
+                GOIPTVPRO
             </a>
+            <ul class="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#pricing">PRICING</a></li>
+                <li><a href="#movies">MOVIES</a></li>
+                <li><a href="#support" class="support-btn">Support</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="accueil">
+    <section class="hero" id="home">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Le Meilleur Service <span>IPTV Premium</span> en France</h1>
-                <p>Accédez à plus de 23 000 chaînes TV et 154 000 films & séries en qualité 4K/UHD. Streaming fluide, sans coupure, 24h/24.</p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number">23K+</div>
-                        <div class="stat-label">Chaînes</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">154K+</div>
-                        <div class="stat-label">Films & Séries</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">4K</div>
-                        <div class="stat-label">Qualité</div>
-                    </div>
-                </div>
-                <div class="hero-buttons">
-                    <a href="https://wa.me/213550082871" class="btn-primary" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Commander Maintenant
-                    </a>
-                    <a href="#tarifs" class="btn-secondary">Voir les Tarifs</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=600&h=400&fit=crop" alt="IPTV Streaming">
                 <div class="hero-badge">
-                    <i class="fas fa-star"></i> Offre Limitée
+                    <i class="fas fa-star"></i> Premium IPTV Experience
+                </div>
+                
+                <h1>
+                    <span class="welcome">Welcome to World Wide!</span>
+                    <span class="main-title">Discover a New World of Entertainment</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Enjoy <strong>premium IPTV subscriptions</strong>, where cutting-edge technology meets powerful platforms like 
+                    <strong>IPTV Smarters</strong> and <strong>Smart IPTV</strong> to give you an exceptional, limitless viewing experience.
+                    <br><br>
+                    Access thousands of channels, movies, and series in <strong>high definition without interruption</strong>, 
+                    with fast performance and perfect stability across all your devices.
+                </p>
+
+                <div class="hero-features">
+                    <div class="hero-feature"><i class="fas fa-bolt"></i> Instant Activation</div>
+                    <div class="hero-feature"><i class="fas fa-shield-alt"></i> 99.9% Uptime</div>
+                    <div class="hero-feature"><i class="fas fa-headset"></i> 24/7 Support</div>
+                    <div class="hero-feature"><i class="fas fa-mobile-alt"></i> All Devices</div>
+                </div>
+                
+                <a href="#pricing" class="cta-button">
+                    <i class="fab fa-whatsapp"></i> View Pricing Plans
+                </a>
+            </div>
+            
+            <div class="hero-image-wrapper">
+                <div class="hero-image-container">
+                    <div class="hero-image-glow"></div>
+                    <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=600" alt="Enjoy IPTV" class="hero-image">
+                    <div class="floating-badge channels">
+                        <i class="fas fa-tv"></i> 23,000+ Channels
+                    </div>
+                    <div class="floating-badge movies">
+                        <i class="fas fa-film"></i> 154,000+ Movies
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="pricing" id="tarifs">
-        <div class="section-header">
-            <h2>Choisissez Votre <span>Forfait</span></h2>
-            <p>Des prix compétitifs pour une qualité premium. Activation instantanée.</p>
-        </div>
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>1 Mois</h3>
-                <div class="price">10.99€ <span>/ mois</span></div>
-                <ul>
-                    <li><i class="fas fa-check"></i> 23 000+ Chaînes</li>
-                    <li><i class="fas fa-check"></i> 154 000+ VOD</li>
-                    <li><i class="fas fa-check"></i> Qualité 4K/UHD</li>
-                    <li><i class="fas fa-check"></i> Support 24/7</li>
-                    <li><i class="fas fa-check"></i> 1 Connexion</li>
-                </ul>
-                <a href="https://wa.me/213550082871" class="btn-pricing" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Commander
-                </a>
+    <!-- AdSense Ad 1 -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8647291268357460"
+             data-ad-slot="VOTRE_SLOT_1"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <div class="testimonials-header">
+                <h2>Ce que disent nos clients</h2>
+                <p>Plus de 5000 utilisateurs nous font confiance pour leur divertissement quotidien.</p>
             </div>
-            <div class="pricing-card featured">
-                <div class="badge-popular">POPULAIRE</div>
-                <h3>12 Mois</h3>
-                <div class="price">44.99€ <span>/ an</span></div>
-                <ul>
-                    <li><i class="fas fa-check"></i> 23 000+ Chaînes</li>
-                    <li><i class="fas fa-check"></i> 154 000+ VOD</li>
-                    <li><i class="fas fa-check"></i> Qualité 4K/UHD</li>
-                    <li><i class="fas fa-check"></i> Support 24/7</li>
-                    <li><i class="fas fa-check"></i> 3 Connexions</li>
-                    <li><i class="fas fa-check"></i> Meilleur rapport qualité/prix</li>
-                </ul>
-                <a href="https://wa.me/213550082871" class="btn-pricing" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Commander
-                </a>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Service incroyable ! La qualité 4K est réelle et je n'ai aucune coupure pendant les matchs de foot. L'activation a été faite en 5 minutes via WhatsApp."</p>
+                    <div class="testimonial-author">
+                        <div class="author-name">Jean-Pierre M.</div>
+                        <div class="author-location"><i class="fas fa-map-marker-alt"></i> Paris, France</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Le meilleur abonnement IPTV que j'ai testé. Le pack 3 codes est parfait pour toute ma famille. Support technique très réactif et professionnel."</p>
+                    <div class="testimonial-author">
+                        <div class="author-name">Marc L.</div>
+                        <div class="author-location"><i class="fas fa-map-marker-alt"></i> Bruxelles, Belgique</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Une bibliothèque de films et séries impressionnante. Les mises à jour sont quotidiennes. Je recommande vivement GOIPTVPRO !"</p>
+                    <div class="testimonial-author">
+                        <div class="author-name">Sophie R.</div>
+                        <div class="author-location"><i class="fas fa-map-marker-alt"></i> Genève, Suisse</div>
+                    </div>
+                </div>
             </div>
-            <div class="pricing-card">
-                <h3>6 Mois</h3>
-                <div class="price">32.99€ <span>/ 6 mois</span></div>
-                <ul>
-                    <li><i class="fas fa-check"></i> 23 000+ Chaînes</li>
-                    <li><i class="fas fa-check"></i> 154 000+ VOD</li>
-                    <li><i class="fas fa-check"></i> Qualité 4K/UHD</li>
-                    <li><i class="fas fa-check"></i> Support 24/7</li>
-                    <li><i class="fas fa-check"></i> 2 Connexions</li>
-                </ul>
-                <a href="https://wa.me/213550082871" class="btn-pricing" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Commander
-                </a>
+
+            <div class="testimonials-stats">
+                <div class="stat-item">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Uptime Serveur</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support VIP</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">Clients Satisfaits</div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Movies Marquee Section -->
+    <section class="movies-marquee-section" id="movies">
+        <div class="marquee-header">
+            <h2>Latest <span>Movies & Series</span></h2>
+            <p>New releases added every week - Watch in 4K Ultra HD</p>
+        </div>
+        
+        <!-- Row 1 -->
+        <div class="marquee-row">
+            <div class="marquee-track left">
+                <div class="marquee-item"><img src="https://www.impawards.com/2023/posters/extraction_two.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://m.media-amazon.com/images/M/MV5BZmFhZTNlNzctZGQzZi00MTA3LThiNjMtYWQzNjUzMjNjZjA3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://www.movieposters.com/cdn/shop/files/spider-man-across-the-spider-verse_tsm61wbo_1024x1024.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://cdn11.bigcommerce.com/s-ydriczk/products/90298/images/98760/Killers-of-the-Flower-Moon-original-movie-poster-one-sheet-buy-now-at-starstills__14802.1697534128.450.659.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://territorystudio.com/wp-content/uploads/2024/07/THBY_S4_DigitalOneSheet_RiotHomelander_1944x2880_PRE_FINAL_en-US_CPS.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://m.media-amazon.com/images/I/81rcco4qHlL._AC_UF894,1000_QL80_.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://lumiere-a.akamaihd.net/v1/images/the-mandalorian-compilation-poster-fb-tw_6ae443d1.jpeg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://cdn11.bigcommerce.com/s-ydriczk/products/90302/images/98771/Loki-season-2-original-tv-one-sheet-poster-buy-now-at-starstills__88779.1698076395.450.659.jpg" alt="Movie"></div>
+                <!-- Duplicate -->
+                <div class="marquee-item"><img src="https://www.impawards.com/2023/posters/extraction_two.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://m.media-amazon.com/images/M/MV5BZmFhZTNlNzctZGQzZi00MTA3LThiNjMtYWQzNjUzMjNjZjA3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://www.movieposters.com/cdn/shop/files/spider-man-across-the-spider-verse_tsm61wbo_1024x1024.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://cdn11.bigcommerce.com/s-ydriczk/products/90298/images/98760/Killers-of-the-Flower-Moon-original-movie-poster-one-sheet-buy-now-at-starstills__14802.1697534128.450.659.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://territorystudio.com/wp-content/uploads/2024/07/THBY_S4_DigitalOneSheet_RiotHomelander_1944x2880_PRE_FINAL_en-US_CPS.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://m.media-amazon.com/images/I/81rcco4qHlL._AC_UF894,1000_QL80_.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://lumiere-a.akamaihd.net/v1/images/the-mandalorian-compilation-poster-fb-tw_6ae443d1.jpeg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://cdn11.bigcommerce.com/s-ydriczk/products/90302/images/98771/Loki-season-2-original-tv-one-sheet-poster-buy-now-at-starstills__88779.1698076395.450.659.jpg" alt="Movie"></div>
+            </div>
+        </div>
+        
+        <!-- Row 2 -->
+        <div class="marquee-row">
+            <div class="marquee-track right">
+                <div class="marquee-item"><img src="https://ew.com/thmb/IEN5Mbr6EotytJIjVjUe3IHcCCE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/ted-lasso-season-320191113_94-f744b15167d941009185329167b9c234.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://posterspy.com/wp-content/uploads/2022/10/Succession-S4.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://screenscoop.com/wp-content/uploads/2024/05/GO1JdE1XEAEsyhQ-scaled.jpeg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://mlpnk72yciwc.i.optimole.com/cqhiHLc.IIZS~2ef73/w:auto/h:auto/q:75/https://bleedingcool.com/wp-content/uploads/2021/12/FHoAvdGX0AQ_ela.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://image.tmdb.org/t/p/original/n8gM53yiJy3S7jzP4A6ojDvNY2j.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://m.media-amazon.com/images/M/MV5BYzBmNjg0YWEtMTdlNS00OTMxLWI0MDAtODgzNmEyMWEyY2YxXkEyXkFqcGc@._V1_.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://m.media-amazon.com/images/M/MV5BZGQwNDdhODAtY2Y0Ni00YzFhLTk1OGUtY2RkMDAzNzBmZjAxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://www.impawards.com/2023/posters/extraction_two.jpg" alt="Movie"></div>
+                <!-- Duplicate -->
+                <div class="marquee-item"><img src="https://ew.com/thmb/IEN5Mbr6EotytJIjVjUe3IHcCCE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/ted-lasso-season-320191113_94-f744b15167d941009185329167b9c234.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://posterspy.com/wp-content/uploads/2022/10/Succession-S4.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://screenscoop.com/wp-content/uploads/2024/05/GO1JdE1XEAEsyhQ-scaled.jpeg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://mlpnk72yciwc.i.optimole.com/cqhiHLc.IIZS~2ef73/w:auto/h:auto/q:75/https://bleedingcool.com/wp-content/uploads/2021/12/FHoAvdGX0AQ_ela.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://image.tmdb.org/t/p/original/n8gM53yiJy3S7jzP4A6ojDvNY2j.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://m.media-amazon.com/images/M/MV5BYzBmNjg0YWEtMTdlNS00OTMxLWI0MDAtODgzNmEyMWEyY2YxXkEyXkFqcGc@._V1_.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://m.media-amazon.com/images/M/MV5BZGQwNDdhODAtY2Y0Ni00YzFhLTk1OGUtY2RkMDAzNzBmZjAxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://www.impawards.com/2023/posters/extraction_two.jpg" alt="Movie"></div>
+            </div>
+        </div>
+        
+        <!-- Row 3 -->
+        <div class="marquee-row">
+            <div class="marquee-track left">
+                <div class="marquee-item"><img src="https://www.impawards.com/2023/posters/extraction_two.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://m.media-amazon.com/images/M/MV5BZmFhZTNlNzctZGQzZi00MTA3LThiNjMtYWQzNjUzMjNjZjA3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://www.movieposters.com/cdn/shop/files/spider-man-across-the-spider-verse_tsm61wbo_1024x1024.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://cdn11.bigcommerce.com/s-ydriczk/products/90298/images/98760/Killers-of-the-Flower-Moon-original-movie-poster-one-sheet-buy-now-at-starstills__14802.1697534128.450.659.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://territorystudio.com/wp-content/uploads/2024/07/THBY_S4_DigitalOneSheet_RiotHomelander_1944x2880_PRE_FINAL_en-US_CPS.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://m.media-amazon.com/images/I/81rcco4qHlL._AC_UF894,1000_QL80_.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://lumiere-a.akamaihd.net/v1/images/the-mandalorian-compilation-poster-fb-tw_6ae443d1.jpeg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://cdn11.bigcommerce.com/s-ydriczk/products/90302/images/98771/Loki-season-2-original-tv-one-sheet-poster-buy-now-at-starstills__88779.1698076395.450.659.jpg" alt="Movie"></div>
+                <!-- Duplicate -->
+                <div class="marquee-item"><img src="https://www.impawards.com/2023/posters/extraction_two.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://m.media-amazon.com/images/M/MV5BZmFhZTNlNzctZGQzZi00MTA3LThiNjMtYWQzNjUzMjNjZjA3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://www.movieposters.com/cdn/shop/files/spider-man-across-the-spider-verse_tsm61wbo_1024x1024.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://cdn11.bigcommerce.com/s-ydriczk/products/90298/images/98760/Killers-of-the-Flower-Moon-original-movie-poster-one-sheet-buy-now-at-starstills__14802.1697534128.450.659.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://territorystudio.com/wp-content/uploads/2024/07/THBY_S4_DigitalOneSheet_RiotHomelander_1944x2880_PRE_FINAL_en-US_CPS.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://m.media-amazon.com/images/I/81rcco4qHlL._AC_UF894,1000_QL80_.jpg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://lumiere-a.akamaihd.net/v1/images/the-mandalorian-compilation-poster-fb-tw_6ae443d1.jpeg" alt="Movie"></div>
+                <div class="marquee-item"><img src="https://cdn11.bigcommerce.com/s-ydriczk/products/90302/images/98771/Loki-season-2-original-tv-one-sheet-poster-buy-now-at-starstills__88779.1698076395.450.659.jpg" alt="Movie"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense Ad 2 -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8647291268357460"
+             data-ad-slot="VOTRE_SLOT_2"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- PRICING SECTION - 6 FOURNISSEURS -->
+    <section class="pricing-section" id="pricing">
+        <div class="section-header">
+            <h2>Choose Your <span>Perfect Plan</span></h2>
+            <p class="section-subtitle">6 Premium IPTV Providers - Select the one that fits your needs</p>
+        </div>
+
+        <!-- ORCA PRO MAX -->
+        <div class="provider-container provider-orca">
+            <div class="provider-header"><i class="fas fa-tv"></i> ORCA PRO MAX</div>
+            <div class="pricing-grid-new">
+                <div class="pricing-card-new">
+                    <div class="code-badge">1 CODE</div>
+                    <div class="price-tag-new">35€</div>
+                    <div class="price-period">par mois</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 1 Connexion</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/213550082871?text=ORCA%201%20CODE%20-%2035EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new recommended">
+                    <div class="recommended-badge"><i class="fas fa-star"></i> RECOMMENDED</div>
+                    <div class="code-badge">2 CODES</div>
+                    <div class="price-tag-new">65€</div>
+                    <div class="price-period">par mois</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 2 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 5€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/213550082871?text=ORCA%202%20CODES%20-%2065EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new">
+                    <div class="code-badge">3 CODES</div>
+                    <div class="price-tag-new">90€</div>
+                    <div class="price-period">par mois</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 3 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 15€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/213550082871?text=ORCA%203%20CODES%20-%2090EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ATLAS PRO MAX -->
+        <div class="provider-container provider-atlas">
+            <div class="provider-header"><i class="fas fa-globe"></i> ATLAS PRO MAX</div>
+            <div class="pricing-grid-new">
+                <div class="pricing-card-new">
+                    <div class="code-badge">1 CODE</div>
+                    <div class="price-tag-new">35€</div>
+                    <div class="price-period">par mois</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 1 Connexion</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/213550082871?text=ATLAS%201%20CODE%20-%2035EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new recommended">
+                    <div class="recommended-badge"><i class="fas fa-star"></i> RECOMMENDED</div>
+                    <div class="code-badge">2 CODES</div>
+                    <div class="price-tag-new">65€</div>
+                    <div class="price-period">par mois</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 2 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 5€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/213550082871?text=ATLAS%202%20CODES%20-%2065EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new">
+                    <div class="code-badge">3 CODES</div>
+                    <div class="price-tag-new">90€</div>
+                    <div class="price-period">par mois</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 3 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 15€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/213550082871?text=ATLAS%203%20CODES%20-%2090EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STRONG -->
+        <div class="provider-container provider-strong">
+            <div class="provider-header"><i class="fas fa-bolt"></i> STRONG</div>
+            <div class="pricing-grid-new">
+                <div class="pricing-card-new">
+                    <div class="code-badge">1 CODE</div>
+                    <div class="price-tag-new">35€</div>
+                    <div class="price-period">par mois</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 1 Connexion</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/213550082871?text=STRONG%201%20CODE%20-%2035EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new recommended">
+                    <div class="recommended-badge"><i class="fas fa-star"></i> RECOMMENDED</div>
+                    <div class="code-badge">2 CODES</div>
+                    <div class="price-tag-new">65€</div>
+                    <div class="price-period">par mois</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 2 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 5€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/213550082871?text=STRONG%202%20CODES%20-%2065EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new">
+                    <div class="code-badge">3 CODES</div>
+                    <div class="price-tag-new">90€</div>
+                    <div class="price-period">par mois</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 3 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 15€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/213550082871?text=STRONG%203%20CODES%20-%2090EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TREX -->
+        <div class="provider-container provider-trex">
+            <div class="provider-header"><i class="fas fa-dragon"></i> TREX</div>
+            <div class="pricing-grid-new">
+                <div class="pricing-card-new">
+                    <div class="code-badge">1 CODE</div>
+                    <div class="price-tag-new">35€</div>
+                    <div class="price-period">par mois</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 1 Connexion</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/213550082871?text=TREX%201%20CODE%20-%2035EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new recommended">
+                    <div class="recommended-badge"><i class="fas fa-star"></i> RECOMMENDED</div>
+                    <div class="code-badge">2 CODES</div>
+                    <div class="price-tag-new">65€</div>
+                    <div class="price-period">par mois</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 2 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 5€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/213550082871?text=TREX%202%20CODES%20-%2065EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new">
+                    <div class="code-badge">3 CODES</div>
+                    <div class="price-tag-new">90€</div>
+                    <div class="price-period">par mois</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 3 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 15€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/213550082871?text=TREX%203%20CODES%20-%2090EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- IRONPROMAX -->
+        <div class="provider-container provider-iron">
+            <div class="provider-header"><i class="fas fa-crown"></i> IRONPROMAX</div>
+            <div class="pricing-grid-new">
+                <div class="pricing-card-new">
+                    <div class="code-badge">1 CODE</div>
+                    <div class="price-tag-new">35€</div>
+                    <div class="price-period">par mois</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 1 Connexion</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/213550082871?text=IRONPROMAX%201%20CODE%20-%2035EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new recommended">
+                    <div class="recommended-badge"><i class="fas fa-star"></i> RECOMMENDED</div>
+                    <div class="code-badge">2 CODES</div>
+                    <div class="price-tag-new">65€</div>
+                    <div class="price-period">par mois</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 2 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 5€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/213550082871?text=IRONPROMAX%202%20CODES%20-%2065EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new">
+                    <div class="code-badge">3 CODES</div>
+                    <div class="price-tag-new">90€</div>
+                    <div class="price-period">par mois</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 3 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 15€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/213550082871?text=IRONPROMAX%203%20CODES%20-%2090EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KING365TV -->
+        <div class="provider-container provider-king">
+            <div class="provider-header"><i class="fas fa-crown"></i> KING365TV</div>
+            <div class="pricing-grid-new">
+                <div class="pricing-card-new">
+                    <div class="code-badge">1 CODE</div>
+                    <div class="price-tag-new">35€</div>
+                    <div class="price-period">par mois</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 1 Connexion</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/213550082871?text=KING365TV%201%20CODE%20-%2035EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new recommended">
+                    <div class="recommended-badge"><i class="fas fa-star"></i> RECOMMENDED</div>
+                    <div class="code-badge">2 CODES</div>
+                    <div class="price-tag-new">65€</div>
+                    <div class="price-period">par mois</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 2 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 5€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/213550082871?text=KING365TV%202%20CODES%20-%2065EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new">
+                    <div class="code-badge">3 CODES</div>
+                    <div class="price-tag-new">90€</div>
+                    <div class="price-period">par mois</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 3 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 15€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/213550082871?text=KING365TV%203%20CODES%20-%2090EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense Ad 3 -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8647291268357460"
+             data-ad-slot="VOTRE_SLOT_3"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
 
     <!-- Features Section -->
-    <section class="features" id="features">
+    <section class="features-section">
         <div class="section-header">
-            <h2>Pourquoi Nous <span>Choisir ?</span></h2>
-            <p>La meilleure expérience IPTV garantie.</p>
+            <h2>Why Choose <span>Our Service</span></h2>
         </div>
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-bolt"></i>
+                <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                <div class="feature-content">
+                    <h3>24/7 Support</h3>
+                    <p>Our dedicated support team is available around the clock. Click to chat on WhatsApp or Telegram!</p>
                 </div>
-                <h3>Activation Instantanée</h3>
-                <p>Recevez vos identifiants en moins de 5 minutes après paiement.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-tv"></i>
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                <div class="feature-content">
+                    <h3>Instant Activation</h3>
+                    <p>Get immediate access to your subscription right after purchase. No waiting time!</p>
                 </div>
-                <h3>Qualité 4K & UHD</h3>
-                <p>Profitez d'une image cristalline avec nos flux optimisés.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-headset"></i>
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="feature-content">
+                    <h3>Secure Payment</h3>
+                    <p>All transactions are encrypted and secure. Your data is always protected.</p>
                 </div>
-                <h3>Support 24/7</h3>
-                <p>Notre équipe est disponible jour et nuit pour vous aider.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-sync"></i>
+                <div class="feature-icon"><i class="fas fa-undo"></i></div>
+                <div class="feature-content">
+                    <h3>30-Day Money-Back</h3>
+                    <p>Not satisfied? Get a full refund within 30 days. No questions asked!</p>
                 </div>
-                <h3>Mises à Jour</h3>
-                <p>Bibliothèque VOD mise à jour quotidiennement.</p>
             </div>
         </div>
     </section>
 
-    <!-- Devices Section -->
-    <section class="devices">
-        <div class="section-header">
-            <h2>Compatible Avec <span>Tous Vos Appareils</span></h2>
-            <p>Regardez sur n'importe quel écran, n'importe où.</p>
-        </div>
-        <div class="devices-grid">
-            <div class="device-item">
-                <i class="fas fa-tv"></i>
-                <h4>Smart TV</h4>
+    <!-- Referral Section -->
+    <section class="referral-section">
+        <div class="referral-container">
+            <div class="referral-badge"><i class="fas fa-gift"></i> Special Offer</div>
+            <h2 class="referral-title">Earn a Free Month for Every Friend You Invite</h2>
+            <p class="referral-subtitle">Share your experience with friends and get a free month for every friend who subscribes through your link</p>
+            
+            <div class="referral-steps">
+                <div class="referral-step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Share Your Link</div>
+                    <div class="step-desc">Send your unique referral link to your friends</div>
+                </div>
+                <div class="referral-step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Friend Subscribes</div>
+                    <div class="step-desc">When your friend subscribes through your link</div>
+                </div>
+                <div class="referral-step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Get Free Month</div>
+                    <div class="step-desc">A free month is automatically added to your subscription</div>
+                </div>
             </div>
-            <div class="device-item">
-                <i class="fas fa-mobile-alt"></i>
-                <h4>Mobile</h4>
-            </div>
-            <div class="device-item">
-                <i class="fas fa-tablet-alt"></i>
-                <h4>Tablette</h4>
-            </div>
-            <div class="device-item">
-                <i class="fas fa-laptop"></i>
-                <h4>PC & Mac</h4>
-            </div>
-            <div class="device-item">
-                <i class="fab fa-apple"></i>
-                <h4>Apple TV</h4>
-            </div>
-            <div class="device-item">
-                <i class="fas fa-box"></i>
-                <h4>Android Box</h4>
+
+            <div class="referral-reward">
+                <div class="reward-icon"><i class="fas fa-infinity"></i></div>
+                <div class="reward-text">Unlimited Earnings!</div>
+                <div class="reward-subtext">The more friends you invite, the more free months you get</div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq" id="faq">
-        <div class="section-header">
-            <h2>Questions <span>Fréquentes</span></h2>
-            <p>Tout ce que vous devez savoir.</p>
+    <!-- Payment Section -->
+    <section class="payment-section">
+        <div class="payment-container">
+            <div class="payment-title"><i class="fas fa-credit-card"></i> Accepted Payment Methods</div>
+            <div class="payment-icons">
+                <div class="payment-icon visa">VISA</div>
+                <div class="payment-icon mastercard"></div>
+                <div class="payment-icon amex">AMEX</div>
+                <div class="payment-icon paypal">PayPal</div>
+                <div class="payment-icon crypto"><i class="fab fa-bitcoin"></i></div>
+            </div>
+            <div class="payment-note"><i class="fas fa-lock"></i> All payments are secure and encrypted</div>
         </div>
-        <div class="faq-container">
-            <div class="faq-item">
-                <div class="faq-question">
-                    Comment recevoir mon code après paiement ?
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    Une fois le paiement confirmé, vous recevez vos identifiants directement sur WhatsApp en moins de 5 minutes.
-                </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="support-section" id="support">
+        <div class="support-container">
+            <div class="support-icon"><i class="fas fa-headset"></i></div>
+            <h2 class="support-title">24/7 Customer Support</h2>
+            <p class="support-text">Need help? Our support team is available 24 hours a day, 7 days a week. Contact us anytime via WhatsApp or Telegram for instant assistance!</p>
+            
+            <div class="support-buttons">
+                <a href="https://wa.me/213550082871" class="support-btn whatsapp-btn"><i class="fab fa-whatsapp"></i> Contact on WhatsApp</a>
+                <a href="https://t.me/goiptvpro" class="support-btn telegram-btn"><i class="fab fa-telegram"></i> Contact on Telegram</a>
             </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    Puis-je utiliser sur plusieurs appareils ?
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    Oui ! Selon votre forfait, vous pouvez avoir 1 à 3 connexions simultanées.
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    Quelle vitesse internet est nécessaire ?
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    12 Mbps pour HD, 25 Mbps recommandés pour 4K sans interruption.
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    Quels sont les modes de paiement ?
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    Virement bancaire, PayPal, Western Union. Contactez-nous sur WhatsApp pour plus d'options.
-                </div>
+
+            <div class="support-features">
+                <div class="support-feature"><i class="fas fa-check-circle"></i> Instant Response</div>
+                <div class="support-feature"><i class="fas fa-check-circle"></i> Technical Help</div>
+                <div class="support-feature"><i class="fas fa-check-circle"></i> Setup Assistance</div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-about">
-                <div class="footer-logo">PREMIUM IPTV</div>
-                <p>Le meilleur service IPTV premium en France. Qualité 4K, streaming fluide, support 24/7.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#tarifs">Tarifs</a></li>
-                    <li><a href="#features">Avantages</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h4>Contact</h4>
-                <p><i class="fab fa-whatsapp"></i> +213 550 08 28 71</p>
-                <p><i class="fab fa-telegram"></i> @goiptvpro</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 PREMIUM IPTV. Tous droits réservés.</p>
-        </div>
+        <p>&copy; 2026 GOIPTVPRO. All rights reserved. Premium IPTV Entertainment.</p>
     </footer>
 
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/213550082871" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/213550082871" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://t.me/goiptvpro" class="telegram-float" target="_blank"><i class="fab fa-telegram"></i></a>
 
-    <script>
-        // FAQ Toggle
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                item.classList.toggle('active');
-            });
-        });
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
