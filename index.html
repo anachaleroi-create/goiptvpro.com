@@ -1232,6 +1232,204 @@
             box-shadow: 0 10px 30px rgba(0, 208, 132, 0.4);
         }
 
+        /* VPN Partners Section */
+        .vpn-partners-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, #0a0a0f 0%, #0d1117 50%, #0a0a0f 100%);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .vpn-partners-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .vpn-partners-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .vpn-partners-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .vpn-partners-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .vpn-partners-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .vpn-banners {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .vpn-banner {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .vpn-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.05));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .vpn-banner:hover::before {
+            opacity: 1;
+        }
+
+        .vpn-banner.nordvpn {
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+        }
+
+        .vpn-banner.nordvpn:hover {
+            transform: translateY(-8px);
+            border-color: rgba(59, 130, 246, 0.6);
+            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.3);
+        }
+
+        .vpn-banner.expressvpn {
+            border-color: rgba(239, 68, 68, 0.3);
+            box-shadow: 0 10px 30px rgba(239, 68, 68, 0.1);
+        }
+
+        .vpn-banner.expressvpn:hover {
+            transform: translateY(-8px);
+            border-color: rgba(239, 68, 68, 0.6);
+            box-shadow: 0 20px 50px rgba(239, 68, 68, 0.3);
+        }
+
+        .vpn-banner.surfshark {
+            border-color: rgba(16, 185, 129, 0.3);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);
+        }
+
+        .vpn-banner.surfshark:hover {
+            transform: translateY(-8px);
+            border-color: rgba(16, 185, 129, 0.6);
+            box-shadow: 0 20px 50px rgba(16, 185, 129, 0.3);
+        }
+
+        .vpn-banner.cyberghost {
+            border-color: rgba(249, 115, 22, 0.3);
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.1);
+        }
+
+        .vpn-banner.cyberghost:hover {
+            transform: translateY(-8px);
+            border-color: rgba(249, 115, 22, 0.6);
+            box-shadow: 0 20px 50px rgba(249, 115, 22, 0.3);
+        }
+
+        .vpn-banner-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .vpn-logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .vpn-banner.nordvpn .vpn-logo { color: #60a5fa; }
+        .vpn-banner.expressvpn .vpn-logo { color: #f87171; }
+        .vpn-banner.surfshark .vpn-logo { color: #34d399; }
+        .vpn-banner.cyberghost .vpn-logo { color: #fb923c; }
+
+        .vpn-offer {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border-radius: 12px;
+            padding: 0.6rem 1rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #ffd700;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .vpn-feature {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .vpn-feature i {
+            color: #10b981;
+            margin-right: 5px;
+        }
+
+        .vpn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .vpn-banner:hover .vpn-cta {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .vpn-disclaimer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .vpn-disclaimer i {
+            color: #6366f1;
+            margin-right: 8px;
+        }
+
         /* Payment Section */
         .payment-section {
             padding: 3rem 2rem;
@@ -1473,6 +1671,12 @@
             .affiliate-features { grid-template-columns: 1fr; }
             .affiliate-title { font-size: 2rem; }
             .commission-percent { font-size: 2.5rem; }
+            .vpn-banners { grid-template-columns: repeat(2, 1fr); }
+            .vpn-partners-title { font-size: 1.8rem; }
+        }
+
+        @media (max-width: 480px) {
+            .vpn-banners { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -2254,6 +2458,59 @@
             </form>
         </div>
     </div>
+
+    <!-- VPN Partners Section -->
+    <section class="vpn-partners-section">
+        <div class="vpn-partners-container">
+            <div class="vpn-partners-header">
+                <div class="vpn-partners-badge"><i class="fas fa-shield-alt"></i> Partenaires VPN</div>
+                <h2 class="vpn-partners-title">Protégez Votre Connexion</h2>
+                <p class="vpn-partners-subtitle">Nos partenaires VPN recommandés pour une streaming sécurisé et anonyme</p>
+            </div>
+            
+            <div class="vpn-banners">
+                <a href="https://nordvpn.com" target="_blank" class="vpn-banner nordvpn">
+                    <div class="vpn-banner-content">
+                        <div class="vpn-logo"><i class="fas fa-shield-alt"></i> NORDVPN</div>
+                        <div class="vpn-offer">-60% de réduction</div>
+                        <div class="vpn-feature"><i class="fas fa-check"></i> 6000+ serveurs</div>
+                        <div class="vpn-cta">Obtenir l'offre <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+                
+                <a href="https://expressvpn.com" target="_blank" class="vpn-banner expressvpn">
+                    <div class="vpn-banner-content">
+                        <div class="vpn-logo"><i class="fas fa-bolt"></i> EXPRESSVPN</div>
+                        <div class="vpn-offer">3 mois gratuits</div>
+                        <div class="vpn-feature"><i class="fas fa-check"></i> Ultra rapide</div>
+                        <div class="vpn-cta">Obtenir l'offre <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+                
+                <a href="https://surfshark.com" target="_blank" class="vpn-banner surfshark">
+                    <div class="vpn-banner-content">
+                        <div class="vpn-logo"><i class="fas fa-water"></i> SURFSHARK</div>
+                        <div class="vpn-offer">-82% + 2 mois free</div>
+                        <div class="vpn-feature"><i class="fas fa-check"></i> Connexions illimitées</div>
+                        <div class="vpn-cta">Obtenir l'offre <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+                
+                <a href="https://cyberghost.com" target="_blank" class="vpn-banner cyberghost">
+                    <div class="vpn-banner-content">
+                        <div class="vpn-logo"><i class="fas fa-ghost"></i> CYBERGHOST</div>
+                        <div class="vpn-offer">-83% de réduction</div>
+                        <div class="vpn-feature"><i class="fas fa-check"></i> 9000+ serveurs</div>
+                        <div class="vpn-cta">Obtenir l'offre <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="vpn-disclaimer">
+                <i class="fas fa-info-circle"></i> En utilisant ces liens, vous soutenez notre service. Les offres sont mises à jour régulièrement.
+            </div>
+        </div>
+    </section>
 
     <!-- Payment Section -->
     <section class="payment-section">
