@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact GOIPTVPRO</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0a0a0f;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    .container {
+      background: #1a1a25;
+      padding: 3rem;
+      border-radius: 20px;
+      border: 2px solid #00d084;
+      max-width: 500px;
+      width: 90%;
+    }
+    h1 {
+      color: #00d084;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .subtitle {
+      color: #a1a1aa;
+      margin-bottom: 2rem;
+    }
+    .pack-info {
+      background: #0a0a0f;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin: 1.5rem 0;
+      border-left: 4px solid #ffd700;
+    }
+    .pack-name {
+      color: #ffd700;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    .pack-price {
+      color: white;
+      font-size: 2rem;
+      margin-top: 0.5rem;
+    }
+    input, select {
+      width: 100%;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 8px;
+      background: #0a0a0f;
+      color: white;
+      border: 1px solid #333;
+    }
+    input:focus, select:focus {
+      outline: none;
+      border-color: #00d084;
+    }
+    .btn-whatsapp {
+      display: inline-block;
+      background: #00d084;
+      color: #0a0a0f;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1.5rem;
+      transition: transform 0.3s;
+    }
+    .btn-whatsapp:hover {
+      transform: scale(1.05);
+    }
+    .security {
+      color: #00d084;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎬 GOIPTVPRO</h1>
+    <p class="subtitle">Commande sécurisée via WhatsApp</p>
+    
+    <div class="pack-info">
+      <div class="pack-name">ORCA <span id="pack-code">1</span> CODE</div>
+      <div class="pack-price"><span id="pack-price">35</span>€/an</div>
+    </div>
+    
+    <input type="text" id="clientName" placeholder="Votre nom" required>
+    <input type="email" id="clientEmail" placeholder="Votre email (optionnel)">
+    
+    <a href="#" class="btn-whatsapp" onclick="goToWhatsApp(event)">
+      <i class="fab fa-whatsapp"></i> Continuer sur WhatsApp
+    </a>
+    
+    <p class="security">🔒 Vos informations sont protégées</p>
+  </div>
+
+  <script>
+    // Récupérer le pack depuis l'URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const pack = urlParams.get('pack') || '1';
+    const prices = {'1': '35', '2': '65', '3': '90'};
+    
+    document.getElementById('pack-code').textContent = pack;
+    document.getElementById('pack-price').textContent = prices[pack];
+    
+    function goToWhatsApp(e) {
+      e.preventDefault();
+      const name = document.getElementById('clientName').value || 'Client';
+      const packNum = document.getElementById('pack-code').textContent;
+      const price = document.getElementById('pack-price').textContent;
+      
+      const message = `Bonjour GOIPTVPRO, je suis ${name} et je souhaite commander le pack ${packNum} Codes (${price}€/an)`;
+      
+      // Numéro caché dans le code
+      const num = '33' + '602245915';
+      
+      window.open(`https://wa.me/${num}?text=${encodeURIComponent(message)}`, '_blank');
+    }
+  </script>
+</body>
+</html>
