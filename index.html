@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <!-- ... autres meta tags ... -->
-  
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-T9LS5W4N');</script>
-  <!-- End Google Tag Manager -->
-  
-  <style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GOIPTVPRO - Premium IPTV Entertainment</title>
@@ -278,6 +267,97 @@
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 20px 40px rgba(0, 102, 255, 0.6);
+        }
+
+        .hero-guarantee {
+            margin-top: 1.5rem;
+            color: #10b981;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 8px;
+        }
+
+        .hero-guarantee i {
+            font-size: 1.1rem;
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .trust-badge i {
+            color: #10b981;
+            font-size: 1.3rem;
+        }
+
+        /* Countdown Timer */
+        .countdown-section {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(245, 158, 11, 0.1));
+            padding: 1.5rem;
+            text-align: center;
+            border-top: 2px solid rgba(239, 68, 68, 0.3);
+            border-bottom: 2px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .countdown-text {
+            color: #fbbf24;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .countdown-text i {
+            margin-right: 8px;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .countdown-item {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            padding: 0.8rem 1.2rem;
+            min-width: 60px;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ef4444;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
         }
 
         /* Ad Container */
@@ -1315,6 +1395,103 @@
             box-shadow: 0 10px 30px rgba(0, 208, 132, 0.4);
         }
 
+        /* FAQ Section */
+        .faq-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, #0a0a0f 0%, #12121a 100%);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #8b5cf6, #6366f1);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: white;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .faq-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .faq-header p {
+            color: var(--text-secondary);
+        }
+
+        .faq-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        .faq-question {
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .faq-question i {
+            color: #8b5cf6;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.2rem 1.5rem;
+            max-height: 200px;
+        }
+
         /* VPN Partners Section */
         .vpn-partners-section {
             padding: 4rem 2rem;
@@ -1987,6 +2164,10 @@
             .reseller-card.popular { transform: scale(1); }
             .reseller-card.popular:hover { transform: scale(1) translateY(-15px); }
             .reseller-title { font-size: 2rem; }
+            .trust-badges { gap: 1rem; }
+            .trust-badge { font-size: 0.8rem; }
+            .countdown-number { font-size: 1.5rem; }
+            .faq-header h2 { font-size: 2rem; }
         }
 
         @media (max-width: 480px) {
@@ -1997,10 +2178,6 @@
     </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9LS5W4N"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
     <!-- Navigation -->
     <nav>
@@ -2049,8 +2226,11 @@
                 </div>
                 
                 <a href="#pricing" class="cta-button">
-                    <i class="fab fa-whatsapp"></i> View Pricing Plans
+                    <i class="fab fa-whatsapp"></i> Voir les Offres
                 </a>
+                <div class="hero-guarantee">
+                    <i class="fas fa-shield-alt"></i> Garantie 7 jours satisfait ou remboursé
+                </div>
             </div>
             
             <div class="hero-image-wrapper">
@@ -2067,6 +2247,49 @@
             </div>
         </div>
     </section>
+
+    <!-- Trust Badges -->
+    <div class="trust-badges">
+        <div class="trust-badge">
+            <i class="fas fa-shield-alt"></i>
+            <span>Paiement Sécurisé</span>
+        </div>
+        <div class="trust-badge">
+            <i class="fas fa-undo"></i>
+            <span>7 Jours Garantie</span>
+        </div>
+        <div class="trust-badge">
+            <i class="fas fa-bolt"></i>
+            <span>Activation Instantanée</span>
+        </div>
+        <div class="trust-badge">
+            <i class="fas fa-headset"></i>
+            <span>Support 24/7</span>
+        </div>
+        <div class="trust-badge">
+            <i class="fas fa-users"></i>
+            <span>5000+ Clients</span>
+        </div>
+    </div>
+
+    <!-- Countdown Section -->
+    <div class="countdown-section">
+        <div class="countdown-text"><i class="fas fa-fire"></i> OFFRE SPÉCIALE - PRIX BAS GARANTIS JUSQU'À MINUIT</div>
+        <div class="countdown-timer" id="countdown">
+            <div class="countdown-item">
+                <div class="countdown-number" id="hours">23</div>
+                <div class="countdown-label">Heures</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="minutes">59</div>
+                <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="seconds">59</div>
+                <div class="countdown-label">Secondes</div>
+            </div>
+        </div>
+    </div>
 
     <!-- AdSense Ad 1 -->
     <div class="ad-container">
@@ -2722,6 +2945,79 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="faq-header">
+                <div class="faq-badge"><i class="fas fa-question-circle"></i> FAQ</div>
+                <h2>Questions Fréquentes</h2>
+                <p>Tout ce que vous devez savoir avant de commander</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-plus"></i>
+                        <span>Comment recevoir mes codes après paiement ?</span>
+                    </div>
+                    <div class="faq-answer">
+                        Après votre paiement, vous recevez vos codes d'activation sous 5 à 15 minutes directement sur WhatsApp ou Telegram. Notre équipe est disponible 24/7 pour vous assister.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-plus"></i>
+                        <span>Sur quels appareils puis-je utiliser l'IPTV ?</span>
+                    </div>
+                    <div class="faq-answer">
+                        Nos abonnements fonctionnent sur Smart TV (Samsung, LG, Android TV), Box Android, Fire Stick, Smartphone (iOS/Android), PC/Mac, et même sur votre navigateur web.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-plus"></i>
+                        <span>Que se passe-t-il si ça ne marche pas chez moi ?</span>
+                    </div>
+                    <div class="faq-answer">
+                        Nous offrons une garantie satisfait ou remboursé de 7 jours. Si le service ne fonctionne pas chez vous, nous vous remboursons intégralement, sans poser de questions.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-plus"></i>
+                        <span>Puis-je regarder sur plusieurs appareils simultanément ?</span>
+                    </div>
+                    <div class="faq-answer">
+                        Oui ! Avec nos packs 2 CODES ou 3 CODES, vous pouvez regarder sur 2 ou 3 appareils en même temps. Parfait pour toute la famille !
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-plus"></i>
+                        <span>Quels sont les modes de paiement acceptés ?</span>
+                    </div>
+                    <div class="faq-answer">
+                        Nous acceptons les virements bancaires, PayPal, et les paiements par carte via des solutions sécurisées. Contactez-nous sur WhatsApp pour les détails de paiement.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-plus"></i>
+                        <span>La qualité 4K est-elle vraiment disponible ?</span>
+                    </div>
+                    <div class="faq-answer">
+                        Absolument ! Nous proposons des chaînes en 4K UHD, FHD, HD et SD. La qualité dépend de votre connexion internet (minimum 25 Mbps recommandé pour le 4K).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- AdSense Ad 3 -->
     <div class="ad-container">
         <div class="ad-label">Advertisement</div>
@@ -3121,6 +3417,42 @@
             if (e.key === 'Escape') {
                 closeAffiliateModal();
             }
+        });
+
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const midnight = new Date();
+            midnight.setHours(24, 0, 0, 0);
+            
+            const diff = midnight - now;
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                
+                // Open clicked if wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
         });
     </script>
 
