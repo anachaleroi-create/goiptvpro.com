@@ -14,14 +14,21 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"></noscript>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
             --primary-dark: #0a0a0f;
+            --secondary-dark: #12121a;
+            --card-bg: #1a1a25;
+            --accent-gold: #ffd700;
             --text-primary: #ffffff;
             --text-secondary: #a1a1aa;
+            --affiliate-green: #00d084;
+            --affiliate-green-dark: #00a86b;
         }
         
         body {
@@ -43,6 +50,7 @@
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -50,19 +58,36 @@
             justify-content: space-between;
             align-items: center;
         }
-        .logo img { height: 70px; width: auto; }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo i { color: #ffd700; }
+
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
         }
+
         .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s;
         }
-        .nav-links a:hover { color: #ffd700; }
+
+        .nav-links a:hover { color: var(--accent-gold); }
+
         .support-btn {
             background: linear-gradient(135deg, #ffd700, #ffed4e);
             color: #0a0a0f !important;
@@ -71,7 +96,7 @@
             font-weight: 600;
         }
 
-        /* Hero */
+        /* Hero Section */
         .hero {
             margin-top: 80px;
             min-height: 90vh;
@@ -81,7 +106,18 @@
             justify-content: center;
             padding: 3rem 2rem;
             position: relative;
+            overflow: hidden;
         }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 50%, rgba(0, 204, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
         .hero-container {
             max-width: 1400px;
             width: 100%;
@@ -89,8 +125,69 @@
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
+
         .hero-content { text-align: left; }
+
+        .hero-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .hero-image {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 30px 80px rgba(0, 102, 255, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image-container:hover .hero-image { transform: scale(1.02); }
+
+        .hero-image-glow {
+            position: absolute;
+            top: -20px; left: -20px; right: -20px; bottom: -20px;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.3), rgba(0, 204, 255, 0.2));
+            border-radius: 30px;
+            filter: blur(30px);
+            z-index: -1;
+            animation: glow-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: linear-gradient(135deg, #ff3366, #ff6b6b);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 51, 102, 0.4);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-badge.channels { top: 10%; right: -10%; animation-delay: 0s; }
+        .floating-badge.movies { bottom: 15%; left: -15%; background: linear-gradient(135deg, #00ccff, #0066ff); box-shadow: 0 10px 30px rgba(0, 204, 255, 0.4); animation-delay: 1.5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -103,11 +200,13 @@
             color: #00ccff;
             margin-bottom: 2rem;
         }
+
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
+
         .hero h1 .welcome {
             display: block;
             font-size: 1.2rem;
@@ -116,24 +215,30 @@
             letter-spacing: 3px;
             margin-bottom: 0.5rem;
         }
+
         .hero h1 .main-title {
             background: linear-gradient(135deg, #ffffff 0%, #00ccff 50%, #0066ff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .hero-description {
             color: var(--text-secondary);
             font-size: 1.2rem;
             line-height: 1.8;
             margin-bottom: 2.5rem;
         }
+
+        .hero-description strong { color: var(--text-primary); }
+
         .hero-features {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 2rem;
             margin-bottom: 3rem;
             flex-wrap: wrap;
         }
+
         .hero-feature {
             display: flex;
             align-items: center;
@@ -141,7 +246,9 @@
             color: var(--text-secondary);
             font-size: 0.95rem;
         }
+
         .hero-feature i { color: #00ccff; }
+
         .cta-button {
             display: inline-flex;
             align-items: center;
@@ -156,52 +263,104 @@
             transition: all 0.3s;
             box-shadow: 0 10px 30px rgba(0, 102, 255, 0.4);
         }
+
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 20px 40px rgba(0, 102, 255, 0.6);
         }
-        .hero-image-wrapper {
-            position: relative;
+
+        .hero-guarantee {
+            margin-top: 1.5rem;
+            color: #10b981;
+            font-size: 0.95rem;
             display: flex;
-            justify-content: center;
             align-items: center;
-        }
-        .hero-image-container {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-        }
-        .hero-image {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 30px 80px rgba(0, 102, 255, 0.4);
-        }
-        .floating-badge {
-            position: absolute;
-            background: linear-gradient(135deg, #ff3366, #ff6b6b);
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            color: white;
-            box-shadow: 0 10px 30px rgba(255, 51, 102, 0.4);
-            animation: float 3s ease-in-out infinite;
-        }
-        .floating-badge.channels {
-            top: 10%;
-            right: -10%;
-        }
-        .floating-badge.movies {
-            bottom: 15%;
-            left: -15%;
-            background: linear-gradient(135deg, #00ccff, #0066ff);
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            justify-content: flex-start;
+            gap: 8px;
         }
 
-        /* AdSense */
+        .hero-guarantee i {
+            font-size: 1.1rem;
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .trust-badge i {
+            color: #10b981;
+            font-size: 1.3rem;
+        }
+
+        /* Countdown Timer */
+        .countdown-section {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(245, 158, 11, 0.1));
+            padding: 1.5rem;
+            text-align: center;
+            border-top: 2px solid rgba(239, 68, 68, 0.3);
+            border-bottom: 2px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .countdown-text {
+            color: #fbbf24;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .countdown-text i {
+            margin-right: 8px;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .countdown-item {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            padding: 0.8rem 1.2rem;
+            min-width: 60px;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ef4444;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        /* Ad Container */
         .ad-container {
             width: 100%;
             max-width: 1200px;
@@ -212,6 +371,7 @@
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .ad-label {
             font-size: 0.75rem;
             color: var(--text-secondary);
@@ -220,106 +380,178 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Testimonials */
-        .testimonials-section {
+        /* WhatsApp Testimonials Section */
+        .whatsapp-testimonials-section {
             padding: 5rem 2rem;
-            background: linear-gradient(180deg, #0a0a0f 0%, #12121a 50%, #0a0a0f 100%);
+            background: linear-gradient(180deg, #0a0a0f 0%, #0d1117 50%, #0a0a0f 100%);
         }
-        .testimonials-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .testimonials-header {
+
+        .whatsapp-testimonials-container { max-width: 1400px; margin: 0 auto; }
+
+        .whatsapp-testimonials-header {
             text-align: center;
             margin-bottom: 3rem;
         }
-        .testimonials-header h2 {
-            font-size: 2.5rem;
+
+        .whatsapp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: white;
             font-weight: 700;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+        }
+
+        .whatsapp-testimonials-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .testimonials-header p {
+
+        .whatsapp-testimonials-header p {
             color: #a1a1aa;
             font-size: 1.1rem;
             max-width: 600px;
             margin: 0 auto;
         }
-        .testimonials-grid {
+
+        .whatsapp-chats-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
             margin-bottom: 3rem;
         }
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 215, 0, 0.15);
+
+        .whatsapp-chat-card {
+            background: linear-gradient(180deg, #1a1a25 0%, #12121a 100%);
             border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.3s ease;
+            overflow: hidden;
+            border: 1px solid rgba(37, 211, 102, 0.2);
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
         }
-        .testimonial-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255, 215, 0, 0.4);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+
+        .whatsapp-chat-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(37, 211, 102, 0.5);
+            box-shadow: 0 20px 60px rgba(37, 211, 102, 0.15);
         }
-        .testimonial-card.featured {
-            transform: scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+        .whatsapp-chat-header {
+            background: linear-gradient(135deg, #075e54, #128c7e);
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
         }
-        .stars {
-            color: #ffd700;
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 2px;
-        }
-        .testimonial-text {
-            color: #e5e5e5;
-            font-style: italic;
-            line-height: 1.8;
-            font-size: 1rem;
-            margin-bottom: 2rem;
-        }
-        .testimonial-author {
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .author-name {
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-        }
-        .author-location {
-            color: #888;
+
+        .whatsapp-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
             font-size: 0.9rem;
         }
-        .author-location i {
-            margin-right: 5px;
-            color: #ffd700;
+
+        .whatsapp-contact-info {
+            flex: 1;
         }
-        .testimonials-stats {
+
+        .whatsapp-contact-name {
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .whatsapp-status {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.75rem;
+        }
+
+        .whatsapp-chat-body {
+            padding: 1rem;
+            min-height: 280px;
+            background: linear-gradient(180deg, #0d1117 0%, #0a0a0f 100%);
+        }
+
+        .whatsapp-message {
+            max-width: 85%;
+            padding: 0.7rem 1rem;
+            border-radius: 12px;
+            margin-bottom: 0.8rem;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .whatsapp-message.received {
+            background: #1a1a25;
+            color: #e5e5e5;
+            border-top-left-radius: 4px;
+            margin-right: auto;
+        }
+
+        .whatsapp-message.sent {
+            background: linear-gradient(135deg, #075e54, #128c7e);
+            color: white;
+            border-top-right-radius: 4px;
+            margin-left: auto;
+        }
+
+        .whatsapp-message-time {
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: right;
+            margin-top: 0.3rem;
+        }
+
+        .whatsapp-message.sent .whatsapp-message-time {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .whatsapp-check {
+            color: #34b7f1;
+            font-size: 0.7rem;
+            margin-left: 3px;
+        }
+
+        .whatsapp-stats {
             display: flex;
             justify-content: center;
-            gap: 5rem;
+            gap: 4rem;
             padding-top: 3rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             flex-wrap: wrap;
         }
-        .stat-item { text-align: center; }
-        .stat-number {
-            font-size: 3rem;
+
+        .whatsapp-stat-item { text-align: center; }
+
+        .whatsapp-stat-number {
+            font-size: 2.5rem;
             font-weight: 800;
-            color: #ffd700;
-            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.3rem;
         }
-        .stat-label {
+
+        .whatsapp-stat-label {
             color: #888;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         /* Movies Marquee */
@@ -328,32 +560,37 @@
             background: linear-gradient(180deg, #0a0a0f 0%, #12121a 50%, #0a0a0f 100%);
             overflow: hidden;
         }
+
         .marquee-header {
             text-align: center;
             margin-bottom: 3rem;
             padding: 0 2rem;
         }
+
         .marquee-header h2 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
+
         .marquee-header h2 span {
             background: linear-gradient(135deg, #00ccff, #0066ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .marquee-header p {
             color: var(--text-secondary);
             font-size: 1.1rem;
         }
+
         .marquee-row {
             position: relative;
             width: 100%;
             overflow: hidden;
             margin-bottom: 1.5rem;
         }
-        .marquee-row::before,
-        .marquee-row::after {
+
+        .marquee-row::before, .marquee-row::after {
             content: '';
             position: absolute;
             top: 0;
@@ -362,31 +599,37 @@
             z-index: 10;
             pointer-events: none;
         }
+
         .marquee-row::before {
             left: 0;
             background: linear-gradient(90deg, #0a0a0f, transparent);
         }
+
         .marquee-row::after {
             right: 0;
             background: linear-gradient(-90deg, #0a0a0f, transparent);
         }
+
         .marquee-track {
             display: flex;
             gap: 1rem;
             width: max-content;
             animation: marquee-left 40s linear infinite;
         }
-        .marquee-track.right {
-            animation: marquee-right 40s linear infinite;
-        }
+
+        .marquee-track.right { animation: marquee-right 40s linear infinite; }
+        .marquee-track:hover { animation-play-state: paused; }
+
         @keyframes marquee-left {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
+
         @keyframes marquee-right {
             0% { transform: translateX(-50%); }
             100% { transform: translateX(0); }
         }
+
         .marquee-item {
             flex-shrink: 0;
             width: 200px;
@@ -395,47 +638,60 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease;
+            cursor: pointer;
         }
+
         .marquee-item:hover {
             transform: scale(1.08);
             box-shadow: 0 20px 50px rgba(0, 102, 255, 0.4);
+            z-index: 100;
         }
+
         .marquee-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.3s ease;
         }
 
-        /* NOUVEAU PRICING 1/2/3 CODES */
-        .pricing-tables-section {
+        .marquee-item:hover img { transform: scale(1.1); }
+
+        /* PRICING SECTION */
+        .pricing-section {
             padding: 5rem 2rem;
             background: linear-gradient(180deg, var(--primary-dark) 0%, #0d0d15 50%, var(--primary-dark) 100%);
         }
+
         .section-header {
             text-align: center;
             margin-bottom: 4rem;
         }
+
         .section-header h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
+
         .section-header h2 span {
             background: linear-gradient(135deg, #00ccff, #0066ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .section-subtitle {
             color: var(--text-secondary);
             font-size: 1.1rem;
         }
-        .provider-table-container {
+
+        .provider-container {
             max-width: 1200px;
             margin: 0 auto 4rem auto;
-            border-radius: 20px;
+            border-radius: 25px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0,0,0,0.5);
         }
-        .provider-header-table {
+
+        .provider-header {
             padding: 1.5rem;
             text-align: center;
             font-size: 1.8rem;
@@ -443,30 +699,20 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             color: white;
-        }
-        .provider-orca .provider-header-table { 
-            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
-        }
-        .provider-atlas .provider-header-table { 
-            background: linear-gradient(135deg, #059669 0%, #047857 100%);
-        }
-        .provider-strong .provider-header-table { 
-            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-        }
-        .provider-trex .provider-header-table { 
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            color: #1f2937;
-        }
-        .provider-iron .provider-header-table { 
-            background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%);
-        }
-        .provider-king .provider-header-table { 
-            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
-            color: #1f2937;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
         }
 
-        /* GRID 3 COLONNES */
-        .pricing-row-new {
+        .provider-orca .provider-header { background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); }
+        .provider-atlas .provider-header { background: linear-gradient(135deg, #059669 0%, #047857 100%); }
+        .provider-strong .provider-header { background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); }
+        .provider-trex .provider-header { background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); color: #1f2937; }
+        .provider-iron .provider-header { background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%); }
+        .provider-king .provider-header { background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%); color: #1f2937; }
+
+        .pricing-grid-new {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
@@ -474,636 +720,38 @@
             background: rgba(0, 0, 0, 0.3);
         }
 
-        /* CARTE PRICING - BORDURE BLEUE LUMINEUSE */
-        .pricing-column-new {
+        .pricing-card-new {
             background: rgba(26, 26, 37, 0.95);
             border: 2px solid rgba(0, 102, 255, 0.4);
-            border-radius: 20px;
-            padding: 2rem 1.5rem;
+            border-radius: 25px;
+            padding: 2.5rem 1.5rem;
             text-align: center;
             position: relative;
             transition: all 0.4s ease;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
                         0 0 20px rgba(0, 102, 255, 0.1);
         }
-        .pricing-column-new:hover {
+
+        .pricing-card-new:hover {
             transform: translateY(-10px);
             border-color: rgba(0, 204, 255, 0.8);
             box-shadow: 0 20px 50px rgba(0, 102, 255, 0.4),
                         0 0 40px rgba(0, 204, 255, 0.2);
         }
 
-        /* RECOMMENDED - 2 CODES */
-        .pricing-column-new.recommended {
+        .pricing-card-new.recommended {
             border: 3px solid rgba(0, 204, 255, 0.9);
             box-shadow: 0 0 50px rgba(0, 102, 255, 0.5), 
                         inset 0 0 60px rgba(0, 102, 255, 0.15);
             transform: scale(1.05);
             z-index: 10;
         }
-        .pricing-column-new.recommended:hover {
+
+        .pricing-card-new.recommended:hover {
             transform: scale(1.05) translateY(-10px);
             box-shadow: 0 25px 60px rgba(0, 102, 255, 0.6),
                         0 0 80px rgba(0, 204, 255, 0.3),
                         inset 0 0 80px rgba(0, 204, 255, 0.2);
-        }
-
-        /* BADGE RECOMMENDED */
-        .recommended-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%);
-            color: white;
-            padding: 0.6rem 1.8rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            box-shadow: 0 5px 25px rgba(0, 102, 255, 0.6);
-            animation: pulse-blue 2s ease-in-out infinite;
-            white-space: nowrap;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-        @keyframes pulse-blue {
-            0%, 100% { 
-                box-shadow: 0 5px 25px rgba(0, 102, 255, 0.6);
-                transform: translateX(-50%) scale(1);
-            }
-            50% { 
-                box-shadow: 0 5px 35px rgba(0, 204, 255, 0.9);
-                transform: translateX(-50%) scale(1.02);
-            }
-        }
-
-        /* BADGE CODE */
-        .code-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.2) 0%, rgba(0, 204, 255, 0.1) 100%);
-            border: 2px solid rgba(0, 204, 255, 0.5);
-            color: #00ccff;
-            padding: 0.8rem 2rem;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 0 10px rgba(0, 204, 255, 0.3);
-        }
-
-        /* PRIX */
-        .price-tag-new {
-            font-size: 4rem;
-            font-weight: 900;
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 0 30px rgba(0, 102, 255, 0.5);
-            background: linear-gradient(135deg, #ffffff 0%, #00ccff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .price-save {
-            display: inline-block;
-            background: linear-gradient(135deg, #00cc66 0%, #00aa44 100%);
-            color: white;
-            padding: 0.5rem 1.2rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 5px 20px rgba(0, 204, 102, 0.4);
-            animation: pulse-green 2s ease-in-out infinite;
-        }
-        @keyframes pulse-green {
-            0%, 100% { box-shadow: 0 5px 20px rgba(0, 204, 102, 0.4); }
-            50% { box-shadow: 0 5px 30px rgba(0, 255, 128, 0.6); }
-        }
-
-        /* FEATURES LIST */
-        .features-list-new {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 2rem 0;
-            text-align: left;
-        }
-        .features-list-new li {
-            padding: 0.8rem 0;
-            color: #b0b0b0;
-            font-size: 0.95rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .features-list-new li:last-child {
-            border-bottom: none;
-        }
-        .features-list-new li i {
-            color: #00ccff;
-            font-size: 0.9rem;
-            text-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
-        }
-
-        /* BOUTONS */
-        .buy-buttons-new {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-        .whatsapp-btn-new, .telegram-btn-new {
-            width: 100%;
-            padding: 1.1rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            color: white;
-            text-transform: uppercase;
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
-        .whatsapp-btn-new {
-            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-        }
-        .whatsapp-btn-new:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
-        }
-        .telegram-btn-new {
-            background: linear-gradient(135deg, #0088cc 0%, #00a8e6 100%);
-            box-shadow: 0 5px 20px rgba(0, 136, 204, 0.4);
-        }
-        .telegram-btn-new:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 30px rgba(0, 136, 204, 0.6);
-        }
-
-        /* Features Section */
-        .features-section {
-            padding: 4rem 2rem;
-            background: var(--primary-dark);
-        }
-        .features-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        .feature-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 1.5rem;
-            color: white;
-        }
-        .feature-card:nth-child(1) .feature-icon {
-            background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%);
-        }
-        .feature-card:nth-child(2) .feature-icon {
-            background: linear-gradient(135deg, #00ccff 0%, #0066ff 100%);
-        }
-        .feature-card:nth-child(3) .feature-icon {
-            background: linear-gradient(135deg, #0099ff 0%, #00ccff 100%);
-        }
-        .feature-card:nth-child(4) .feature-icon {
-            background: linear-gradient(135deg, #0066ff 0%, #0099ff 100%);
-        }
-        .feature-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-        }
-        .feature-content p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* Referral Section */
-        .referral-section {
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 204, 255, 0.05) 100%);
-            border-top: 1px solid rgba(0, 204, 255, 0.2);
-            border-bottom: 1px solid rgba(0, 204, 255, 0.2);
-        }
-        .referral-container {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .referral-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, #0066ff, #00ccff);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: white;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            animation: pulse-glow 2s ease-in-out infinite;
-        }
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(0, 102, 255, 0.5); }
-            50% { box-shadow: 0 0 40px rgba(0, 204, 255, 0.8); }
-        }
-        .referral-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff 0%, #00ccff 50%, #0066ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .referral-subtitle {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .referral-steps {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-bottom: 2.5rem;
-        }
-        .referral-step {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(0, 204, 255, 0.2);
-            border-radius: 20px;
-            padding: 1.5rem;
-            width: 200px;
-            text-align: center;
-            transition: all 0.3s;
-        }
-        .referral-step:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0, 204, 255, 0.5);
-            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.2);
-        }
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #0066ff, #00ccff);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white;
-            margin: 0 auto 1rem;
-        }
-        .step-text {
-            color: var(--text-primary);
-            font-size: 1rem;
-            font-weight: 600;
-        }
-        .step-desc {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
-        }
-        .referral-reward {
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.2), rgba(0, 204, 255, 0.1));
-            border: 2px dashed rgba(0, 204, 255, 0.5);
-            border-radius: 20px;
-            padding: 2rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .reward-icon {
-            font-size: 3rem;
-            color: #00ccff;
-            margin-bottom: 1rem;
-        }
-        .reward-text {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 0.5rem;
-        }
-        .reward-subtext {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* Support Section */
-        .support-section {
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.15) 0%, rgba(0, 204, 255, 0.1) 100%);
-            border-top: 1px solid rgba(0, 204, 255, 0.3);
-            text-align: center;
-        }
-        .support-container {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .support-icon {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #0066ff, #00ccff);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-            margin: 0 auto 2rem;
-            box-shadow: 0 0 40px rgba(0, 102, 255, 0.5);
-            animation: support-pulse 2s ease-in-out infinite;
-        }
-        @keyframes support-pulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 40px rgba(0, 102, 255, 0.5); }
-            50% { transform: scale(1.05); box-shadow: 0 0 60px rgba(0, 204, 255, 0.8); }
-        }
-        .support-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #00ccff, #0066ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .support-text {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-        .support-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-        .support-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 1.2rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        .support-btn.whatsapp-btn {
-            background: linear-gradient(135deg, #25d366, #128c7e);
-            color: white;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-        }
-        .support-btn.whatsapp-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
-        }
-        .support-btn.telegram-btn {
-            background: linear-gradient(135deg, #0088cc, #00a8e6);
-            color: white;
-            box-shadow: 0 10px 30px rgba(0, 136, 204, 0.4);
-        }
-        .support-btn.telegram-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 136, 204, 0.6);
-        }
-        .support-features {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        .support-feature {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-        .support-feature i {
-            color: #25d366;
-        }
-
-        /* Payment Section */
-        .payment-section {
-            padding: 3rem 2rem;
-            background: linear-gradient(180deg, var(--primary-dark) 0%, #0f0f1a 100%);
-        }
-        .payment-container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .payment-title {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: var(--text-primary);
-        }
-        .payment-title i {
-            color: #00ccff;
-            margin-right: 10px;
-        }
-        .payment-icons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-        .payment-icon {
-            width: 60px;
-            height: 40px;
-            background: white;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            transition: transform 0.3s;
-        }
-        .payment-icon:hover {
-            transform: scale(1.1);
-        }
-        .payment-icon.visa { 
-            background: #1a1f71; 
-            color: white; 
-            font-family: Arial, sans-serif;
-            font-weight: bold;
-            font-size: 1rem;
-        }
-        .payment-icon.mastercard { 
-            background: linear-gradient(90deg, #eb001b 50%, #f79e1b 50%); 
-        }
-        .payment-icon.amex { 
-            background: #016fd0; 
-            color: white; 
-            font-weight: bold;
-            font-size: 0.8rem;
-        }
-        .payment-icon.paypal { 
-            background: #003087; 
-            color: white; 
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-        .payment-icon.crypto { 
-            background: #f7931a; 
-            color: white; 
-        }
-        .payment-note {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        .payment-note i {
-            color: #00ccff;
-        }
-
-        /* WhatsApp Float */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: #25d366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-            cursor: pointer;
-            transition: all 0.3s;
-            z-index: 1000;
-            text-decoration: none;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        /* Telegram Float */
-        .telegram-float {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: #0088cc;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 136, 204, 0.4);
-            cursor: pointer;
-            transition: all 0.3s;
-            z-index: 1000;
-            text-decoration: none;
-        }
-        .telegram-float:hover {
-            transform: scale(1.1);
-        }
-
-        /* Footer */
-        footer {
-            background: rgba(0,0,0,0.3);
-            padding: 2rem;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        footer p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero-content { text-align: center; }
-            .hero-image-wrapper { order: -1; }
-            .hero-image-container { max-width: 350px; }
-            .floating-badge.channels { right: 0; }
-            .floating-badge.movies { left: 0; }
-            .pricing-row-new {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .pricing-column-new.recommended {
-                transform: scale(1);
-                grid-column: span 2;
-            }
-            .testimonials-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2.5rem; }
-            .pricing-row-new {
-                grid-template-columns: 1fr;
-                padding: 1rem;
-            }
-            .pricing-column-new.recommended {
-                grid-column: span 1;
-                transform: scale(1);
-            }
-            .price-tag-new { font-size: 3rem; }
-            .marquee-item { width: 150px; height: 225px; }
-            .features-grid { grid-template-columns: 1fr; }
-            .testimonials-grid { grid-template-columns: 1fr; }
-            .testimonials-stats { gap: 2rem; }
-            .stat-number { font-size: 2.5rem; }
-            .recommended-badge {
-                font-size: 0.75rem;
-                padding: 0.5rem 1.2rem;
-            }
-        }
-    </style>
-<base target="_blank">
-</head>
-<body>
         }
 
         .recommended-badge {
@@ -2886,7 +2534,30 @@
                 <div class="marquee-item"><img src="https://www.impawards.com/2023/posters/extraction_two.jpg" alt="Movie" width="200" height="300" loading="lazy" decoding="async"></div>
             </div>
         </div>
-         </section>
+        
+        <!-- Row 3 -->
+        <div class="marquee-row">
+            <div class="marquee-track left">
+                <div class="marquee-item"><img src="https://www.impawards.com/2023/posters/extraction_two.jpg" alt="Movie" width="200" height="300" loading="lazy" decoding="async"></div>
+                <div class="marquee-item"><img src="https://m.media-amazon.com/images/M/MV5BZmFhZTNlNzctZGQzZi00MTA3LThiNjMtYWQzNjUzMjNjZjA3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Movie" width="200" height="300" loading="lazy" decoding="async"></div>
+                <div class="marquee-item"><img src="https://www.movieposters.com/cdn/shop/files/spider-man-across-the-spider-verse_tsm61wbo_1024x1024.jpg" alt="Movie" width="200" height="300" loading="lazy" decoding="async"></div>
+                <div class="marquee-item"><img src="https://cdn11.bigcommerce.com/s-ydriczk/products/90298/images/98760/Killers-of-the-Flower-Moon-original-movie-poster-one-sheet-buy-now-at-starstills__14802.1697534128.450.659.jpg" alt="Movie" width="200" height="300" loading="lazy" decoding="async"></div>
+                <div class="marquee-item"><img src="https://territorystudio.com/wp-content/uploads/2024/07/THBY_S4_DigitalOneSheet_RiotHomelander_1944x2880_PRE_FINAL_en-US_CPS.jpg" alt="Movie" width="200" height="300" loading="lazy" decoding="async"></div>
+                <div class="marquee-item"><img src="https://m.media-amazon.com/images/I/81rcco4qHlL._AC_UF894,1000_QL80_.jpg" alt="Movie" width="200" height="300" loading="lazy" decoding="async"></div>
+                <div class="marquee-item"><img src="https://lumiere-a.akamaihd.net/v1/images/the-mandalorian-compilation-poster-fb-tw_6ae443d1.jpeg" alt="Movie" width="200" height="300" loading="lazy" decoding="async"></div>
+                <div class="marquee-item"><img src="https://cdn11.bigcommerce.com/s-ydriczk/products/90302/images/98771/Loki-season-2-original-tv-one-sheet-poster-buy-now-at-starstills__88779.1698076395.450.659.jpg" alt="Movie" width="200" height="300" loading="lazy" decoding="async"></div>
+                <!-- Duplicate -->
+                <div class="marquee-item"><img src="https://www.impawards.com/2023/posters/extraction_two.jpg" alt="Movie" width="200" height="300" loading="lazy" decoding="async"></div>
+                <div class="marquee-item"><img src="https://m.media-amazon.com/images/M/MV5BZmFhZTNlNzctZGQzZi00MTA3LThiNjMtYWQzNjUzMjNjZjA3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Movie" width="200" height="300" loading="lazy" decoding="async"></div>
+                <div class="marquee-item"><img src="https://www.movieposters.com/cdn/shop/files/spider-man-across-the-spider-verse_tsm61wbo_1024x1024.jpg" alt="Movie" width="200" height="300" loading="lazy" decoding="async"></div>
+                <div class="marquee-item"><img src="https://cdn11.bigcommerce.com/s-ydriczk/products/90298/images/98760/Killers-of-the-Flower-Moon-original-movie-poster-one-sheet-buy-now-at-starstills__14802.1697534128.450.659.jpg" alt="Movie" width="200" height="300" loading="lazy" decoding="async"></div>
+                <div class="marquee-item"><img src="https://territorystudio.com/wp-content/uploads/2024/07/THBY_S4_DigitalOneSheet_RiotHomelander_1944x2880_PRE_FINAL_en-US_CPS.jpg" alt="Movie" width="200" height="300" loading="lazy" decoding="async"></div>
+                <div class="marquee-item"><img src="https://m.media-amazon.com/images/I/81rcco4qHlL._AC_UF894,1000_QL80_.jpg" alt="Movie" width="200" height="300" loading="lazy" decoding="async"></div>
+                <div class="marquee-item"><img src="https://lumiere-a.akamaihd.net/v1/images/the-mandalorian-compilation-poster-fb-tw_6ae443d1.jpeg" alt="Movie" width="200" height="300" loading="lazy" decoding="async"></div>
+                <div class="marquee-item"><img src="https://cdn11.bigcommerce.com/s-ydriczk/products/90302/images/98771/Loki-season-2-original-tv-one-sheet-poster-buy-now-at-starstills__88779.1698076395.450.659.jpg" alt="Movie" width="200" height="300" loading="lazy" decoding="async"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- AdSense Ad 2 -->
     <div class="ad-container">
@@ -2900,119 +2571,69 @@
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
-/* NOUVEAU PRICING 1/2/3 CODES */
-        .pricing-tables-section {
-            padding: 5rem 2rem;
-            background: linear-gradient(180deg, var(--primary-dark) 0%, #0d0d15 50%, var(--primary-dark) 100%);
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        .section-header h2 span {
-            background: linear-gradient(135deg, #00ccff, #0066ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .section-subtitle {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-        }
-        .provider-table-container {
-            max-width: 1200px;
-            margin: 0 auto 4rem auto;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-        }
-        .provider-header-table {
-            padding: 1.5rem;
-            text-align: center;
-            font-size: 1.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: white;
-        }
-        .provider-orca .provider-header-table { 
-            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
-        }
-        .provider-atlas .provider-header-table { 
-            background: linear-gradient(135deg, #059669 0%, #047857 100%);
-        }
-        .provider-strong .provider-header-table { 
-            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-        }
-        .provider-trex .provider-header-table { 
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            color: #1f2937;
-        }
-        .provider-iron .provider-header-table { 
-            background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%);
-        }
-        .provider-king .provider-header-table { 
-            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
-            color: #1f2937;
-        }
+    <!-- PRICING SECTION - 6 FOURNISSEURS -->
+    <section class="pricing-section" id="pricing">
+        <div class="section-header">
+            <h2>Choose Your <span>Perfect Plan</span></h2>
+            <p class="section-subtitle">6 Premium IPTV Providers - Select the one that fits your needs</p>
+        </div>
+
         <!-- ORCA PRO MAX -->
-        <div class="provider-table-container provider-orca">
-            <div class="provider-header-table"><i class="fas fa-tv"></i> ORCA PRO MAX</div>
-            <div class="pricing-row-new">
-                <div class="pricing-column-new">
+        <div class="provider-container provider-orca">
+            <div class="provider-header"><i class="fas fa-tv"></i> ORCA PRO MAX</div>
+            <div class="pricing-grid-new">
+                <div class="pricing-card-new">
                     <div class="code-badge">1 CODE</div>
                     <div class="price-tag-new">35€</div>
+                    <div class="price-period">par mois</div>
                     <ul class="features-list-new">
                         <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
-                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
                         <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
                         <li><i class="fas fa-check"></i> Free Update</li>
                         <li><i class="fas fa-check"></i> Catch-up & EPG</li>
-                        <li><i class="fas fa-check"></i> 1 Device</li>
+                        <li><i class="fas fa-check"></i> 1 Connexion</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <a href="https://wa.me/+33602245915" class="whatsapp-btn-new" target="_blank"><i class="fab fa-whatsapp"></i> BUY NOW</a>
-                        <a href="https://t.me/goiptvpro" class="telegram-btn-new" target="_blank"><i class="fab fa-telegram"></i> TELEGRAM</a>
+                        <a href="https://wa.me/213550082871?text=ORCA%201%20CODE%20-%2035EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
-                <div class="pricing-column-new recommended">
-                    <div class="recommended-badge">⭐ RECOMMENDED</div>
+                <div class="pricing-card-new recommended">
+                    <div class="recommended-badge"><i class="fas fa-star"></i> RECOMMENDED</div>
                     <div class="code-badge">2 CODES</div>
                     <div class="price-tag-new">65€</div>
-                    <div class="price-save">SAVE €5</div>
+                    <div class="price-period">par mois</div>
                     <ul class="features-list-new">
                         <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
-                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
                         <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
                         <li><i class="fas fa-check"></i> Free Update</li>
                         <li><i class="fas fa-check"></i> Catch-up & EPG</li>
-                        <li><i class="fas fa-check"></i> 2 Devices</li>
-                        <li><i class="fas fa-check"></i> Share with family</li>
+                        <li><i class="fas fa-check"></i> 2 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 5€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <a href="https://wa.me/+33602245915" class="whatsapp-btn-new" target="_blank"><i class="fab fa-whatsapp"></i> BUY NOW</a>
-                        <a href="https://t.me/goiptvpro" class="telegram-btn-new" target="_blank"><i class="fab fa-telegram"></i> TELEGRAM</a>
+                        <a href="https://wa.me/213550082871?text=ORCA%202%20CODES%20-%2065EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
-                <div class="pricing-column-new">
+                <div class="pricing-card-new">
                     <div class="code-badge">3 CODES</div>
                     <div class="price-tag-new">90€</div>
-                    <div class="price-save">SAVE €15</div>
+                    <div class="price-period">par mois</div>
                     <ul class="features-list-new">
                         <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
-                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
                         <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
                         <li><i class="fas fa-check"></i> Free Update</li>
                         <li><i class="fas fa-check"></i> Catch-up & EPG</li>
-                        <li><i class="fas fa-check"></i> 3 Devices</li>
-                        <li><i class="fas fa-check"></i> Best value</li>
+                        <li><i class="fas fa-check"></i> 3 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 15€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <a href="https://wa.me/+33602245915" class="whatsapp-btn-new" target="_blank"><i class="fab fa-whatsapp"></i> BUY NOW</a>
-                        <a href="https://t.me/goiptvpro" class="telegram-btn-new" target="_blank"><i class="fab fa-telegram"></i> TELEGRAM</a>
+                        <a href="https://wa.me/213550082871?text=ORCA%203%20CODES%20-%2090EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
             </div>
@@ -3025,7 +2646,7 @@
                 <div class="pricing-card-new">
                     <div class="code-badge">1 CODE</div>
                     <div class="price-tag-new">30€</div>
-                    <div class="price-period">12 mois</div>
+                    <div class="price-period">par mois</div>
                     <ul class="features-list-new">
                         <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
                         <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
@@ -3035,7 +2656,7 @@
                         <li><i class="fas fa-check"></i> 1 Connexion</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <a href="https://wa.me/+33602245915?text=ATLAS%201%20CODE%20-%2030EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://wa.me/213550082871?text=ATLAS%201%20CODE%20-%2030EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
                         <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
@@ -3043,7 +2664,7 @@
                     <div class="recommended-badge"><i class="fas fa-star"></i> RECOMMENDED</div>
                     <div class="code-badge">2 CODES</div>
                     <div class="price-tag-new">55€</div>
-                    <div class="price-period">12 mois</div>
+                    <div class="price-period">par mois</div>
                     <ul class="features-list-new">
                         <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
                         <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
@@ -3054,14 +2675,14 @@
                         <li><i class="fas fa-check"></i> Economisez 5€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <a href="https://wa.me/+33602245915?text=ATLAS%202%20CODES%20-%2055EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://wa.me/213550082871?text=ATLAS%202%20CODES%20-%2055EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
                         <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
                 <div class="pricing-card-new">
                     <div class="code-badge">3 CODES</div>
                     <div class="price-tag-new">80€</div>
-                    <div class="price-period">12 mois</div>
+                    <div class="price-period">par mois</div>
                     <ul class="features-list-new">
                         <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
                         <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
@@ -3072,7 +2693,7 @@
                         <li><i class="fas fa-check"></i> Economisez 10€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <a href="https://wa.me/+33602245915?text=ATLAS%203%20CODES%20-%2080EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://wa.me/213550082871?text=ATLAS%203%20CODES%20-%2080EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
                         <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
@@ -3086,7 +2707,7 @@
                 <div class="pricing-card-new">
                     <div class="code-badge">1 CODE</div>
                     <div class="price-tag-new">45€</div>
-                    <div class="price-period">12 mois</div>
+                    <div class="price-period">par mois</div>
                     <ul class="features-list-new">
                         <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
                         <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
@@ -3096,7 +2717,7 @@
                         <li><i class="fas fa-check"></i> 1 Connexion</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <a href="https://wa.me/+33602245915?text=STRONG%201%20CODE%20-%2045EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://wa.me/213550082871?text=STRONG%201%20CODE%20-%2045EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
                         <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
@@ -3104,7 +2725,7 @@
                     <div class="recommended-badge"><i class="fas fa-star"></i> RECOMMENDED</div>
                     <div class="code-badge">2 CODES</div>
                     <div class="price-tag-new">80€</div>
-                    <div class="price-period">12 mois</div>
+                    <div class="price-period">par mois</div>
                     <ul class="features-list-new">
                         <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
                         <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
@@ -3115,14 +2736,14 @@
                         <li><i class="fas fa-check"></i> Economisez 10€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <a href="https://wa.me/+33602245915?text=STRONG%202%20CODES%20-%2080EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://wa.me/213550082871?text=STRONG%202%20CODES%20-%2080EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
                         <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
                 <div class="pricing-card-new">
                     <div class="code-badge">3 CODES</div>
                     <div class="price-tag-new">105€</div>
-                    <div class="price-period">12 mois</div>
+                    <div class="price-period">par mois</div>
                     <ul class="features-list-new">
                         <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
                         <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
@@ -3133,7 +2754,7 @@
                         <li><i class="fas fa-check"></i> Economisez 30€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <a href="https://wa.me/+33602245915?text=STRONG%203%20CODES%20-%20105EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://wa.me/213550082871?text=STRONG%203%20CODES%20-%20105EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
                         <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
@@ -3147,7 +2768,7 @@
                 <div class="pricing-card-new">
                     <div class="code-badge">1 CODE</div>
                     <div class="price-tag-new">45€</div>
-                    <div class="price-period">12 mois</div>
+                    <div class="price-period">par mois</div>
                     <ul class="features-list-new">
                         <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
                         <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
@@ -3157,7 +2778,7 @@
                         <li><i class="fas fa-check"></i> 1 Connexion</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <a href="https://wa.me/+33602245915?text=TREX%201%20CODE%20-%2045EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://wa.me/213550082871?text=TREX%201%20CODE%20-%2045EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
                         <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
@@ -3165,7 +2786,7 @@
                     <div class="recommended-badge"><i class="fas fa-star"></i> RECOMMENDED</div>
                     <div class="code-badge">2 CODES</div>
                     <div class="price-tag-new">80€</div>
-                    <div class="price-period">12 mois</div>
+                    <div class="price-period">par mois</div>
                     <ul class="features-list-new">
                         <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
                         <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
@@ -3176,14 +2797,14 @@
                         <li><i class="fas fa-check"></i> Economisez 10€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <a href="https://wa.me/+33602245915?text=TREX%202%20CODES%20-%2080EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://wa.me/213550082871?text=TREX%202%20CODES%20-%2080EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
                         <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
                 <div class="pricing-card-new">
                     <div class="code-badge">3 CODES</div>
                     <div class="price-tag-new">105€</div>
-                    <div class="price-period">12 mois</div>
+                    <div class="price-period">par mois</div>
                     <ul class="features-list-new">
                         <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
                         <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
@@ -3194,7 +2815,7 @@
                         <li><i class="fas fa-check"></i> Economisez 30€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <a href="https://wa.me/+33602245915?text=TREX%203%20CODES%20-%20105EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://wa.me/213550082871?text=TREX%203%20CODES%20-%20105EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
                         <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
@@ -3208,7 +2829,7 @@
                 <div class="pricing-card-new">
                     <div class="code-badge">1 CODE</div>
                     <div class="price-tag-new">35€</div>
-                    <div class="price-period">12 mois</div>
+                    <div class="price-period">par mois</div>
                     <ul class="features-list-new">
                         <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
                         <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
@@ -3218,7 +2839,7 @@
                         <li><i class="fas fa-check"></i> 1 Connexion</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <a href="https://wa.me/+33602245915?text=IRONPROMAX%201%20CODE%20-%2035EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://wa.me/213550082871?text=IRONPROMAX%201%20CODE%20-%2035EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
                         <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
@@ -3226,7 +2847,7 @@
                     <div class="recommended-badge"><i class="fas fa-star"></i> RECOMMENDED</div>
                     <div class="code-badge">2 CODES</div>
                     <div class="price-tag-new">65€</div>
-                    <div class="price-period">12 mois</div>
+                    <div class="price-period">par mois</div>
                     <ul class="features-list-new">
                         <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
                         <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
@@ -3237,14 +2858,14 @@
                         <li><i class="fas fa-check"></i> Economisez 5€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <a href="https://wa.me/+33602245915?text=IRONPROMAX%202%20CODES%20-%2065EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://wa.me/213550082871?text=IRONPROMAX%202%20CODES%20-%2065EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
                         <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
                 <div class="pricing-card-new">
                     <div class="code-badge">3 CODES</div>
                     <div class="price-tag-new">90€</div>
-                    <div class="price-period">12 mois</div>
+                    <div class="price-period">par mois</div>
                     <ul class="features-list-new">
                         <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
                         <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
@@ -3255,7 +2876,7 @@
                         <li><i class="fas fa-check"></i> Economisez 15€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <a href="https://wa.me/+33602245915?text=IRONPROMAX%203%20CODES%20-%2090EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://wa.me/213550082871?text=IRONPROMAX%203%20CODES%20-%2090EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
                         <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
@@ -3269,7 +2890,7 @@
                 <div class="pricing-card-new">
                     <div class="code-badge">1 CODE</div>
                     <div class="price-tag-new">50€</div>
-                    <div class="price-period">12 mois</div>
+                    <div class="price-period">par mois</div>
                     <ul class="features-list-new">
                         <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
                         <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
@@ -3279,33 +2900,33 @@
                         <li><i class="fas fa-check"></i> 1 Connexion</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <a href="https://wa.me/+33602245915?text=KING365TV%201%20CODE%20-%2050EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://wa.me/213550082871?text=KING365TV%201%20CODE%20-%2050EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
                         <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
-                 <div class="pricing-column-new recommended">
-                    <div class="recommended-badge">⭐ RECOMMENDED</div>
+                <div class="pricing-card-new recommended">
+                    <div class="recommended-badge"><i class="fas fa-star"></i> RECOMMENDED</div>
                     <div class="code-badge">2 CODES</div>
                     <div class="price-tag-new">85€</div>
-                    <div class="price-save">SAVE €5</div>
+                    <div class="price-period">par mois</div>
                     <ul class="features-list-new">
                         <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
-                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
                         <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
                         <li><i class="fas fa-check"></i> Free Update</li>
                         <li><i class="fas fa-check"></i> Catch-up & EPG</li>
-                        <li><i class="fas fa-check"></i> 2 Devices</li>
-                        <li><i class="fas fa-check"></i> Share with family</li>
+                        <li><i class="fas fa-check"></i> 2 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 15€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <a href="https://wa.me/+33602245915?" class="whatsapp-btn-new" target="_blank"><i class="fab fa-whatsapp"></i> BUY NOW</a>
-                        <a href="https://t.me/goiptvpro" class="telegram-btn-new" target="_blank"><i class="fab fa-telegram"></i> TELEGRAM</a>
+                        <a href="https://wa.me/213550082871?text=KING365TV%202%20CODES%20-%2085EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
                 <div class="pricing-card-new">
                     <div class="code-badge">3 CODES</div>
                     <div class="price-tag-new">110€</div>
-                    <div class="price-period">12 mois</div>
+                    <div class="price-period">par mois</div>
                     <ul class="features-list-new">
                         <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
                         <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
@@ -3316,7 +2937,7 @@
                         <li><i class="fas fa-check"></i> Economisez 40€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <a href="https://wa.me/+33602245915?text=KING365TV%203%20CODES%20-%20110EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
+                        <a href="https://wa.me/213550082871?text=KING365TV%203%20CODES%20-%20110EUR" class="whatsapp-btn-new"><i class="fab fa-whatsapp"></i> BUY NOW</a>
                         <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
@@ -3567,7 +3188,7 @@
                 </div>
                 <div class="form-group">
                     <label><i class="fab fa-whatsapp"></i> WhatsApp</label>
-                    <input type="tel" placeholder="+33602245915" required>
+                    <input type="tel" placeholder="+33 6 12 34 56 78" required>
                 </div>
                 <div class="form-group">
                     <label><i class="fas fa-globe"></i> Site Web / Réseaux Sociaux (optionnel)</label>
@@ -3660,7 +3281,7 @@
                         <li><i class="fas fa-check"></i> Payez au fur et à mesure !</li>
                         <li><i class="fas fa-check"></i> Assistance 24/7</li>
                     </ul>
-                    <a href="https://wa.me/+33602245915?text=PACK%20120%20CREDITS%20-%20250EUR" class="reseller-btn">
+                    <a href="https://wa.me/213550082871?text=PACK%20120%20CREDITS%20-%20250EUR" class="reseller-btn">
                         <i class="fab fa-whatsapp"></i> Commander
                     </a>
                 </div>
@@ -3683,7 +3304,7 @@
                         <li><i class="fas fa-check"></i> Payez au fur et à mesure !</li>
                         <li><i class="fas fa-check"></i> Assistance 24/7</li>
                     </ul>
-                    <a href="https://wa.me/+33602245915?text=PACK%20240%20CREDITS%20-%20520EUR" class="reseller-btn">
+                    <a href="https://wa.me/213550082871?text=PACK%20240%20CREDITS%20-%20520EUR" class="reseller-btn">
                         <i class="fab fa-whatsapp"></i> Commander
                     </a>
                 </div>
@@ -3705,7 +3326,7 @@
                         <li><i class="fas fa-check"></i> Payez au fur et à mesure !</li>
                         <li><i class="fas fa-check"></i> Assistance 24/7</li>
                     </ul>
-                    <a href="https://wa.me/+33602245915?text=PACK%20480%20CREDITS%20-%20900EUR" class="reseller-btn">
+                    <a href="https://wa.me/213550082871?text=PACK%20480%20CREDITS%20-%20900EUR" class="reseller-btn">
                         <i class="fab fa-whatsapp"></i> Commander
                     </a>
                 </div>
@@ -3745,7 +3366,7 @@
             <p class="support-text">Need help? Our support team is available 24 hours a day, 7 days a week. Contact us anytime via WhatsApp or Telegram for instant assistance!</p>
             
             <div class="support-buttons">
-                <a href="https://wa.me/+33602245915" class="support-btn whatsapp-btn"><i class="fab fa-whatsapp"></i> Contact on WhatsApp</a>
+                <a href="https://wa.me/213550082871" class="support-btn whatsapp-btn"><i class="fab fa-whatsapp"></i> Contact on WhatsApp</a>
                 <a href="https://t.me/goiptvpro" class="support-btn telegram-btn"><i class="fab fa-telegram"></i> Contact on Telegram</a>
             </div>
 
@@ -3759,11 +3380,11 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2020 GOIPTVPRO. All rights reserved. Premium IPTV Entertainment.</p>
+        <p>&copy; 2026 GOIPTVPRO. All rights reserved. Premium IPTV Entertainment.</p>
     </footer>
 
     <!-- Floating Buttons -->
-    <a href="https://wa.me/+33602245915" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/213550082871" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
     <a href="https://t.me/goiptvpro" class="telegram-float" target="_blank"><i class="fab fa-telegram"></i></a>
 
     <!-- Affiliate Modal JavaScript -->
