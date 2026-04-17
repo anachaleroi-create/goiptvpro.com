@@ -656,42 +656,36 @@
 
         .marquee-item:hover img { transform: scale(1.1); }
 
-        /* PRICING SECTION */
-        .pricing-section {
+        /* NOUVEAU PRICING 1/2/3 CODES */
+        .pricing-tables-section {
             padding: 5rem 2rem;
             background: linear-gradient(180deg, var(--primary-dark) 0%, #0d0d15 50%, var(--primary-dark) 100%);
         }
-
         .section-header {
             text-align: center;
             margin-bottom: 4rem;
         }
-
         .section-header h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
-
         .section-header h2 span {
             background: linear-gradient(135deg, #00ccff, #0066ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
         .section-subtitle {
             color: var(--text-secondary);
             font-size: 1.1rem;
         }
-
-        .provider-container {
+        .provider-table-container {
             max-width: 1200px;
             margin: 0 auto 4rem auto;
-            border-radius: 25px;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0,0,0,0.5);
         }
-
-        .provider-header {
+        .provider-header-table {
             padding: 1.5rem;
             text-align: center;
             font-size: 1.8rem;
@@ -699,19 +693,27 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
         }
-
-        .provider-orca .provider-header { background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); }
-        .provider-atlas .provider-header { background: linear-gradient(135deg, #059669 0%, #047857 100%); }
-        .provider-strong .provider-header { background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); }
-        .provider-trex .provider-header { background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); color: #1f2937; }
-        .provider-iron .provider-header { background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%); }
-        .provider-king365 .provider-header { background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%); color: #1f2937; }
-
+        .provider-orca .provider-header-table { 
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+        }
+        .provider-atlas .provider-header-table { 
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+        }
+        .provider-strong .provider-header-table { 
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .provider-trex .provider-header-table { 
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #1f2937;
+        }
+        .provider-iron .provider-header-table { 
+            background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%);
+        }
+        .provider-king .provider-header-table { 
+            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+            color: #1f2937;
+        }
         .pricing-grid-new {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
