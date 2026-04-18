@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commander - GOIPTVPRO</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0f;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(10, 10, 15, 0.95);
+            padding: 1rem 5%;
+            border-bottom: 1px solid rgba(0, 204, 255, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .logo i { color: #ffd700; }
+
+        /* Main Content */
+        .main-content {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .page-title span {
+            background: linear-gradient(135deg, #00ccff, #0066ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: #a1a1aa;
+            margin-bottom: 50px;
+        }
+
+        /* Provider Header */
+        .provider-header {
+            background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%);
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: white;
+            border-radius: 20px 20px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        /* Card Styles */
+        .price-card {
+            background: linear-gradient(180deg, #15151f 0%, #0f0f17 100%);
+            border: 2px solid rgba(0, 204, 255, 0.3);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 204, 255, 0.6);
+            box-shadow: 0 20px 60px rgba(0, 102, 255, 0.2);
+        }
+
+        .price-card.recommended {
+            border: 3px solid #00ccff;
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(0, 204, 255, 0.3);
+        }
+
+        .recommended-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #0066ff, #00ccff);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Code Badge */
+        .code-badge {
+            display: inline-block;
+            background: rgba(0, 102, 255, 0.2);
+            border: 2px solid rgba(0, 204, 255, 0.5);
+            color: #00ccff;
+            padding: 10px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        /* Price */
+        .price {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #00ccff;
+            margin-bottom: 30px;
+            text-shadow: 0 0 30px rgba(0, 204, 255, 0.5);
+        }
+
+        .price span {
+            font-size: 1.5rem;
+            color: #a1a1aa;
+        }
+
+        /* Features */
+        .features-list {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .features-list li {
+            padding: 12px 0;
+            color: #e5e5e5;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .features-list li i {
+            color: #00ccff;
+        }
+
+        /* Buttons */
+        .btn-whatsapp {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-bottom: 12px;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-telegram {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #0088cc 0%, #00a8e6 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(0, 136, 204, 0.4);
+        }
+
+        /* WhatsApp Section */
+        .whatsapp-section {
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.1) 0%, rgba(18, 140, 126, 0.05) 100%);
+            border: 2px solid rgba(37, 211, 102, 0.3);
+            border-radius: 25px;
+            padding: 40px;
+            text-align: center;
+            max-width: 600px;
+            margin: 50px auto 0;
+        }
+
+        .whatsapp-section h3 {
+            color: #25d366;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .message-preview {
+            background: #1a1a25;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .message-bubble {
+            background: linear-gradient(135deg, #075e54, #128c7e);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 15px;
+            border-top-right-radius: 5px;
+            max-width: 90%;
+            margin-left: auto;
+            font-size: 0.95rem;
+        }
+
+        .message-time {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.6);
+            text-align: right;
+            margin-top: 8px;
+        }
+
+        .whatsapp-big-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0,0,0,0.3);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 50px;
+        }
+
+        footer p {
+            color: #a1a1aa;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .cards-grid { grid-template-columns: repeat(2, 1fr); }
+            .price-card.recommended { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .cards-grid { grid-template-columns: 1fr; }
+            .page-title { font-size: 1.8rem; }
+            .whatsapp-section { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-satellite-dish"></i>
+                GOIPTVPRO
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1 class="page-title">Commander <span>IRONPROMAX</span></h1>
+        <p class="page-subtitle">Choisissez votre pack et commandez directement via WhatsApp ou Telegram</p>
+
+        <!-- Provider Header -->
+        <div class="provider-header">
+            <i class="fas fa-crown"></i> IRONPROMAX
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="cards-grid">
+            <!-- 1 Code -->
+            <div class="price-card">
+                <div class="code-badge">1 CODE</div>
+                <div class="price">35€<span>/an</span></div>
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                    <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                    <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                    <li><i class="fas fa-check"></i> Free Update</li>
+                    <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                    <li><i class="fas fa-check"></i> 1 Connexion</li>
+                </ul>
+                <button class="btn-whatsapp" onclick="selectPack(1, '35€')">
+                    <i class="fab fa-whatsapp"></i> BUY NOW
+                </button>
+                <button class="btn-telegram" onclick="orderTelegram(1, '35€')">
+                    <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                </button>
+            </div>
+
+            <!-- 2 Codes - Recommended -->
+            <div class="price-card recommended">
+                <div class="recommended-badge">
+                    <i class="fas fa-star"></i> RECOMMENDED
+                </div>
+                <div class="code-badge">2 CODES</div>
+                <div class="price">65€<span>/an</span></div>
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                    <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                    <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                    <li><i class="fas fa-check"></i> Free Update</li>
+                    <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                    <li><i class="fas fa-check"></i> 2 Connexions</li>
+                    <li><i class="fas fa-check"></i> Economisez 5€</li>
+                </ul>
+                <button class="btn-whatsapp" onclick="selectPack(2, '65€')">
+                    <i class="fab fa-whatsapp"></i> BUY NOW
+                </button>
+                <button class="btn-telegram" onclick="orderTelegram(2, '65€')">
+                    <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                </button>
+            </div>
+
+            <!-- 3 Codes -->
+            <div class="price-card">
+                <div class="code-badge">3 CODES</div>
+                <div class="price">90€<span>/an</span></div>
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                    <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                    <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                    <li><i class="fas fa-check"></i> Free Update</li>
+                    <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                    <li><i class="fas fa-check"></i> 3 Connexions</li>
+                    <li><i class="fas fa-check"></i> Economisez 15€</li>
+                </ul>
+                <button class="btn-whatsapp" onclick="selectPack(3, '90€')">
+                    <i class="fab fa-whatsapp"></i> BUY NOW
+                </button>
+                <button class="btn-telegram" onclick="orderTelegram(3, '90€')">
+                    <i class="fab fa-telegram"></i> BUY ON TELEGRAM
+                </button>
+            </div>
+        </div>
+
+        <!-- WhatsApp Section -->
+        <div class="whatsapp-section" id="whatsappSection" style="display: none;">
+            <h3><i class="fab fa-whatsapp"></i> Votre commande</h3>
+            
+            <div class="message-preview">
+                <div class="message-bubble" id="messageText">
+                    Bonjour GOIPTVPRO, je souhaite commander le pack IRONPROMAX - 2 CODES (65€/an)
+                    <div class="message-time">Maintenant <i class="fas fa-check-double"></i></div>
+                </div>
+            </div>
+
+            <a href="#" class="whatsapp-big-btn" id="whatsappBtn" onclick="openWhatsApp()">
+                <i class="fab fa-whatsapp"></i> Envoyer sur WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 GOIPTVPRO. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        let selectedCodes = 2;
+        let selectedPrice = '65€';
+        const phoneNumber = '33602245915'; // Votre numéro WhatsApp
+        const telegramUsername = 'goiptvpro'; // Votre username Telegram
+
+        function selectPack(codes, price) {
+            selectedCodes = codes;
+            selectedPrice = price;
+            
+            document.getElementById('whatsappSection').style.display = 'block';
+            updateMessage();
+            document.getElementById('whatsappSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function orderTelegram(codes, price) {
+            const message = `Bonjour GOIPTVPRO, je souhaite commander le pack IRONPROMAX - ${codes} CODE${codes > 1 ? 'S' : ''} (${price}/an)`;
+            window.open(`https://t.me/${telegramUsername}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        function updateMessage() {
+            const message = `Bonjour GOIPTVPRO, je souhaite commander le pack IRONPROMAX - ${selectedCodes} CODE${selectedCodes > 1 ? 'S' : ''} (${selectedPrice}/an)`;
+            document.getElementById('messageText').innerHTML = 
+                message + '<div class="message-time">Maintenant <i class="fas fa-check-double"></i></div>';
+        }
+
+        function openWhatsApp() {
+            const message = `Bonjour GOIPTVPRO, je souhaite commander le pack IRONPROMAX - ${selectedCodes} CODE${selectedCodes > 1 ? 'S' : ''} (${selectedPrice}/an)`;
+            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>
