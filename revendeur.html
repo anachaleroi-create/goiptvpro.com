@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revendeur - GOIPTVPRO</title>
+    
+    <!-- Google AdSense Verification & Script -->
+    <meta name="google-adsense-account" content="ca-pub-8647291268357460">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8647291268357460"
+         crossorigin="anonymous"></script>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #0a0a0f;
+            --secondary-dark: #12121a;
+            --card-bg: #1a1a25;
+            --accent-gold: #ffd700;
+            --accent-purple: #8b5cf6;
+            --accent-cyan: #06b6d4;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .nav-links a.active {
+            color: var(--accent-cyan);
+        }
+
+        .support-btn {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #0a0a0f !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 40vh;
+            background: linear-gradient(135deg, rgba(10, 10, 15, 0.95), rgba(26, 26, 37, 0.98));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 50%, rgba(0, 204, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 102, 255, 0.1);
+            border: 1px solid rgba(0, 204, 255, 0.3);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: #00ccff;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #ffffff 0%, #00ccff 50%, #0066ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Reseller Section */
+        .reseller-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, var(--primary-dark) 0%, #1a1a2e 50%, var(--primary-dark) 100%);
+        }
+
+        .reseller-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reseller-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .reseller-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .reseller-header h2 span {
+            background: linear-gradient(135deg, #00ccff, #0066ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .reseller-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Pricing Cards */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .pricing-card {
+            background: rgba(26, 26, 37, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 204, 255, 0.3);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .pricing-card.popular {
+            border: 2px solid #0066ff;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #0066ff, #00ccff);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .credits-amount {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .credits-label {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .price .currency {
+            font-size: 1.5rem;
+            vertical-align: super;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .features-list li {
+            padding: 0.7rem 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .features-list li i {
+            color: #00ccff;
+            font-size: 0.9rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%);
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 102, 255, 0.6);
+        }
+
+        .card-blue { border-color: rgba(0, 102, 255, 0.3); }
+        .card-blue .price { color: #00ccff; }
+
+        .card-gold { border-color: rgba(255, 215, 0, 0.3); }
+        .card-gold .price { color: #ffd700; }
+
+        .card-purple { border-color: rgba(139, 92, 246, 0.3); }
+        .card-purple .price { color: #8b5cf6; }
+
+        /* Info Section */
+        .info-section {
+            padding: 3rem 2rem;
+            background: rgba(0, 102, 255, 0.05);
+            border-top: 1px solid rgba(0, 204, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 204, 255, 0.2);
+        }
+
+        .info-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .info-container h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-container h3 span {
+            background: linear-gradient(135deg, #00ccff, #0066ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .info-container p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Contact Buttons */
+        .contact-section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .contact-section h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-section h3 span {
+            background: linear-gradient(135deg, #00ccff, #0066ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .contact-btn.whatsapp {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .contact-btn.whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+        }
+
+        .contact-btn.telegram {
+            background: linear-gradient(135deg, #0088cc, #00a8e6);
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 136, 204, 0.4);
+        }
+
+        .contact-btn.telegram:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 136, 204, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0,0,0,0.3);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Chatbot Widget */
+        #chatbot-widget { position: fixed; bottom: 20px; right: 20px; z-index: 10000; font-family: 'Segoe UI', sans-serif; }
+        #chatbot-fab { width: 60px; height: 60px; background: linear-gradient(135deg, #25d366, #128c7e); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 28px; cursor: pointer; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); transition: all 0.3s; position: relative; animation: pulse-fab 2s infinite; }
+        #chatbot-fab:hover { transform: scale(1.1); }
+        @keyframes pulse-fab { 0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); } 50% { box-shadow: 0 4px 30px rgba(37,211,102,0.7); } }
+        .fab-notification { position: absolute; top: -5px; right: -5px; background: #ff4757; color: #fff; width: 22px; height: 22px; border-radius: 50%; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; animation: bounce 1s infinite; }
+        @keyframes bounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+
+        #chatbot-window { width: 360px; height: 520px; background: #1a1a25; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5); display: flex; flex-direction: column; position: absolute; bottom: 80px; right: 0; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.1); }
+        #chatbot-window.hidden { opacity: 0; transform: translateY(20px) scale(0.95); pointer-events: none; }
+
+        #chatbot-header { background: linear-gradient(135deg, #075e54, #128c7e); padding: 15px 20px; display: flex; align-items: center; gap: 12px; }
+        .chatbot-avatar { width: 40px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #fff; }
+        .chatbot-info { flex: 1; }
+        .chatbot-name { color: #fff; font-weight: 600; font-size: 15px; }
+        .chatbot-status { color: rgba(255,255,255,0.8); font-size: 12px; display: flex; align-items: center; gap: 5px; }
+        .status-dot { width: 8px; height: 8px; background: #25d366; border-radius: 50%; animation: blink 2s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        #chatbot-close { background: none; border: none; color: #fff; font-size: 18px; cursor: pointer; padding: 5px; }
+
+        #chatbot-messages { flex: 1; overflow-y: auto; padding: 15px; display: flex; flex-direction: column; gap: 10px; }
+        .msg-bot { align-self: flex-start; max-width: 85%; }
+        .msg-user { align-self: flex-end; max-width: 85%; }
+        .msg-bubble { padding: 12px 15px; border-radius: 15px; font-size: 13px; line-height: 1.5; }
+        .msg-bot .msg-bubble { background: #2a2a3a; color: #e0e0e0; border-bottom-left-radius: 4px; }
+        .msg-user .msg-bubble { background: linear-gradient(135deg, #25d366, #128c7e); color: #fff; border-bottom-right-radius: 4px; }
+        .msg-time { font-size: 10px; color: #666; margin-top: 3px; padding: 0 5px; }
+
+        #chatbot-buttons { padding: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .chat-btn { background: rgba(37, 211, 102, 0.1); border: 1px solid rgba(37, 211, 102, 0.3); color: #25d366; padding: 10px; border-radius: 10px; font-size: 12px; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 6px; font-weight: 500; }
+        .chat-btn:hover { background: rgba(37, 211, 102, 0.25); transform: translateY(-2px); }
+        .chat-link { display: inline-flex; align-items: center; gap: 6px; color: #25d366; text-decoration: none; padding: 6px 10px; background: rgba(37, 211, 102, 0.1); border-radius: 8px; margin: 3px 0; font-size: 12px; transition: all 0.3s; }
+        .chat-link:hover { background: rgba(37, 211, 102, 0.25); }
+
+        @media(max-width: 480px) {
+            #chatbot-window { width: calc(100vw - 40px); height: 60vh; right: -10px; }
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Telegram Float */
+        .telegram-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #0088cc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 136, 204, 0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        .telegram-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+            .pricing-card.popular:hover {
+                transform: scale(1) translateY(-10px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2rem; }
+            .credits-amount { font-size: 2.5rem; }
+        }
+
+        /* === PROVIDER STYLES === */
+                .provider-container {
+            max-width: 1200px;
+            margin: 0 auto 4rem auto;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .provider-header {
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .provider-orca .provider-header { background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); }
+        .provider-atlas .provider-header { background: linear-gradient(135deg, #059669 0%, #047857 100%); }
+        .provider-strong .provider-header { background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); }
+        .provider-trex .provider-header { background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); color: #1f2937; }
+        .provider-iron .provider-header { background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%); }
+        .provider-king .provider-header { background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%); color: #1f2937; }
+
+        .pricing-grid-new {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .pricing-card-new {
+            background: rgba(26, 26, 37, 0.95);
+            border: 2px solid rgba(0, 102, 255, 0.4);
+            border-radius: 25px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+                        0 0 20px rgba(0, 102, 255, 0.1);
+        }
+
+        .pricing-card-new:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 204, 255, 0.8);
+            box-shadow: 0 20px 50px rgba(0, 102, 255, 0.4),
+                        0 0 40px rgba(0, 204, 255, 0.2);
+        }
+
+        .pricing-card-new.recommended {
+            border: 3px solid rgba(0, 204, 255, 0.9);
+            box-shadow: 0 0 50px rgba(0, 102, 255, 0.5), 
+                        inset 0 0 60px rgba(0, 102, 255, 0.15);
+            transform: scale(1.05);
+            z-index: 10;
+        }
+
+        .pricing-card-new.recommended:hover {
+            transform: scale(1.05) translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 102, 255, 0.6),
+                        0 0 80px rgba(0, 204, 255, 0.3),
+                        inset 0 0 80px rgba(0, 204, 255, 0.2);
+        }
+
+        .recommended-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%);
+            color: white;
+            padding: 0.6rem 1.8rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 5px 25px rgba(0, 102, 255, 0.6);
+            animation: pulse-blue 2s ease-in-out infinite;
+            white-space: nowrap;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes pulse-blue {
+            0%, 100% { 
+                box-shadow: 0 5px 25px rgba(0, 102, 255, 0.6);
+                transform: translateX(-50%) scale(1);
+            }
+            50% { 
+                box-shadow: 0 5px 35px rgba(0, 204, 255, 0.9);
+                transform: translateX(-50%) scale(1.02);
+            }
+        }
+
+        .code-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.2) 0%, rgba(0, 204, 255, 0.1) 100%);
+            border: 2px solid rgba(0, 204, 255, 0.5);
+            color: #00ccff;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px rgba(0, 204, 255, 0.3);
+        }
+
+        .price-tag-new {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 30px rgba(0, 102, 255, 0.5);
+            background: linear-gradient(135deg, #ffffff 0%, #00ccff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .price-period {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list-new {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            text-align: left;
+        }
+
+        .features-list-new li {
+            padding: 0.8rem 0;
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .features-list-new li:last-child { border-bottom: none; }
+
+        .features-list-new li i {
+            color: #00ccff;
+            font-size: 0.9rem;
+            text-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+        }
+
+        .buy-buttons-new {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .whatsapp-btn-new, .telegram-btn-new {
+            width: 100%;
+            padding: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: white;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .whatsapp-btn-new {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-btn-new:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .telegram-btn-new {
+            background: linear-gradient(135deg, #0088cc 0%, #00a8e6 100%);
+            box-shadow: 0 5px 20px rgba(0, 136, 204, 0.4);
+        }
+
+        .telegram-btn-new:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(0, 136, 204, 0.6);
+        }
+
+            .az-provider-cards {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 16px;
+        max-width: 1200px; margin: 0 auto 60px;
+    }
+    .az-prov-card {
+        border-radius: 16px;
+        padding: 24px 12px 20px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+    }
+    .az-prov-card::before {
+        content: '';
+        position: absolute; inset: 0;
+        opacity: 0.08;
+        transition: opacity 0.3s;
+    }
+    .az-prov-card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,0.3); }
+    .az-prov-card:hover::before { opacity: 0.18; }
+
+    /* Each provider color */
+    .prov-atlas  { background: linear-gradient(145deg, #064e3b, #065f46); }
+    .prov-atlas::before { background: #10b981; }
+    .prov-iron   { background: linear-gradient(145deg, #1e3a8a, #1d4ed8); }
+    .prov-iron::before { background: #3b82f6; }
+    .prov-orca   { background: linear-gradient(145deg, #7f1d1d, #991b1b); }
+    .prov-orca::before { background: #ef4444; }
+    .prov-trex   { background: linear-gradient(145deg, #78350f, #92400e); }
+    .prov-trex::before { background: #f59e0b; }
+    .prov-king   { background: linear-gradient(145deg, #4c1d95, #5b21b6); }
+    .prov-king::before { background: #8b5cf6; }
+    .prov-strong { background: linear-gradient(145deg, #1e1b4b, #312e81); }
+    .prov-strong::before { background: #6366f1; }
+
+    .az-prov-icon {
+        font-size: 2.2rem; margin-bottom: 12px; display: block;
+        filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+    }
+    .az-prov-name {
+        color: #fff; font-weight: 800; font-size: 0.82rem;
+        text-transform: uppercase; letter-spacing: 1px;
+        line-height: 1.2;
+    }
+    .az-prov-badge {
+        margin-top: 10px;
+        background: rgba(255,255,255,0.15);
+        color: rgba(255,255,255,0.9);
+        font-size: 0.65rem; font-weight: 700;
+        padding: 3px 10px; border-radius: 50px;
+        display: inline-block;
+    }
+    .az-prov-card.hot .az-prov-badge {
+        background: #ffd700; color: #1a1a1a;
+    }
+    .az-prov-card .hot-tag {
+        position: absolute; top: 10px; right: 10px;
+        background: #ef4444; color: white;
+        font-size: 0.55rem; font-weight: 800;
+        padding: 2px 7px; border-radius: 50px;
+        text-transform: uppercase; letter-spacing: 0.5px;
+    }
+
+    @media(max-width: 900px) { .az-provider-cards { grid-template-columns: repeat(3,1fr); } }
+    @media(max-width: 500px) { .az-provider-cards { grid-template-columns: repeat(2,1fr); } }
+
+    /* TABS nav */
+    .az-tabs-nav {
+        display: flex; justify-content: center; flex-wrap: wrap;
+        gap: 10px; margin-bottom: 0; padding: 0 5% 30px;
+        background: #0a0a0f;
+    }
+    .az-tab-btn {
+        padding: 10px 22px; border-radius: 8px;
+        border: 1.5px solid rgba(255,255,255,0.15);
+        background: rgba(255,255,255,0.04);
+        color: rgba(255,255,255,0.6);
+        font-size: 0.82rem; font-weight: 700;
+        cursor: pointer; transition: all 0.25s;
+        text-transform: uppercase; letter-spacing: 1px;
+        font-family: inherit;
+    }
+    .az-tab-btn:hover { border-color: #00ccff; color: #00ccff; }
+    .az-tab-btn.active { background: #00ccff; color: #0a0a0f; border-color: #00ccff; }
+
+    /* Tab colors */
+    .az-tab-btn[data-tab="atlas"].active  { background: #059669; border-color: #059669; color: #fff; }
+    .az-tab-btn[data-tab="iron"].active   { background: #1d4ed8; border-color: #1d4ed8; color: #fff; }
+    .az-tab-btn[data-tab="orca"].active   { background: #dc2626; border-color: #dc2626; color: #fff; }
+    .az-tab-btn[data-tab="trex"].active   { background: #f59e0b; border-color: #f59e0b; color: #111; }
+    .az-tab-btn[data-tab="king"].active   { background: #7c3aed; border-color: #7c3aed; color: #fff; }
+    .az-tab-btn[data-tab="strong"].active { background: #4f46e5; border-color: #4f46e5; color: #fff; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px;">
+                    <img src="logo.png" alt="GOIPTVPRO" style="height: 70px; width: auto;">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">ACCUEIL</a></li>
+                <li><a href="index.html#pricing">ABONNEMENTS</a></li>
+                <li><a href="revendeur.html" class="active">REVENDEUR</a></li>
+                <li><a href="index.html#movies">FILMS & SERIES</a></li>
+                <li><a href="index.html#affilie">AFFILIE</a></li>
+                <li><a href="index.html#support" class="support-btn">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-handshake"></i> Programme Revendeur
+            </div>
+            <h1>Devenez <span>Revendeur IPTV</span></h1>
+            <p>Rejoignez notre programme revendeur et beneficiez des meilleurs tarifs du marche avec un systeme de credits simple et transparent</p>
+        </div>
+    </section>
+
+    <!-- Reseller Pricing Section -->
+    <section class="reseller-section">
+        <div class="reseller-container">
+            
+            <div class="reseller-header">
+                <h2>Choisissez votre <span>Pack de Credits</span></h2>
+                <p>Plus vous achetez de credits, plus le prix unitaire est avantageux !</p>
+            </div>
+
+            <div class="pricing-grid">
+                
+                <!-- 120 Credits -->
+                <div class="pricing-card card-blue">
+                    <div class="credits-amount">120</div>
+                    <div class="credits-label">Credits</div>
+                    <div class="price">
+                        <span class="currency">EUR</span>250
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Panneau complet</li>
+                        <li><i class="fas fa-check"></i> 1 mois = 1 credit</li>
+                        <li><i class="fas fa-check"></i> 3 mois = 3 credits</li>
+                        <li><i class="fas fa-check"></i> 6 mois = 6 credits</li>
+                        <li><i class="fas fa-check"></i> 12 mois = 12 credits</li>
+                        <li><i class="fas fa-check"></i> 1 Day = 0 Credit</li>
+                        <li><i class="fas fa-check"></i> Groupes personnalises</li>
+                        <li><i class="fas fa-check"></i> Acces exclusif a votre Panel</li>
+                        <li><i class="fas fa-check"></i> Payez au fur et a mesure !</li>
+                        <li><i class="fas fa-check"></i> Assistance 24/7</li>
+                    </ul>
+                    <a href="https://wa.me/213550082871" class="cta-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </a>
+                </div>
+
+                <!-- 240 Credits - Most Popular -->
+                <div class="pricing-card popular card-gold">
+                    <div class="popular-badge">Plus Populaire</div>
+                    <div class="credits-amount">240</div>
+                    <div class="credits-label">Credits</div>
+                    <div class="price">
+                        <span class="currency">EUR</span>520
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Panneau complet</li>
+                        <li><i class="fas fa-check"></i> 1 mois = 1 credit</li>
+                        <li><i class="fas fa-check"></i> 3 mois = 3 credits</li>
+                        <li><i class="fas fa-check"></i> 6 mois = 6 credits</li>
+                        <li><i class="fas fa-check"></i> 12 mois = 12 credits</li>
+                        <li><i class="fas fa-check"></i> 1 Day = 0 Credit</li>
+                        <li><i class="fas fa-check"></i> Groupes personnalises</li>
+                        <li><i class="fas fa-check"></i> Acces exclusif a votre Panel</li>
+                        <li><i class="fas fa-check"></i> Payez au fur et a mesure !</li>
+                        <li><i class="fas fa-check"></i> Assistance 24/7</li>
+                    </ul>
+                    <a href="https://wa.me/213550082871" class="cta-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </a>
+                </div>
+
+                <!-- 480 Credits -->
+                <div class="pricing-card card-purple">
+                    <div class="credits-amount">480</div>
+                    <div class="credits-label">Credits</div>
+                    <div class="price">
+                        <span class="currency">EUR</span>900
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Panneau complet</li>
+                        <li><i class="fas fa-check"></i> 1 mois = 1 credit</li>
+                        <li><i class="fas fa-check"></i> 3 mois = 3 credits</li>
+                        <li><i class="fas fa-check"></i> 6 mois = 6 credits</li>
+                        <li><i class="fas fa-check"></i> 12 mois = 12 credits</li>
+                        <li><i class="fas fa-check"></i> 1 Day = 0 Credit</li>
+                        <li><i class="fas fa-check"></i> Groupes personnalises</li>
+                        <li><i class="fas fa-check"></i> Acces exclusif a votre Panel</li>
+                        <li><i class="fas fa-check"></i> Payez au fur et a mesure !</li>
+                        <li><i class="fas fa-check"></i> Assistance 24/7</li>
+                    </ul>
+                    <a href="https://wa.me/213550082871" class="cta-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <div class="az-providers-showcase">
+        <div class="az-providers-label">Nos Partenaires</div>
+        <h2 class="az-providers-title">6 Fournisseurs <span>Premium</span></h2>
+        <p class="az-providers-sub">Choisissez le fournisseur qui correspond à vos besoins</p>
+
+        <div class="az-provider-cards">
+            <a href="#pricing" class="az-prov-card prov-atlas" onclick="showTab('atlas')">
+                <span class="az-prov-icon">🌍</span>
+                <div class="az-prov-name">Atlas Pro<br>Max</div>
+                <div class="az-prov-badge">23 000+ chaînes</div>
+            </a>
+            <a href="#pricing" class="az-prov-card prov-iron hot" onclick="showTab('iron')">
+                <div class="hot-tag">🔥 HOT</div>
+                <span class="az-prov-icon">👑</span>
+                <div class="az-prov-name">Iron Pro<br>Max</div>
+                <div class="az-prov-badge">⭐ Recommandé</div>
+            </a>
+            <a href="#pricing" class="az-prov-card prov-orca" onclick="showTab('orca')">
+                <span class="az-prov-icon">🐋</span>
+                <div class="az-prov-name">Orca Pro<br>Max</div>
+                <div class="az-prov-badge">154 000+ films</div>
+            </a>
+            <a href="#pricing" class="az-prov-card prov-trex" onclick="showTab('trex')">
+                <span class="az-prov-icon">🦖</span>
+                <div class="az-prov-name">T-Rex<br>IPTV</div>
+                <div class="az-prov-badge">4K Ultra HD</div>
+            </a>
+            <a href="#pricing" class="az-prov-card prov-king" onclick="showTab('king')">
+                <span class="az-prov-icon">👸</span>
+                <div class="az-prov-name">King365<br>TV</div>
+                <div class="az-prov-badge">Multi-pays</div>
+            </a>
+            <a href="#pricing" class="az-prov-card prov-strong" onclick="showTab('strong')">
+                <span class="az-prov-icon">💪</span>
+                <div class="az-prov-name">Strong<br>IPTV</div>
+                <div class="az-prov-badge">Anti-freeze</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- TABS NAVIGATION -->
+    <div class="az-tabs-nav" id="pricing">
+        <button class="az-tab-btn active" data-tab="orca"   onclick="showTab('orca')">🐋 Orca Pro Max</button>
+        <button class="az-tab-btn" data-tab="atlas"  onclick="showTab('atlas')">🌍 Atlas Pro Max</button>
+        <button class="az-tab-btn" data-tab="strong" onclick="showTab('strong')">💪 Strong</button>
+        <button class="az-tab-btn" data-tab="trex"   onclick="showTab('trex')">🦖 T-Rex</button>
+        <button class="az-tab-btn" data-tab="iron"   onclick="showTab('iron')">👑 Iron Pro Max</button>
+        <button class="az-tab-btn" data-tab="king"   onclick="showTab('king')">👸 King365 TV</button>
+    </div>
+
+    <script>
+    function showTab(name) {
+        // hide all providers
+        document.querySelectorAll('.provider-container').forEach(function(el) {
+            el.style.display = 'none';
+        });
+        // show selected
+        var target = document.querySelector('.provider-' + name);
+        if (target) target.style.display = 'block';
+        // update tab buttons
+        document.querySelectorAll('.az-tab-btn').forEach(function(btn) {
+            btn.classList.remove('active');
+            if (btn.dataset.tab === name) btn.classList.add('active');
+        });
+    }
+    // Init: show only orca on load
+    document.addEventListener('DOMContentLoaded', function() {
+        showTab('orca');
+    });
+    </script>
+
+    <section class="pricing-section" style="padding-top:20px" id="pricing-detail">
+        <div class="section-header" style="display:none"></div>
+
+        <!-- ORCA PRO MAX -->
+        <div class="provider-container provider-orca">
+            <div class="provider-header"><i class="fas fa-tv"></i> ORCA PRO MAX</div>
+            <div class="pricing-grid-new">
+                <div class="pricing-card-new">
+                    <div class="code-badge">1 CODE</div>
+                    <div class="price-tag-new">35€</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 1 Connexion</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                       <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20ORCAPROMAX%20-%201%20CODE%20(35€/an)" class="whatsapp-btn-new">
+                         <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new recommended">
+                   <div class="recommended-badge">⭐ RECOMMENDED</div>  
+                    <div class="code-badge">2 CODES</div>
+                    <div class="price-tag-new">65€</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 2 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 5€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20ORCAPROMAX%20-%202%20CODES%20(65€/an)" class="whatsapp-btn-new">
+                         <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new">
+                    <div class="code-badge">3 CODES</div>
+                    <div class="price-tag-new">90€</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 3 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 15€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                       <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20ORCAPROMAX%20-%203%20CODES%20(90€/an)" class="whatsapp-btn-new">
+                       <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ATLAS PRO MAX -->
+        <div class="provider-container provider-atlas">
+            <div class="provider-header"><i class="fas fa-globe"></i> ATLAS PRO MAX</div>
+            <div class="pricing-grid-new">
+                <div class="pricing-card-new">
+                    <div class="code-badge">1 CODE</div>
+                    <div class="price-tag-new">30€</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 1 Connexion</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                       <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20ATLASPROMAX%20-%201%20CODE%20(30€/an)" class="whatsapp-btn-new">
+                      <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+         <div class="pricing-card-new recommended">
+               <div class="recommended-badge">⭐ RECOMMENDED</div>  
+              <div class="code-badge">2 CODES</div>
+              <div class="price-tag-new">55€</div>
+              <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 2 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 5€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20ATLASPROMAX%20-%202%20CODES%20(55€/an)" class="whatsapp-btn-new">
+                          <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new">
+                    <div class="code-badge">3 CODES</div>
+                    <div class="price-tag-new">80€</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 3 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 10€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20ATLASPROMAX%20-%203%20CODES%20(80€/an)" class="whatsapp-btn-new">
+                           <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STRONG -->
+        <div class="provider-container provider-strong">
+            <div class="provider-header"><i class="fas fa-bolt"></i> STRONG</div>
+            <div class="pricing-grid-new">
+                <div class="pricing-card-new">
+                    <div class="code-badge">1 CODE</div>
+                    <div class="price-tag-new">45€</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 1 Connexion</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20STRONG%20-%201%20CODE%20(45€/an)" class="whatsapp-btn-new">
+                              <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new recommended">
+                    <div class="recommended-badge">⭐ RECOMMENDED</div>  
+                    <div class="price-tag-new">80€</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 2 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 10€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                       <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20STRONG%20-%202%20CODES%20(80€/an)" class="whatsapp-btn-new">
+                          <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new">
+                    <div class="code-badge">3 CODES</div>
+                    <div class="price-tag-new">105€</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 3 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 30€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20STRONG%20-%203%20CODES%20(105€/an)" class="whatsapp-btn-new">
+                          <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TREX -->
+        <div class="provider-container provider-trex">
+            <div class="provider-header"><i class="fas fa-dragon"></i> TREX</div>
+            <div class="pricing-grid-new">
+                <div class="pricing-card-new">
+                    <div class="code-badge">1 CODE</div>
+                    <div class="price-tag-new">45€</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 1 Connexion</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                       <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20TREX%20-%201%20CODE%20(45€/an)" class="whatsapp-btn-new">
+                        <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new recommended">
+                    <div class="recommended-badge">⭐ RECOMMENDED</div>  
+                    <div class="code-badge">2 CODES</div>
+                    <div class="price-tag-new">80€</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 2 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 10€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20TREX%20-%202%20CODES%20(80€/an)" class="whatsapp-btn-new">
+                           <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new">
+                    <div class="code-badge">3 CODES</div>
+                    <div class="price-tag-new">105€</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 3 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 30€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20TREX%20-%203%20CODES%20(105€/an)" class="whatsapp-btn-new">
+<                          i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- IRONPROMAX -->
+        <div class="provider-container provider-iron">
+            <div class="provider-header"><i class="fas fa-crown"></i> IRONPROMAX</div>
+            <div class="pricing-grid-new">
+                <div class="pricing-card-new">
+                    <div class="code-badge">1 CODE</div>
+                    <div class="price-tag-new">35€</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 1 Connexion</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20IRONPROMAX%20-%201%20CODE%20(35€/an)" class="whatsapp-btn-new">
+                       <i class="fab fa-whatsapp"></i> BUY NOW
+                              </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new recommended">
+                    <div class="recommended-badge">⭐ RECOMMENDED</div>  
+                    <div class="code-badge">2 CODES</div>
+                    <div class="price-tag-new">65€</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 2 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 5€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20IRONPROMAX%20-%202%20CODES%20(65€/an)" class="whatsapp-btn-new">
+                         <i class="fab fa-whatsapp"></i> BUY NOW
+                            </a>
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new">
+                    <div class="code-badge">3 CODES</div>
+                    <div class="price-tag-new">90€</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 3 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 15€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20IRONPROMAX%20-%203%20CODES%20(90€/an)" class="whatsapp-btn-new">
+                            <i class="fab fa-whatsapp"></i> BUY NOW
+                        </a>    
+                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KING365TV -->
+        <div class="provider-container provider-king">
+            <div class="provider-header"><i class="fas fa-crown"></i> KING365TV</div>
+            <div class="pricing-grid-new">
+                <div class="pricing-card-new">
+                    <div class="code-badge">1 CODE</div>
+                    <div class="price-tag-new">50€</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 1 Connexion</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20KING365TV%20-%201%20CODE%20(50€/an)" class="whatsapp-btn-new">
+                            <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new recommended">
+                   <div class="recommended-badge">⭐ RECOMMENDED</div>  
+                    <div class="code-badge">2 CODES</div>
+                    <div class="price-tag-new">90€</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 2 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 15€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20KING365TV%20-%202%20CODES%20(85€/an)" class="whatsapp-btn-new">
+                            <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+                <div class="pricing-card-new">
+                    <div class="code-badge">3 CODES</div>
+                    <div class="price-tag-new">110€</div>
+                    <ul class="features-list-new">
+                        <li><i class="fas fa-check"></i> +23 000 TV Channels</li>
+                        <li><i class="fas fa-check"></i> +154 000 Films & Series</li>
+                        <li><i class="fas fa-check"></i> UHD/FHD/HD/SD Quality</li>
+                        <li><i class="fas fa-check"></i> Free Update</li>
+                        <li><i class="fas fa-check"></i> Catch-up & EPG</li>
+                        <li><i class="fas fa-check"></i> 3 Connexions</li>
+                        <li><i class="fas fa-check"></i> Economisez 40€</li>
+                    </ul>
+                    <div class="buy-buttons-new">
+                  <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20KING365TV%20-%203%20CODES%20(110€/an)" class="whatsapp-btn-new">
+                      <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container" style="max-width:800px;margin:0 auto;padding:3rem 2rem;text-align:center;">
+            <div class="faq-badge" style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,204,255,0.1);border:1px solid rgba(0,204,255,0.3);padding:0.5rem 1.5rem;border-radius:50px;color:#00ccff;font-size:0.9rem;margin-bottom:1.5rem;">
+                <i class="fas fa-question-circle"></i> FAQ Revendeur
+            </div>
+            <h2 style="font-size:2.5rem;margin-bottom:1rem;">Questions <span style="background:linear-gradient(135deg,#00ccff,#0066ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Fréquentes</span></h2>
+            <p style="color:var(--text-secondary);margin-bottom:2rem;">Tout ce que vous devez savoir pour devenir revendeur</p>
+            
+            <div class="faq-item" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:15px;padding:1.5rem;margin-bottom:1rem;text-align:left;cursor:pointer;transition:all 0.3s;" onclick="this.classList.toggle('active');">
+                <div class="faq-question" style="display:flex;justify-content:space-between;align-items:center;font-weight:600;">
+                    <span><i class="fas fa-coins" style="color:#00ccff;margin-right:10px;"></i> Qu'est-ce qu'un crédit ?</span>
+                    <i class="fas fa-chevron-down" style="color:#00ccff;transition:transform 0.3s;"></i>
+                </div>
+                <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s;color:var(--text-secondary);margin-top:0;">
+                    <p style="padding-top:1rem;">1 crédit = 1 mois d'abonnement. Vous utilisez vos crédits pour créer des abonnements pour vos clients. Par exemple, 120 crédits vous permettent de créer 120 abonnements d'1 mois.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:15px;padding:1.5rem;margin-bottom:1rem;text-align:left;cursor:pointer;transition:all 0.3s;" onclick="this.classList.toggle('active');">
+                <div class="faq-question" style="display:flex;justify-content:space-between;align-items:center;font-weight:600;">
+                    <span><i class="fas fa-chart-line" style="color:#00ccff;margin-right:10px;"></i> Quel est le meilleur pack pour commencer ?</span>
+                    <i class="fas fa-chevron-down" style="color:#00ccff;transition:transform 0.3s;"></i>
+                </div>
+                <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s;color:var(--text-secondary);margin-top:0;">
+                    <p style="padding-top:1rem;">Le pack de 240 crédits (520€) est le plus populaire. C'est le meilleur rapport qualité/prix pour démarrer sereinement avec un panel complet.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:15px;padding:1.5rem;margin-bottom:1rem;text-align:left;cursor:pointer;transition:all 0.3s;" onclick="this.classList.toggle('active');">
+                <div class="faq-question" style="display:flex;justify-content:space-between;align-items:center;font-weight:600;">
+                    <span><i class="fas fa-shield-alt" style="color:#00ccff;margin-right:10px;"></i> Le panel est-il sécurisé ?</span>
+                    <i class="fas fa-chevron-down" style="color:#00ccff;transition:transform 0.3s;"></i>
+                </div>
+                <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s;color:var(--text-secondary);margin-top:0;">
+                    <p style="padding-top:1rem;">Oui ! Vous avez un accès exclusif à votre propre panel avec gestion complète de vos clients, groupes personnalisés et support 24/7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="info-container">
+            <h3>Comment fonctionne le <span>systeme de credits</span> ?</h3>
+            <p>Chaque credit correspond a 1 mois d'abonnement. Par exemple, avec le pack de 120 credits a 250 EUR, vous pouvez creer 120 abonnements d'1 mois, ou 40 abonnements de 3 mois, etc. Plus vous achetez de credits, plus le prix unitaire est avantageux !</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h3>Une question ? <span>Contactez-nous</span></h3>
+        <div class="contact-buttons">
+            <a href="https://wa.me/213550082871" class="contact-btn whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://t.me/goiptvpro" class="contact-btn telegram" target="_blank">
+                <i class="fab fa-telegram"></i> Telegram
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>GOIPTVPRO &copy; 2025. Tous droits reserves.</p>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/213550082871" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Telegram Float -->
+    <a href="https://t.me/goiptvpro" class="telegram-float" target="_blank">
+        <i class="fab fa-telegram"></i>
+    </a>
+
+
+    <script>
+    function showTab(name) {
+        document.querySelectorAll('.provider-container').forEach(function(el) {
+            el.style.display = 'none';
+        });
+        var target = document.querySelector('.provider-' + name);
+        if (target) target.style.display = 'block';
+        document.querySelectorAll('.az-tab-btn').forEach(function(btn) {
+            btn.classList.remove('active');
+            if (btn.dataset.tab === name) btn.classList.add('active');
+        });
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        showTab('orca');
+    });
+    </script>
+
+    <!-- WhatsApp Chatbot Widget -->
+    <div id="chatbot-widget">
+        <div id="chatbot-window" class="hidden">
+            <div id="chatbot-header">
+                <div class="chatbot-avatar"><i class="fab fa-whatsapp"></i></div>
+                <div class="chatbot-info">
+                    <div class="chatbot-name">GOIPTVPRO Assistant</div>
+                    <div class="chatbot-status"><span class="status-dot"></span> En ligne</div>
+                </div>
+                <button id="chatbot-close" onclick="toggleChatbot()"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="chatbot-messages">
+                <div class="msg-bot">
+                    <div class="msg-bubble">
+                        👋 Bonjour ! Bienvenue sur <strong>GOIPTVPRO</strong> !<br><br>
+                        Comment puis-je vous aider aujourd'hui ?
+                    </div>
+                    <div class="msg-time">Maintenant</div>
+                </div>
+            </div>
+            <div id="chatbot-buttons">
+                <button class="chat-btn" onclick="sendToWhatsApp('abonnement')">
+                    <i class="fas fa-tv"></i> Acheter un abonnement
+                </button>
+                <button class="chat-btn" onclick="sendToWhatsApp('revendeur')">
+                    <i class="fas fa-store"></i> Devenir revendeur
+                </button>
+                <button class="chat-btn" onclick="sendToWhatsApp('test')">
+                    <i class="fas fa-play-circle"></i> Test Gratuit 24h
+                </button>
+                <button class="chat-btn" onclick="sendToWhatsApp('support')">
+                    <i class="fas fa-headset"></i> Parler à un agent
+                </button>
+            </div>
+        </div>
+        <div id="chatbot-fab" onclick="toggleChatbot()">
+            <i class="fab fa-whatsapp"></i>
+            <span class="fab-notification">1</span>
+        </div>
+    </div>
+
+    <script>
+    // Chatbot Widget
+    function toggleChatbot() {
+        const window_ = document.getElementById('chatbot-window');
+        const fab = document.getElementById('chatbot-fab');
+        window_.classList.toggle('hidden');
+        fab.style.display = window_.classList.contains('hidden') ? 'flex' : 'none';
+    }
+
+    function addBotMessage(html, delay) {
+        setTimeout(() => {
+            const container = document.getElementById('chatbot-messages');
+            const div = document.createElement('div');
+            div.className = 'msg-bot';
+            div.innerHTML = '<div class="msg-bubble">' + html + '</div><div class="msg-time">Maintenant</div>';
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }, delay);
+    }
+
+    function addUserMessage(text) {
+        const container = document.getElementById('chatbot-messages');
+        const div = document.createElement('div');
+        div.className = 'msg-user';
+        div.innerHTML = '<div class="msg-bubble">' + text + '</div><div class="msg-time">Maintenant</div>';
+        container.appendChild(div);
+        container.scrollTop = container.scrollHeight;
+    }
+
+    function sendToWhatsApp(type) {
+        let userText = '';
+        let botResponse = '';
+
+        switch(type) {
+            case 'abonnement':
+                userText = '📺 Acheter un abonnement';
+                botResponse = '📺 <strong>Nos abonnements :</strong><br><br>' +
+                    'Choisissez votre fournisseur :<br><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20acheter%201%20CODE%20ORCA%20PRO%20MAX%20(35€)" target="_blank" class="chat-link"><i class="fas fa-tv"></i> 🐋 Orca Pro Max - 35€</a><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20acheter%201%20CODE%20ATLAS%20PRO%20MAX%20(30€)" target="_blank" class="chat-link"><i class="fas fa-globe"></i> 🌍 Atlas Pro Max - 30€</a><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20acheter%201%20CODE%20STRONG%20(45€)" target="_blank" class="chat-link"><i class="fas fa-bolt"></i> ⚡ Strong - 45€</a><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20acheter%201%20CODE%20TREX%20(45€)" target="_blank" class="chat-link"><i class="fas fa-dragon"></i> 🦖 Trex - 45€</a><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20acheter%201%20CODE%20IRONPROMAX%20(35€)" target="_blank" class="chat-link"><i class="fas fa-crown"></i> 👑 IronProMax - 35€</a><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20acheter%201%20CODE%20KING365TV%20(50€)" target="_blank" class="chat-link"><i class="fas fa-chess-king"></i> 👸 King365TV - 50€</a>';
+                break;
+
+            case 'revendeur':
+                userText = '🏪 Devenir revendeur';
+                botResponse = '🏪 <strong>Packs Revendeur :</strong><br><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20acheter%20le%20pack%20120%20CREDITS%20(250€)" target="_blank" class="chat-link"><i class="fas fa-coins"></i> 120 Crédits - 250€</a><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20acheter%20le%20pack%20240%20CREDITS%20(520€)" target="_blank" class="chat-link"><i class="fas fa-coins"></i> 240 Crédits - 520€ ⭐</a><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20acheter%20le%20pack%20480%20CREDITS%20(900€)" target="_blank" class="chat-link"><i class="fas fa-coins"></i> 480 Crédits - 900€</a><br><br>' +
+                    '1 Crédit = 1 mois d\'abonnement';
+                break;
+
+            case 'test':
+                userText = '🎬 Test Gratuit 24h';
+                botResponse = '🎬 <strong>Test Gratuit 24h</strong><br><br>' +
+                    'Cliquez ci-dessous pour recevoir votre test gratuit :<br><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20un%20TEST%20GRATUIT%2024h" target="_blank" class="chat-link"><i class="fab fa-whatsapp"></i> Demander sur WhatsApp</a><br>' +
+                    '<a href="https://t.me/goiptvpro" target="_blank" class="chat-link"><i class="fab fa-telegram"></i> Demander sur Telegram</a>';
+                break;
+
+            case 'support':
+                userText = '🎧 Parler à un agent';
+                botResponse = '🎧 <strong>Support 24/7</strong><br><br>' +
+                    'Nos agents sont disponibles pour vous aider :<br><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20j\'ai%20besoin%20d\'aide" target="_blank" class="chat-link"><i class="fab fa-whatsapp"></i> WhatsApp Direct</a><br>' +
+                    '<a href="https://t.me/goiptvpro" target="_blank" class="chat-link"><i class="fab fa-telegram"></i> Telegram</a>';
+                break;
+        }
+
+        addUserMessage(userText);
+        document.getElementById('chatbot-buttons').style.display = 'none';
+        addBotMessage(botResponse, 800);
+        setTimeout(() => {
+            document.getElementById('chatbot-buttons').style.display = 'grid';
+            addBotMessage('✅ Cliquez sur le lien ci-dessus ou choisissez une autre option :', 200);
+        }, 3000);
+    }
+
+    setTimeout(() => {
+        const window_ = document.getElementById('chatbot-window');
+        if (window_.classList.contains('hidden')) {
+            toggleChatbot();
+        }
+    }, 5000);
+    </script>
+
+</body>
+</html>
