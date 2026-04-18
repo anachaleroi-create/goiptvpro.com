@@ -1926,6 +1926,44 @@
             line-height: 1.7;
         }
 
+        /* WhatsApp Chatbot Widget */
+        #chatbot-widget { position: fixed; bottom: 20px; right: 20px; z-index: 10000; font-family: 'Segoe UI', sans-serif; }
+        #chatbot-fab { width: 60px; height: 60px; background: linear-gradient(135deg, #25d366, #128c7e); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 28px; cursor: pointer; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); transition: all 0.3s; position: relative; animation: pulse-fab 2s infinite; }
+        #chatbot-fab:hover { transform: scale(1.1); }
+        @keyframes pulse-fab { 0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); } 50% { box-shadow: 0 4px 30px rgba(37,211,102,0.7); } }
+        .fab-notification { position: absolute; top: -5px; right: -5px; background: #ff4757; color: #fff; width: 22px; height: 22px; border-radius: 50%; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; animation: bounce 1s infinite; }
+        @keyframes bounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+
+        #chatbot-window { width: 360px; height: 520px; background: #1a1a25; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5); display: flex; flex-direction: column; position: absolute; bottom: 80px; right: 0; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.1); }
+        #chatbot-window.hidden { opacity: 0; transform: translateY(20px) scale(0.95); pointer-events: none; }
+
+        #chatbot-header { background: linear-gradient(135deg, #075e54, #128c7e); padding: 15px 20px; display: flex; align-items: center; gap: 12px; }
+        .chatbot-avatar { width: 40px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #fff; }
+        .chatbot-info { flex: 1; }
+        .chatbot-name { color: #fff; font-weight: 600; font-size: 15px; }
+        .chatbot-status { color: rgba(255,255,255,0.8); font-size: 12px; display: flex; align-items: center; gap: 5px; }
+        .status-dot { width: 8px; height: 8px; background: #25d366; border-radius: 50%; animation: blink 2s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        #chatbot-close { background: none; border: none; color: #fff; font-size: 18px; cursor: pointer; padding: 5px; }
+
+        #chatbot-messages { flex: 1; overflow-y: auto; padding: 15px; display: flex; flex-direction: column; gap: 10px; }
+        .msg-bot { align-self: flex-start; max-width: 85%; }
+        .msg-user { align-self: flex-end; max-width: 85%; }
+        .msg-bubble { padding: 12px 15px; border-radius: 15px; font-size: 13px; line-height: 1.5; }
+        .msg-bot .msg-bubble { background: #2a2a3a; color: #e0e0e0; border-bottom-left-radius: 4px; }
+        .msg-user .msg-bubble { background: linear-gradient(135deg, #25d366, #128c7e); color: #fff; border-bottom-right-radius: 4px; }
+        .msg-time { font-size: 10px; color: #666; margin-top: 3px; padding: 0 5px; }
+
+        #chatbot-buttons { padding: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .chat-btn { background: rgba(37, 211, 102, 0.1); border: 1px solid rgba(37, 211, 102, 0.3); color: #25d366; padding: 10px; border-radius: 10px; font-size: 12px; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 6px; font-weight: 500; }
+        .chat-btn:hover { background: rgba(37, 211, 102, 0.25); transform: translateY(-2px); }
+        .chat-link { display: inline-flex; align-items: center; gap: 6px; color: #25d366; text-decoration: none; padding: 6px 10px; background: rgba(37, 211, 102, 0.1); border-radius: 8px; margin: 3px 0; font-size: 12px; transition: all 0.3s; }
+        .chat-link:hover { background: rgba(37, 211, 102, 0.25); }
+
+        @media(max-width: 480px) {
+            #chatbot-window { width: calc(100vw - 40px); height: 60vh; right: -10px; }
+        }
+
         /* Payment Section */
         .payment-section {
             padding: 3rem 2rem;
@@ -2411,7 +2449,7 @@
             <ul class="nav-links">
                 <li><a href="#home">ACCUEIL</a></li>
                 <li><a href="#pricing">ABONNEMENTS</a></li>
-                <li><a href="#reseller" style="color: #3b82f6;"><i class="fas fa-store"></i> REVENDEUR</a></li>
+                <li><a href="revendeur.html" style="color: #3b82f6;"><i class="fas fa-store"></i> REVENDEUR</a></li>
                 <li><a href="#movies">FILMS & SÉRIES</a></li>
                 <li><a href="#affiliate" style="color: #00d084;"><i class="fas fa-hand-holding-usd"></i> AFFILIÉ</a></li>
                 <li><a href="#support" class="support-btn">Support</a></li>
@@ -3192,6 +3230,9 @@
     .az-tab-btn[data-tab="strong"].active { background: #4f46e5; border-color: #4f46e5; color: #fff; }
     </style>
 
+    
+
+    <!-- PROVIDERS SECTION -->
     <div class="az-providers-showcase">
         <div class="az-providers-label">Nos Partenaires</div>
         <h2 class="az-providers-title">6 Fournisseurs <span>Premium</span></h2>
@@ -3282,10 +3323,9 @@
                         <li><i class="fas fa-check"></i> 1 Connexion</li>
                     </ul>
                     <div class="buy-buttons-new">
-                       <<a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20ORCAPROMAX%20-%203%20CODES%20(30€/an)" class="whatsapp-btn-new">
-                         <i class="fab fa-whatsapp"></i> BUY NOW
-
-                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                       <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20ORCAPROMAX%20-%201%20CODE%20(35€/an)" class="whatsapp-btn-new">
+                         <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
                 <div class="pricing-card-new recommended">
@@ -3302,10 +3342,9 @@
                         <li><i class="fas fa-check"></i> Economisez 5€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <<a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20ORCAPROMAX%20-%203%20CODES%20(30€/an)" class="whatsapp-btn-new">
-                         <i class="fab fa-whatsapp"></i> BUY NOW
- 
-                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20ORCAPROMAX%20-%201%20CODE%20(35€/an)" class="whatsapp-btn-new">
+                         <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
                 <div class="pricing-card-new">
@@ -3321,10 +3360,9 @@
                         <li><i class="fas fa-check"></i> Economisez 15€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                       <<a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20ORCAPROMAX%20-%203%20CODES%20(30€/an)" class="whatsapp-btn-new">
-                       <i class="fab fa-whatsapp"></i> BUY NOW
-
-                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                       <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20ORCAPROMAX%20-%201%20CODE%20(35€/an)" class="whatsapp-btn-new">
+                       <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
             </div>
@@ -3346,9 +3384,9 @@
                         <li><i class="fas fa-check"></i> 1 Connexion</li>
                     </ul>
                     <div class="buy-buttons-new">
-                       <<a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20ATLASPROMAX%20-%203%20CODES%20(30€/an)" class="whatsapp-btn-new">
-                      <i class="fab fa-whatsapp"></i> BUY NOW
-                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                       <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20ATLASPROMAX%20-%201%20CODE%20(30€/an)" class="whatsapp-btn-new">
+                      <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
          <div class="pricing-card-new recommended">
@@ -3365,9 +3403,9 @@
                         <li><i class="fas fa-check"></i> Economisez 5€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <<a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20ATLASPROMAX%20-%203%20CODES%20(55€/an)" class="whatsapp-btn-new">
-                          <i class="fab fa-whatsapp"></i> BUY NOW
-                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20ATLASPROMAX%20-%202%20CODES%20(55€/an)" class="whatsapp-btn-new">
+                          <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
                 <div class="pricing-card-new">
@@ -3383,9 +3421,9 @@
                         <li><i class="fas fa-check"></i> Economisez 10€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <<a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20ATLASPROMAX%20-%203%20CODES%20(80€/an)" class="whatsapp-btn-new">
-                           <i class="fab fa-whatsapp"></i> BUY NOW 
-                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20ATLASPROMAX%20-%203%20CODES%20(80€/an)" class="whatsapp-btn-new">
+                           <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
             </div>
@@ -3407,9 +3445,9 @@
                         <li><i class="fas fa-check"></i> 1 Connexion</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <<a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20STRONG%20-%203%20CODES%20(45€/an)" class="whatsapp-btn-new">
-                              <i class="fab fa-whatsapp"></i> BUY NOW
-                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20STRONG%20-%201%20CODE%20(45€/an)" class="whatsapp-btn-new">
+                              <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
                 <div class="pricing-card-new recommended">
@@ -3425,9 +3463,9 @@
                         <li><i class="fas fa-check"></i> Economisez 10€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                       <<a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20STRONG%20-%203%20CODES%20(80€/an)" class="whatsapp-btn-new">
-                          <i class="fab fa-whatsapp"></i> BUY NOW 
-                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                       <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20STRONG%20-%202%20CODES%20(80€/an)" class="whatsapp-btn-new">
+                          <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
                 <div class="pricing-card-new">
@@ -3443,9 +3481,9 @@
                         <li><i class="fas fa-check"></i> Economisez 30€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <<a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20STRONG%20-%203%20CODES%20(105€/an)" class="whatsapp-btn-new">
-                          <i class="fab fa-whatsapp"></i> BUY NOW
-                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20STRONG%20-%203%20CODES%20(105€/an)" class="whatsapp-btn-new">
+                          <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
             </div>
@@ -3467,9 +3505,9 @@
                         <li><i class="fas fa-check"></i> 1 Connexion</li>
                     </ul>
                     <div class="buy-buttons-new">
-                       <<a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20TREX%20-%203%20CODES%20(40€/an)" class="whatsapp-btn-new">
-                        <i class="fab fa-whatsapp"></i> BUY NOW
-                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                       <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20TREX%20-%201%20CODE%20(45€/an)" class="whatsapp-btn-new">
+                        <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
                 <div class="pricing-card-new recommended">
@@ -3486,9 +3524,9 @@
                         <li><i class="fas fa-check"></i> Economisez 10€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <<a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20TREX%20-%203%20CODES%20(75€/an)" class="whatsapp-btn-new">
-                           <i class="fab fa-whatsapp"></i> BUY NOW
-                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20TREX%20-%202%20CODES%20(80€/an)" class="whatsapp-btn-new">
+                           <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
                 <div class="pricing-card-new">
@@ -3504,9 +3542,9 @@
                         <li><i class="fas fa-check"></i> Economisez 30€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <<a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20TREX%20-%203%20CODES%20(110€/an)" class="whatsapp-btn-new">
-<                          i class="fab fa-whatsapp"></i> BUY NOW
-                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20TREX%20-%203%20CODES%20(105€/an)" class="whatsapp-btn-new">
+<                          i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
             </div>
@@ -3567,7 +3605,7 @@
                         <li><i class="fas fa-check"></i> Economisez 15€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <<a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20IRONPROMAX%20-%203%20CODES%20(90€/an)" class="whatsapp-btn-new">
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20IRONPROMAX%20-%203%20CODES%20(90€/an)" class="whatsapp-btn-new">
                             <i class="fab fa-whatsapp"></i> BUY NOW
                         </a>    
                         <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
@@ -3592,9 +3630,9 @@
                         <li><i class="fas fa-check"></i> 1 Connexion</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <<a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20KING365%20-%203%20CODES%20(50€/an)" class="whatsapp-btn-new">
-                            <i class="fab fa-whatsapp"></i> BUY NOW
-                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20KING365TV%20-%201%20CODE%20(50€/an)" class="whatsapp-btn-new">
+                            <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
                 <div class="pricing-card-new recommended">
@@ -3611,9 +3649,9 @@
                         <li><i class="fas fa-check"></i> Economisez 15€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                        <<a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20KING365%20-%203%20CODES%20(850€/an)" class="whatsapp-btn-new">
-                            <i class="fab fa-whatsapp"></i> BUY NOW
-                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                        <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20KING365TV%20-%202%20CODES%20(90€/an)" class="whatsapp-btn-new">
+                            <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
                 <div class="pricing-card-new">
@@ -3629,18 +3667,17 @@
                         <li><i class="fas fa-check"></i> Economisez 40€</li>
                     </ul>
                     <div class="buy-buttons-new">
-                  <<a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20KING365%20-%203%20CODES%20(110€/an)" class="whatsapp-btn-new">
-                      <i class="fab fa-whatsapp"></i> BUY NOW
-                        <a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
+                  <a href="https://wa.me/33602245915?text=Bonjour%20GOIPTVPRO%2C%20je%20souhaite%20commander%20le%20pack%20KING365TV%20-%203%20CODES%20(110€/an)" class="whatsapp-btn-new">
+                      <i class="fab fa-whatsapp"></i> BUY NOW</a>
+						<a href="https://t.me/goiptvpro" class="telegram-btn-new"><i class="fab fa-telegram"></i> BUY ON TELEGRAM</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <div class="faq-container">
+
+    <div class="faq-container">
             <div class="faq-header">
                 <div class="faq-badge"><i class="fas fa-question-circle"></i> FAQ</div>
                 <h2>Questions Fréquentes</h2>
@@ -3947,95 +3984,6 @@
         </div>
     </section>
 
-    <!-- Reseller Section -->
-    <section class="reseller-section" id="reseller">
-        <div class="reseller-container">
-            <div class="reseller-header">
-                <div class="reseller-badge"><i class="fas fa-store"></i> Programme Revendeur</div>
-                <h2 class="reseller-title">Devenez Revendeur IPTV</h2>
-                <p class="reseller-subtitle">Rejoignez notre programme revendeur et bénéficiez des meilleurs tarifs du marché avec un système de crédits simple et transparent</p>
-            </div>
-
-            <div class="reseller-grid">
-                <!-- Pack 120 Crédits -->
-                <div class="reseller-card">
-                    <div class="credits-amount">120</div>
-                    <div class="credits-label">Crédits</div>
-                    <div class="reseller-price"><span>€</span>250</div>
-                    <ul class="reseller-features">
-                        <li><i class="fas fa-check"></i> Panneau complet</li>
-                        <li><i class="fas fa-check"></i> 1 mois = 1 crédit</li>
-                        <li><i class="fas fa-check"></i> 3 mois = 3 crédits</li>
-                        <li><i class="fas fa-check"></i> 6 mois = 6 crédits</li>
-                        <li><i class="fas fa-check"></i> 12 mois = 12 crédits</li>
-                        <li><i class="fas fa-check"></i> 1 Day = 0 Crédit</li>
-                        <li><i class="fas fa-check"></i> Groupes personnalisés</li>
-                        <li><i class="fas fa-check"></i> Accès exclusif à votre Panel</li>
-                        <li><i class="fas fa-check"></i> Payez au fur et à mesure !</li>
-                        <li><i class="fas fa-check"></i> Assistance 24/7</li>
-                    </ul>
-                    <a href="https://wa.me/+33602245915?text=PACK%20120%20CREDITS%20-%20250EUR" class="reseller-btn">
-                        <i class="fab fa-whatsapp"></i> Commander
-                    </a>
-                </div>
-
-                <!-- Pack 240 Crédits - POPULAIRE -->
-                <div class="reseller-card popular">
-                    <div class="popular-badge"><i class="fas fa-fire"></i> Plus Populaire</div>
-                    <div class="credits-amount">240</div>
-                    <div class="credits-label">Crédits</div>
-                    <div class="reseller-price"><span>€</span>520</div>
-                    <ul class="reseller-features">
-                        <li><i class="fas fa-check"></i> Panneau complet</li>
-                        <li><i class="fas fa-check"></i> 1 mois = 1 crédit</li>
-                        <li><i class="fas fa-check"></i> 3 mois = 3 crédits</li>
-                        <li><i class="fas fa-check"></i> 6 mois = 6 crédits</li>
-                        <li><i class="fas fa-check"></i> 12 mois = 12 crédits</li>
-                        <li><i class="fas fa-check"></i> 1 Day = 0 Crédit</li>
-                        <li><i class="fas fa-check"></i> Groupes personnalisés</li>
-                        <li><i class="fas fa-check"></i> Accès exclusif à votre Panel</li>
-                        <li><i class="fas fa-check"></i> Payez au fur et à mesure !</li>
-                        <li><i class="fas fa-check"></i> Assistance 24/7</li>
-                    </ul>
-                    <a href="https://wa.me/+33602245915?text=PACK%20240%20CREDITS%20-%20520EUR" class="reseller-btn">
-                        <i class="fab fa-whatsapp"></i> Commander
-                    </a>
-                </div>
-
-                <!-- Pack 480 Crédits -->
-                <div class="reseller-card">
-                    <div class="credits-amount">480</div>
-                    <div class="credits-label">Crédits</div>
-                    <div class="reseller-price"><span>€</span>900</div>
-                    <ul class="reseller-features">
-                        <li><i class="fas fa-check"></i> Panneau complet</li>
-                        <li><i class="fas fa-check"></i> 1 mois = 1 crédit</li>
-                        <li><i class="fas fa-check"></i> 3 mois = 3 crédits</li>
-                        <li><i class="fas fa-check"></i> 6 mois = 6 crédits</li>
-                        <li><i class="fas fa-check"></i> 12 mois = 12 crédits</li>
-                        <li><i class="fas fa-check"></i> 1 Day = 0 Crédit</li>
-                        <li><i class="fas fa-check"></i> Groupes personnalisés</li>
-                        <li><i class="fas fa-check"></i> Accès exclusif à votre Panel</li>
-                        <li><i class="fas fa-check"></i> Payez au fur et à mesure !</li>
-                        <li><i class="fas fa-check"></i> Assistance 24/7</li>
-                    </ul>
-                    <a href="https://wa.me/+33602245915?text=PACK%20480%20CREDITS%20-%20900EUR" class="reseller-btn">
-                        <i class="fab fa-whatsapp"></i> Commander
-                    </a>
-                </div>
-            </div>
-
-            <div class="reseller-info">
-                <div class="reseller-info-title"><i class="fas fa-info-circle"></i> Comment fonctionne le système de crédits ?</div>
-                <p class="reseller-info-text">
-                    Chaque crédit correspond à 1 mois d'abonnement. Par exemple, avec le pack de 120 crédits à 250€, 
-                    vous pouvez créer 120 abonnements d'1 mois, ou 40 abonnements de 3 mois, etc. 
-                    Plus vous achetez de crédits, plus le prix unitaire est avantageux !
-                </p>
-            </div>
-        </div>
-    </section>
-
     <!-- Payment Section -->
     <section class="payment-section">
         <div class="payment-container">
@@ -4147,6 +4095,145 @@
                 }
             });
         });
+    </script>
+
+    <!-- WhatsApp Chatbot Widget -->
+    <div id="chatbot-widget">
+        <div id="chatbot-window" class="hidden">
+            <div id="chatbot-header">
+                <div class="chatbot-avatar"><i class="fab fa-whatsapp"></i></div>
+                <div class="chatbot-info">
+                    <div class="chatbot-name">GOIPTVPRO Assistant</div>
+                    <div class="chatbot-status"><span class="status-dot"></span> En ligne</div>
+                </div>
+                <button id="chatbot-close" onclick="toggleChatbot()"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="chatbot-messages">
+                <div class="msg-bot">
+                    <div class="msg-bubble">
+                        👋 Bonjour ! Bienvenue sur <strong>GOIPTVPRO</strong> !<br><br>
+                        Comment puis-je vous aider aujourd'hui ?
+                    </div>
+                    <div class="msg-time">Maintenant</div>
+                </div>
+            </div>
+            <div id="chatbot-buttons">
+                <button class="chat-btn" onclick="sendToWhatsApp('abonnement')">
+                    <i class="fas fa-tv"></i> Acheter un abonnement
+                </button>
+                <button class="chat-btn" onclick="sendToWhatsApp('revendeur')">
+                    <i class="fas fa-store"></i> Devenir revendeur
+                </button>
+                <button class="chat-btn" onclick="sendToWhatsApp('test')">
+                    <i class="fas fa-play-circle"></i> Test Gratuit 24h
+                </button>
+                <button class="chat-btn" onclick="sendToWhatsApp('support')">
+                    <i class="fas fa-headset"></i> Parler à un agent
+                </button>
+            </div>
+        </div>
+        <div id="chatbot-fab" onclick="toggleChatbot()">
+            <i class="fab fa-whatsapp"></i>
+            <span class="fab-notification">1</span>
+        </div>
+    </div>
+
+    <script>
+    // Chatbot Widget
+    function toggleChatbot() {
+        const window_ = document.getElementById('chatbot-window');
+        const fab = document.getElementById('chatbot-fab');
+        window_.classList.toggle('hidden');
+        fab.style.display = window_.classList.contains('hidden') ? 'flex' : 'none';
+    }
+
+    function addBotMessage(html, delay) {
+        setTimeout(() => {
+            const container = document.getElementById('chatbot-messages');
+            const div = document.createElement('div');
+            div.className = 'msg-bot';
+            div.innerHTML = '<div class="msg-bubble">' + html + '</div><div class="msg-time">Maintenant</div>';
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }, delay);
+    }
+
+    function addUserMessage(text) {
+        const container = document.getElementById('chatbot-messages');
+        const div = document.createElement('div');
+        div.className = 'msg-user';
+        div.innerHTML = '<div class="msg-bubble">' + text + '</div><div class="msg-time">Maintenant</div>';
+        container.appendChild(div);
+        container.scrollTop = container.scrollHeight;
+    }
+
+    function sendToWhatsApp(type) {
+        let userText = '';
+        let botResponse = '';
+        let waLink = '';
+
+        switch(type) {
+            case 'abonnement':
+                userText = '📺 Acheter un abonnement';
+                botResponse = '📺 <strong>Nos abonnements :</strong><br><br>' +
+                    'Choisissez votre fournisseur :<br><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20acheter%201%20CODE%20ORCA%20PRO%20MAX%20(35€)" target="_blank" class="chat-link"><i class="fas fa-tv"></i> 🐋 Orca Pro Max - 35€</a><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20acheter%201%20CODE%20ATLAS%20PRO%20MAX%20(30€)" target="_blank" class="chat-link"><i class="fas fa-globe"></i> 🌍 Atlas Pro Max - 30€</a><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20acheter%201%20CODE%20STRONG%20(45€)" target="_blank" class="chat-link"><i class="fas fa-bolt"></i> ⚡ Strong - 45€</a><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20acheter%201%20CODE%20TREX%20(45€)" target="_blank" class="chat-link"><i class="fas fa-dragon"></i> 🦖 Trex - 45€</a><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20acheter%201%20CODE%20IRONPROMAX%20(35€)" target="_blank" class="chat-link"><i class="fas fa-crown"></i> 👑 IronProMax - 35€</a><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20acheter%201%20CODE%20KING365TV%20(50€)" target="_blank" class="chat-link"><i class="fas fa-chess-king"></i> 👸 King365TV - 50€</a>';
+                break;
+
+            case 'revendeur':
+                userText = '🏪 Devenir revendeur';
+                botResponse = '🏪 <strong>Packs Revendeur :</strong><br><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20acheter%20le%20pack%20120%20CREDITS%20(250€)" target="_blank" class="chat-link"><i class="fas fa-coins"></i> 120 Crédits - 250€</a><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20acheter%20le%20pack%20240%20CREDITS%20(520€)" target="_blank" class="chat-link"><i class="fas fa-coins"></i> 240 Crédits - 520€ ⭐</a><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20acheter%20le%20pack%20480%20CREDITS%20(900€)" target="_blank" class="chat-link"><i class="fas fa-coins"></i> 480 Crédits - 900€</a><br><br>' +
+                    '1 Crédit = 1 mois d\'abonnement';
+                break;
+
+            case 'test':
+                userText = '🎬 Test Gratuit 24h';
+                botResponse = '🎬 <strong>Test Gratuit 24h</strong><br><br>' +
+                    'Cliquez ci-dessous pour recevoir votre test gratuit :<br><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20je%20souhaite%20un%20TEST%20GRATUIT%2024h" target="_blank" class="chat-link"><i class="fab fa-whatsapp"></i> Demander sur WhatsApp</a><br>' +
+                    '<a href="https://t.me/goiptvpro" target="_blank" class="chat-link"><i class="fab fa-telegram"></i> Demander sur Telegram</a>';
+                break;
+
+            case 'support':
+                userText = '🎧 Parler à un agent';
+                botResponse = '🎧 <strong>Support 24/7</strong><br><br>' +
+                    'Nos agents sont disponibles pour vous aider :<br><br>' +
+                    '<a href="https://wa.me/33602245915?text=Bonjour%2C%20j\'ai%20besoin%20d\'aide" target="_blank" class="chat-link"><i class="fab fa-whatsapp"></i> WhatsApp Direct</a><br>' +
+                    '<a href="https://t.me/goiptvpro" target="_blank" class="chat-link"><i class="fab fa-telegram"></i> Telegram</a>';
+                break;
+        }
+
+        // Add user message
+        addUserMessage(userText);
+
+        // Hide buttons
+        document.getElementById('chatbot-buttons').style.display = 'none';
+
+        // Add bot response
+        addBotMessage(botResponse, 800);
+
+        // Show buttons again after response
+        setTimeout(() => {
+            document.getElementById('chatbot-buttons').style.display = 'grid';
+            addBotMessage('✅ Cliquez sur le lien ci-dessus ou choisissez une autre option :', 200);
+        }, 3000);
+    }
+
+    // Auto-open after 5 seconds
+    setTimeout(() => {
+        const window_ = document.getElementById('chatbot-window');
+        if (window_.classList.contains('hidden')) {
+            toggleChatbot();
+        }
+    }, 5000);
     </script>
 
 </body>
